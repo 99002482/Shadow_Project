@@ -1,8 +1,10 @@
 import logo from './logo.svg';
+import React, { Component} from 'react';
 import './App.css';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
-function App() {
+class App extends Component {
+  render(){
   return (
     <form className="login-form">
       <h1>
@@ -22,6 +24,7 @@ function App() {
       
     </form>
   );
+}
 }
 
 export default App;
