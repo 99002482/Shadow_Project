@@ -23,18 +23,21 @@ class Dashboard extends Component{
                    Overview Dashboard 
              </div>  */}
            <br></br>
-            <input  type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/>
+             <input  type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
 
-            <div className="Sidebar">
-      <ul className="SidebarList">
+            <ul className="SidebarList">
         {SidebarData.map((val, key) => {
           return (
             <li
               key={key}
               className="row"
-              id={window.location.pathname == val.link ? "active" : ""}
+              // id={window.location.pathname == val.link ? "active" : ""}
               onClick={() => {
-                window.location.pathname = val.link;
+                //window.location.pathname = val.link;
+                if(val.title=='User Profile')
+                 this.props.history.push("/Profile") 
+                else
+                 this.props.history.push("/Login") 
               }}
             >
               <div id="icon">{val.icon}</div> <div id="title">{val.title}</div>
@@ -42,7 +45,6 @@ class Dashboard extends Component{
           );
         })}
       </ul>
-    </div>       
       
         </div>        
         );

@@ -8,16 +8,16 @@ export const SidebarData =[
 
     
     {
-      title: 'User Profile',
-      path: '/products',
+      title: "User Profile",
       icon: <FiIcons.FiSettings />,
-      cName: 'nav-text'
-    },
+      link: "/profile",
+     },
     {
-        title: 'LogOut',
-        path: '/Login',
+        title: "LogOut",
         icon: <BiIcons.BiLogOut />,
-        cName: 'nav-text'
+        link: "/Login",
+       
+        
       },
     
   ];
