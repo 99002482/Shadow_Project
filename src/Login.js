@@ -66,7 +66,7 @@ class Login extends Component {
         
         <form className="loginForm">
              <h1>
-            <span className="font-weight-bold">LOGIN PAGE</span>
+            <span className="title">LOGIN </span>
           </h1>
          <div className="border">       
             
@@ -80,8 +80,10 @@ class Login extends Component {
             <br/>
             <input className='input' type="password" onChange={this.Password} placeholder="Password"/>
           </FormGroup>
-          <Button  className='btn' onClick={this.Login} className="btn-lg btn-dark btn-block">Login</Button>
+          <br/><br/>
+          
           </div>
+          <Button  className='button' onClick={this.Login} >Login</Button>
         </form>
         </div>
         
@@ -90,4 +92,3 @@ class Login extends Component {
     }
     
     export default Login;
-    
