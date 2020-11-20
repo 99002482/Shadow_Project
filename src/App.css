@@ -7,6 +7,7 @@
   
 }
 
+
 .sidebar
 {
   height: 100%;
@@ -66,6 +67,8 @@ body, html, #root, .app, .container {
   border: '1pt';
   background-origin: padding-box;
   border-spacing: 10px;
+  background-color: white;
+  font-variant: small-caps;
  }
 .container {
   font-size: 28px;
@@ -74,20 +77,30 @@ body, html, #root, .app, .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #282c34;
+  background-color: #34c9eb;
+  height: 100%;
 }
 
 .loginForm {
  all:center;
  box-sizing: border-box;
  width: 100%;
+ height: 500px;
  max-width: 400px;
  padding-left: 20px;
  padding-right: 20px;
+ color: rgb(34, 33, 33);
+ font-family: 'Courier New', Courier, monospace;
+background-color: #f2be74;
  
 }
 
-
+.title{
+  font-family: "Sofia";
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+}
 
 .input {
  box-sizing: border-box;
@@ -98,19 +111,22 @@ body, html, #root, .app, .container {
  width: 100%;
  padding: 12px;
  font-size: 14px;
- background: rgba(255, 255, 255, 1);
+ background: #d3eff5;
 }
-.btn {
-  width: 100%;
-  min-width: 280px;
-  color: #565656;
-  padding: 12px;
-  font-size: 14px;
-  font-weight: bold;
-  border: solid 2px #1189de;
-  border-radius: 4px;
-  background: #fff;
+.button {
+ 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
   cursor: pointer;
+  width: 355px;
+  height: 50px;
+  
  }
- 
- 
