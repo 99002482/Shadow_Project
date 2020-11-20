@@ -9,22 +9,23 @@ function App() {
             
     <Router>    
 
-       
+       <div className="App">
       
       <Redirect to="/Login" />
+      <switch>
+     
+     <Route path='/Login' component={Login} />    
+   
+     </switch>
       <Switch>  
 
         <Route path='/Dashboard' component={Dashboard} />    
 
     </Switch>  
     
-     <switch>
-     {/* <div className='container'> */}
-     <Route path='/Login' component={Login} />    
-     {/* </div> */}
-     </switch>
+    
 
-        
+    </div>   
       
     </Router> 
    

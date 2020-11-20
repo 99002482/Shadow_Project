@@ -1,28 +1,56 @@
 import React, { Component } from 'react';
+import * as AiIcons from 'react-icons/ai';
+import { SidebarData } from './SidebarData';
+import { IconContext } from 'react-icons';
+
+import { Link } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
 
 import './App.css';
 
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
-  class Dashboard extends Component {
+class Dashboard extends Component{
+    render(){
+       
+           return (
+            <div className='sidebar'>
 
-    render() {
+            {/* <div class="row" className="mb-2 pageheading">
 
-
-        return (
-
-            <div class="row" className="mb-2 pageheading">
-
-                <div class="col-sm-12 btn btn-primary" >
+             <div class="col-sm-12 btn btn-primary" >
 
                    Overview Dashboard 
-             </div>
-            </div>
+             </div>  */}
+           <br></br>
+            <input  type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/>
+
+            <div className="Sidebar">
+      <ul className="SidebarList">
+        {SidebarData.map((val, key) => {
+          return (
+            <li
+              key={key}
+              className="row"
+              id={window.location.pathname == val.link ? "active" : ""}
+              onClick={() => {
+                window.location.pathname = val.link;
+              }}
+            >
+              <div id="icon">{val.icon}</div> <div id="title">{val.title}</div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>       
+      
+        </div>        
         );
 
     }
-
 }
+
+
 
 
 export default Dashboard;
