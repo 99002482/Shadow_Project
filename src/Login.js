@@ -28,6 +28,15 @@ class Login extends Component {
     }
     
     Login(event){
+      if((this.state.Username).length==0)
+      {
+        alert("Username cannot be empty")
+      }
+      else if((this.state.Password).length==0)
+      {
+        alert("Password cannot be empty")
+      }
+      else{
       
       fetch('https://jsonplaceholder.typicode.com/todos/1',{
         method:'post',
@@ -49,6 +58,7 @@ class Login extends Component {
           alert('Login successful');
       })
     }
+  }
     
       render(){
       return (
