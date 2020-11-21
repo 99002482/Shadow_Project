@@ -1,10 +1,13 @@
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
 import Dashboard from './Dashboard';
 import {withRouter} from 'react-router-dom';
 
+ 
 
 class Login extends Component {
 
@@ -62,6 +65,7 @@ class Login extends Component {
     
       render(){
       return (
+        
           <div className='container'> 
         
         <form className="loginForm">
@@ -71,19 +75,21 @@ class Login extends Component {
          <div className="border">       
             
           <FormGroup>
-            <Label><b>Username</b></Label>
+            <br></br>
+            <Label><FontAwesomeIcon icon={faUser} /><b>&nbsp;Username</b></Label>
             <br/>
-            <input className='input' type="text" onChange={this.Username} placeholder="Username"/>
+             <input className='input' type="text" onChange={this.Username} placeholder="Username"/>
           </FormGroup>
           <FormGroup>
-            <Label><b>Password</b></Label>
+          <br></br>
+            <Label><FontAwesomeIcon icon={faLock} /><b>&nbsp;Password</b></Label>
             <br/>
             <input className='input' type="password" onChange={this.Password} placeholder="Password"/>
           </FormGroup>
-          <br/><br/>
-          
-          </div>
+          <br/>
           <Button  className='button' onClick={this.Login} >Login</Button>
+          </div>
+          
         </form>
         </div>
         
