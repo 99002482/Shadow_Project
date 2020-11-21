@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import * as AiIcons from 'react-icons/ai';
+import Select from 'react-select';
 import { SidebarData } from './SidebarData';
-import { IconContext } from 'react-icons';
-
-import { Link } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa';
 
 import './App.css';
 
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
+const options = [
+  { value: 'Mysore', label: 'Mysore' },
+  { value: 'Bangalore', label: 'Bangalore' },
+  { value: 'Mumbai', label: 'Mumbai' },
+];
 class Dashboard extends Component{
+  state = {
+    selectedOption: null,
+  };
+  handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  };
     render(){
+      const { selectedOption } = this.state;
        
            return (
             <div className='sidebar'>
@@ -23,8 +32,14 @@ class Dashboard extends Component{
                    Overview Dashboard 
              </div>  */}
            <br></br>
-             <input  type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
-
+             <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
+             <br></br> <br></br>
+             <Select 
+             defaultInputValue="Mysore"
+             value={selectedOption}
+             onChange={this.handleChange}
+             options={options}
+            />
             <ul className="SidebarList">
         {SidebarData.map((val, key) => {
           return (
