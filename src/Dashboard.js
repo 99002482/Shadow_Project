@@ -23,14 +23,23 @@ class Dashboard extends Component{
       const { selectedOption } = this.state;
        
            return (
+           
+            
             <div className='sidebar'>
+              <div className="pageheading">
+             
+             <h2 >Overview Dashboard</h2>
+             </div>
 
-            {/* <div class="row" className="mb-2 pageheading">
+          {/* <div class="row" className="mb-2 pageheading">
 
              <div class="col-sm-12 btn btn-primary" >
 
                    Overview Dashboard 
-             </div>  */}
+             </div>   */}
+
+           
+           
            <br></br>
              <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
              <br></br> <br></br>
@@ -61,7 +70,8 @@ class Dashboard extends Component{
         })}
       </ul>
       
-        </div>        
+        </div>  
+         
         );
 
     }

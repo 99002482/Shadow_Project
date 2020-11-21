@@ -17,6 +17,12 @@
 {
   width: 250px;
 }
+.pageheading
+{
+  background-color: #34c9eb;
+  width: 1920px; 
+  text-align: center;
+}
 .SidebarList {
   height: auto;
   padding: 0;
