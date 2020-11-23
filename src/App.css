@@ -1,11 +1,10 @@
 .pageheading
 {
   background-color: #34c9eb;
-  position: fixed;
+  position: absolute; ;
   left: 250px;
-  width: 100%;
+  width: 88%;
   float:right; 
-  /* right: 70%;  */
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   
