@@ -30,22 +30,9 @@ class Dashboard extends Component{
             <h2 >Overview Dashboard</h2>
             </div>
            
- {/* <div class="row" >
-
-             <div class="col-md-12 btn btn-primary"  >
-
-                   Overview Dashboard 
-             </div>  
-             </div> */}
-            
-           
-            
-            <div className='sidebar'>
-              
-
-         
-
-           
+                    
+            <div className='sidebar'>               
+          
            
            <br></br>
              <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 

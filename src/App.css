@@ -22,9 +22,11 @@
 .pageheading
 {
   background-color: #34c9eb;
-  width: 1600px;
+  position: fixed;
+  left: 300px;
+   width: 100%;
   float:right; 
-  right: 70%;
+  /* right: 70%;  */
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   
