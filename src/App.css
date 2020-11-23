@@ -10,18 +10,23 @@
 .sidebar
 {
   height: 100%;
-  width: 250px;
+  width: 300px;
   background-color:black;
 }
 .organisation
 {
-  width: 250px;
+  width: 300px;
+  font-weight: bold;
+  font-size: medium;
 }
 .pageheading
 {
   background-color: #34c9eb;
-  width: 1920px; 
-  text-align: center;
+  width: auto; 
+  /* font-size: xx-small; */
+  /* font-display: auto; */
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 .SidebarList {
   height: auto;
@@ -70,6 +75,7 @@ height: 100vh;
 body, html, #root, .app, .container {
   width: 100%;
   height: 100%;
+  background: linear-gradient(#383838,#b3b1b1);
 }
 
 .border {
@@ -80,13 +86,13 @@ body, html, #root, .app, .container {
   font-variant: small-caps;
  }
  .container {
+  
   font-size: 28px;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#383838,#b3b1b1);
   background-size: cover;
   height: 100%;
 }

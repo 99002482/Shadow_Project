@@ -24,6 +24,9 @@ class Dashboard extends Component{
       const { selectedOption } = this.state;
        
            return (
+            //  <nav className='navbar'>
+
+            
            
             
             <div className='sidebar'>
@@ -72,6 +75,7 @@ class Dashboard extends Component{
       </ul>
       
         </div>  
+        //  </nav>
          
         );
 
