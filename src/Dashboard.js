@@ -24,23 +24,26 @@ class Dashboard extends Component{
       const { selectedOption } = this.state;
        
            return (
-            //  <nav className='navbar'>
+             <div className="App">
+            <div className="pageheading">
+             
+            <h2 >Overview Dashboard</h2>
+            </div>
+           
+ {/* <div class="row" >
 
+             <div class="col-md-12 btn btn-primary"  >
+
+                   Overview Dashboard 
+             </div>  
+             </div> */}
             
            
             
             <div className='sidebar'>
-              <div className="pageheading">
-             
-             <h2 >Overview Dashboard</h2>
-             </div>
+              
 
-          {/* <div class="row" className="mb-2 pageheading">
-
-             <div class="col-sm-12 btn btn-primary" >
-
-                   Overview Dashboard 
-             </div>   */}
+         
 
            
            
@@ -75,6 +78,8 @@ class Dashboard extends Component{
       </ul>
       
         </div>  
+       
+        </div>
         //  </nav>
          
         );
