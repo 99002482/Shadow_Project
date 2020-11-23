@@ -1,94 +1,16 @@
-.login-form{
-  width:100%;
-  max-width:330px;
-  padding:15px;
-  margin:auto;
-  height: 100%;
-  
-}
-
-.sidebar
-{
-  height: 100%;
-  width: 300px;
-  background-color:black;
-}
-.organisation
-{
-  width: 300px;
-  font-weight: bold;
-  font-size: medium;
-}
 .pageheading
 {
   background-color: #34c9eb;
   position: fixed;
-  left: 300px;
-   width: 100%;
+  left: 250px;
+  width: 100%;
   float:right; 
   /* right: 70%;  */
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   
 }
-.SidebarList {
-  height: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.SidebarList .row {
-  width: 100%;
-  height: 60px;
-  list-style-type: none;
-  margin: 0%;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.SidebarList .row:hover {
-  cursor: pointer;
-  background-color: #293846;
-}
-.SidebarList #active {
-  background-color: #293846;
-
-}
-.row #icon {
-  flex: 30%;
-  display: grid;
-  place-items: center;
-}
-
-.row #title {
-  flex: 70%;
-  
-}
-
-.App
-{
-width: 100vw;
-height: 100vh;
-
-}
-body, html, #root, .app, .container {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#383838,#b3b1b1);
-}
-
-.border {
-  border: '1pt';
-  background-origin: padding-box;
-  border-spacing: 10px;
-  background-color: white;
-  font-variant: small-caps;
- }
- .container {
+.container {
   
   font-size: 28px;
   color: #fff;
@@ -98,7 +20,48 @@ body, html, #root, .app, .container {
   justify-content: center;
   background-size: cover;
   height: 100%;
+  background: linear-gradient(0.25turn, #1B1C1C,#6F7373 , #1B1C1C);
+
 }
+body, html, #root, .app, .container {
+  width: 100%;
+  height: 100%;
+ 
+}
+
+.sidebar
+{
+  height: 100%;
+  width: 250px;
+  background-color:black;
+}
+.organisation
+{
+  width: 250px;
+}
+
+.SidebarList {
+  
+  padding: 0;
+  width: 100%;
+}
+
+
+.App
+{
+width: 100vw;
+height: 100vh;
+
+}
+
+.border {
+  border: '1pt';
+  background-origin: padding-box;
+  border-spacing: 10px;
+  background-color: white;
+  font-variant: small-caps;
+ }
+ 
 
 .loginForm {
  all:center;
@@ -150,4 +113,58 @@ body, html, #root, .app, .container {
   letter-spacing: 2px;
   text-transform: uppercase;
   background: linear-gradient(#13d6bf,#13d6bf);
+ }
+
+
+ .main-footer {
+  color: black;
+  background-color:  #34c9eb;
+  padding-top: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+.col-sm{
+  text-align: center;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.header-list{
+  list-style-type: none;
+  color: white;  
+}
+.header-list li{
+  
+  display: inline;
+  color: white;  
+  padding: 14px 16px; 
+}
+
+.navbar-item{  
+  color: white;
+  float: right;  
+  padding:  10px;
+}
+.header{
+  width: 100vw;
+  
+}
+
+.navbar-item:hover{
+  background-color:  #34c9eb;
+  color: black;
+  text-decoration: none;
+}
+
+ .company-name{
+  color: white;
+  float: left;  
+  padding:  10px;
  }

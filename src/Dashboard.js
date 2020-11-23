@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+import Header from "./Header";
+import Footer from "./Footer";
 import { SidebarData } from './SidebarData';
-
-
 import './App.css';
-
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
 const options = [
@@ -24,16 +23,15 @@ class Dashboard extends Component{
       const { selectedOption } = this.state;
        
            return (
-             <div className="App">
-            <div className="pageheading">
+            <div className="App">
+               <Header/>
+            <div className='sidebar'>
              
-            <h2 >Overview Dashboard</h2>
-            </div>
-           
-                    
-            <div className='sidebar'>               
-          
-           
+              <div className="pageheading">
+             
+             <h2 >Overview Dashboard</h2>
+             </div>        
+
            <br></br>
              <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
              <br></br> <br></br>
@@ -43,32 +41,11 @@ class Dashboard extends Component{
              onChange={this.handleChange}
              options={options}
             />
-            <ul className="SidebarList">
-        {SidebarData.map((val, key) => {
-          return (
-            <li
-              key={key}
-              className="row"
-              // id={window.location.pathname == val.link ? "active" : ""}
-              onClick={() => {
-                //window.location.pathname = val.link;
-                if(val.title=='User Profile')
-                 this.props.history.push("/Profile") 
-                else
-                 this.props.history.push("/Login") 
-              }}
-            >
-              <div id="icon">{val.icon}</div> <div id="title">{val.title}</div>
-            </li>
-          );
-        })}
-      </ul>
+           
+      </div>
+      <Footer/> 
+      </div> 
       
-        </div>  
-       
-        </div>
-        //  </nav>
-         
         );
 
     }
