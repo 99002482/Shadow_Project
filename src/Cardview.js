@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Card, CardText,CardBody,CardTitle} from 'reactstrap';
 import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import './App.css';
 
 class Cardview extends Component{
@@ -44,7 +45,7 @@ componentDidMount(){
               <CardTitle ><b>{item.name}</b></CardTitle>
               <CardText>{item.website}</CardText>
               <br/><br/>
-           <Button variant="primary">View Details</Button>
+              <Link to={item.website} >  <Button variant="primary" >View Details</Button></Link>
            </CardBody> 
       </Card> <br/>                   
         </div>
