@@ -2,87 +2,56 @@ import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Card,Button} from 'react-bootstrap';
 import './App.css';
-// const cardInfo = [
-//   {
-//     title: "Lebron James",
-//     text: "THE GOAT",
-//   },
-//   {
-//     title: "Alex Caruso",
-//     text: "THE TRUE GOAT",
-//   },
-//   {
-//     title: "Steph Curry",
-//     text: "he good",
-//   },
-//   {
-//     title: "Michael Jordan",
-//     text: "he is very close to goat",
-//   },
-  
-//   {
-//     title: "Steph Curry",
-//     text: "he good",
-//   },
-//   {
-//     title: "Michael Jordan",
-//     text: "he is very close to goat",
-//   }];
-class Cardview extends Component{
-  constructor(){
-    super()
-       this.state={
-          data:[]
-        }
-      }
 
-async componentDidMount(){
-  console.log('component mounted');
-  // fetch('https://jsonplaceholder.typicode.com/posts')
-  // .then((Response)=>Response.json())
-  // .then((data)=>console.log(data))
-  try{
-    const response= await fetch('https://jsonplaceholder.typicode.com/posts');
-    const data=response.json();
-    console.log(data);
-    // this.setState({data:data.splice(0,10)});
-  }
-  catch(err){
-    console.log(err);
-  }
+class Cardview extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+        data:[],
+        isLoaded:false,
+    }
 }
 
+componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res=>res.json())
+    .then(json=>{
+        this.setState({
+            isLoaded:true,
+            data:json,
 
+        })
+    });
+}
   render(){
     console.log('component rendered');
-    const {data}=this.state;
+    var {isLoaded,data}=this.state;
     console.log(data);
-     // const renderCard = (card, index) => {
-    //   return (
-    //      <Card  key={index} className="box">
-    //        <Card.Body>
-    //         <Card.Title>{card.title}</Card.Title>
-    //         <Card.Text>{card.body}</Card.Text>
-    //         <Button variant="primary">View Details</Button>
-    //       </Card.Body>
-    //     </Card>
-        
-    //   );
-    // };
+     
+    if(!isLoaded){
+      return <div><b>Loading....</b></div>
+  }
+  else{
   
       return (
       <div >
         <ul>
-        {data.map((item)=>{
-           return  <li key={item.id}>{item.body}</li>   
-                         
+        {data.map(item=>(
+
+        <Card  key={data} className="box">
+             <Card.Body>
+              <Card.Title>{item.name}</Card.Title>
+              <Card.Text>{item.website}</Card.Text>
+           <Button variant="primary">View Details</Button>
+           </Card.Body> 
+      </Card>                    
                  
-        })}
+        ))}
         </ul> 
-        App component
-        
+      
       </div> 
       )
+    }
     
       }
     }

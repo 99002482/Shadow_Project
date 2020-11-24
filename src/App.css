@@ -9,6 +9,14 @@
   font-family: 'Times New Roman', Times, serif;
   
 }
+.profile{
+  background-color: #34c9eb;
+  position: relative;  
+  width: 100%;
+  float:right; 
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
 .container {
   
   font-size: 28px;
@@ -20,6 +28,9 @@
   background-size: cover;
   height: 100%;
   background: linear-gradient(0.25turn, #1B1C1C,#6F7373 , #1B1C1C);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px 10px #888888;
 
 }
 body, html, #root, .app, .container {
@@ -68,8 +79,9 @@ height: 100vh;
  width: 100%;
  height: 500px;
  max-width: 400px;
- padding-left: 20px;
- 
+ padding-left: 20px; 
+ padding: 10px;
+ box-shadow: 5px 10px 8px 10px #888888;
  padding-right: 20px;
  color: rgb(34, 33, 33);
  font-family: 'Courier New', Courier, monospace;
@@ -184,10 +196,10 @@ height: 100vh;
  
  .grid {
   min-height: 100%;
-  display: flex;
+  display: inline;
   flex-basis: auto;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   float: left;
   left: 300px;
 }
@@ -196,3 +208,15 @@ height: 100vh;
   flex-basis: auto;
 }
 
+ .profile-data{
+  background-color:  #697072;
+  text-align: center;
+  color: white;
+  font-weight: bolder;     
+  border: 1px solid;
+  padding: 100px;
+  box-shadow: 5px 10px 8px 10px #888888;
+  max-width: 800px;  
+  box-sizing: border-box; 
+ 
+ }
