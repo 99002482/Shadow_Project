@@ -3,6 +3,7 @@ import { Button} from 'reactstrap';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
+import Cardview from './Cardview';
 
 
 class Profile extends Component{
@@ -29,6 +30,7 @@ class Profile extends Component{
     render(){
        var { isLoaded,items}=this.state;  
        
+<<<<<<< HEAD
        if(!isLoaded){
            return <div><b>Loading....</b></div>
        }
@@ -70,6 +72,7 @@ class Profile extends Component{
                </div>
             );
         }
+
     }
 }
 

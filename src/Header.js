@@ -7,9 +7,9 @@ import './App.css';
 function Header () {
 
   return (
-      
+    
     <section className="navbar">
-    <div className="header">  
+    <div className="header" >  
     <ul className="header-list"> 
     <li className="company-name">COMPANY NAME</li>
     <li><Link to="/Login" className="navbar-item"><img height="50px" src={logout}></img></Link></li> 
