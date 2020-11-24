@@ -64,7 +64,7 @@ class Profile extends Component{
                         ))}
 
                         <br/><br/>
-                       <center><button  className='button' >update</button></center> 
+                       <center><Button  className='button' >update</Button></center> 
                </div>           
                
                <div>
