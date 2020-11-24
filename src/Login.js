@@ -1,11 +1,9 @@
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import { Button, FormGroup, Label, Input} from 'reactstrap';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
-import Dashboard from './Dashboard';
-import {withRouter} from 'react-router-dom';
+
 
  
 

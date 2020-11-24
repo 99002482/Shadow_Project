@@ -9,6 +9,14 @@
   font-family: 'Times New Roman', Times, serif;
   
 }
+.profile{
+  background-color: #34c9eb;
+  position: relative;  
+  width: 100%;
+  float:right; 
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
 .container {
   
   font-size: 28px;
@@ -170,4 +178,16 @@ height: 100vh;
   color: white;
   float: left;  
   padding:  10px;
+ }
+ .profile-data{
+  background-color:  #697072;
+  text-align: center;
+  color: white;
+  font-weight: bolder;     
+  border: 1px solid;
+  padding: 100px;
+  box-shadow: 5px 10px 8px 10px #888888;
+  max-width: 800px;  
+  box-sizing: border-box; 
+ 
  }
