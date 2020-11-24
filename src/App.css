@@ -17,7 +17,7 @@
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
 }
-.container {
+.container1 {
   
   font-size: 28px;
   color: #fff;
@@ -202,25 +202,6 @@ height: 100vh;
  
  }
 
- .box{
-   left:300px;
-   width: 20vw;
-   
- }
- 
-
- 
- .grid {
-  min-height: 100%;
-  display: inline;
-  flex-basis: auto;
-  flex-wrap: wrap;
-  flex-direction: column;
-  float: left;
-  left: 300px;
+.card{
+   left:270px;
 }
-.grid > div {
-  width:'30%';
-  flex-basis: auto;
-}
-

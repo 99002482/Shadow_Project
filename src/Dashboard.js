@@ -32,7 +32,8 @@ class Dashboard extends Component{
               <div className="pageheading">
              
              <h2 >Overview Dashboard</h2>
-             </div>  
+             </div> 
+              
 
            <br></br>
              <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
@@ -43,12 +44,14 @@ class Dashboard extends Component{
              onChange={this.handleChange}
              options={options}
             />
-     
-            <div>
-              <Cardview/>
-            </div>
            
       </div>
+      <div className="card"><div className="container">
+      <div className="row">
+              <Cardview/>
+      </div>
+      </div> </div>
+      
       <Footer/> 
       </div> 
       

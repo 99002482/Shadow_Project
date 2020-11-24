@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Card,Button} from 'react-bootstrap';
+import {Card, CardText,CardBody, CardImgOverlay,CardTitle} from 'reactstrap';
+import {Button} from 'react-bootstrap';
 import './App.css';
 
 class Cardview extends Component{
@@ -34,22 +35,22 @@ componentDidMount(){
   else{
   
       return (
-      <div >
-        <ul>
-        {data.map(item=>(
-
-        <Card  key={data} className="box">
-             <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
-              <Card.Text>{item.website}</Card.Text>
+      <div className="container">
+      <div className="row">
+       {data.map(item=>(
+        <div key={item.id} className="col-sm-4">
+       <Card  >
+             <CardBody >
+              <CardTitle>{item.name}</CardTitle>
+              <CardText>{item.website}</CardText>
+              <br/><br/>
            <Button variant="primary">View Details</Button>
-           </Card.Body> 
+           </CardBody> 
       </Card>                    
-                 
+        </div>
         ))}
-        </ul> 
-      
-      </div> 
+       
+      </div> </div>
       )
     }
     
