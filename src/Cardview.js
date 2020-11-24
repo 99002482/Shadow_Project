@@ -40,8 +40,8 @@ componentDidMount(){
        {data.map(item=>(
         <div key={item.id} className="col-sm-3">
        <Card >
-             <CardBody >
-              <CardTitle>{item.name}</CardTitle>
+             <CardBody className="card-box" >
+              <CardTitle ><b>{item.name}</b></CardTitle>
               <CardText>{item.website}</CardText>
               <br/><br/>
            <Button variant="primary">View Details</Button>
