@@ -1,13 +1,33 @@
 import React, { Component } from 'react';
+import { Button} from 'reactstrap';
 import './App.css';
-import Dashboard from './Dashboard';
 import Header from './Header';
 import Footer from './Footer';
-import Cardview from './Cardview';
 
 
 class Profile extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            items:[],
+            isLoaded:false,
+        }
+    }
+      
+    componentDidMount(){
+        fetch('https://jsonplaceholder.typicode.com/users/3')
+        .then(res=>res.json())
+        .then(json=>{
+            this.setState({
+                isLoaded:true,
+                items:[json],
+                                
+            })
+        });
+    }
+    
     render(){
+       var { isLoaded,items}=this.state;  
        
 
        if(!isLoaded){
