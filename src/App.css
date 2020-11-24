@@ -119,13 +119,16 @@ height: 100vh;
   text-decoration: none;
   cursor: pointer;
   width: 355px;
-  font-weight: bolder;
+  font-weight: bold;
   height: 50px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: linear-gradient(#13d6bf,#13d6bf);
+  background: linear-gradient( #34c9eb, #34c9eb);
  }
-
+.button:hover{
+  background: #697072;
+  color: white;
+}
 
  .main-footer {
   color: black;

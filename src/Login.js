@@ -1,7 +1,7 @@
 import { Button, FormGroup, Label, Input} from 'reactstrap';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import {  faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
 
