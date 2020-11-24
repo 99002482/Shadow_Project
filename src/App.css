@@ -202,6 +202,29 @@ height: 100vh;
  
  }
 
+<<<<<<< HEAD
 .card{
    left:270px;
 }
+=======
+ .box{
+   left:300px;
+   width: 20vw;
+   
+ }
+ 
+ .grid {
+  min-height: 100%;
+  display: inline;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  float: left;
+  left: 300px;
+}
+.grid > div {
+  width:'30%';
+  flex-basis: auto;
+}
+
+>>>>>>> 11992c38a8a4a40c113282d60e701a56b096b10d

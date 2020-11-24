@@ -14,16 +14,39 @@ const options = [
   { value: 'Mumbai', label: 'Mumbai' },
 ];
 class Dashboard extends Component{
-  state = {
-    selectedOption: null,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      selectedOption: null,
+      isLoaded:false,
+    }
+    
+  }
+  
   handleChange = selectedOption => {
     this.setState({ selectedOption });
     };
+
+    componentDidMount(){
+      fetch('https://jsonplaceholder.typicode.com/users/3')
+      .then(res=>res.json())
+      .then(json=>{
+          this.setState({
+              isLoaded:true,
+              items:[json],
+                              
+          })
+      });
+  }
     render(){
+      var { isLoaded,items}=this.state;  
       const { selectedOption } = this.state;
      
-       
+      if(!isLoaded){
+        return <div><b>Loading....</b></div>
+    }
+    else{
+
            return (
             <div className="App">
                <Header/>
@@ -36,7 +59,9 @@ class Dashboard extends Component{
               
 
            <br></br>
-             <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
+           {items.map(item=>(
+              <div key={items.id}>
+             <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value={item.address.city} readOnly/> 
              <br></br> <br></br>
              <Select 
              defaultInputValue="Mysore"
@@ -44,6 +69,15 @@ class Dashboard extends Component{
              onChange={this.handleChange}
              options={options}
             />
+<<<<<<< HEAD
+=======
+            </div>
+           ))}
+     
+            <div>
+              <Cardview/>
+            </div>
+>>>>>>> 11992c38a8a4a40c113282d60e701a56b096b10d
            
       </div>
       <div className="card"><div className="container">
@@ -58,6 +92,7 @@ class Dashboard extends Component{
         );
 
     }
+  }
 }
 
 
