@@ -201,24 +201,24 @@ height: 100vh;
   box-sizing: border-box; 
  
  }
+ .card{
+   left: 270px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
 
- .box{
-   left:300px;
-   width: 20vw;
-   
  }
- 
- .grid {
+  .grid {
+  left:300px;
   min-height: 100%;
-  display: inline;
-  flex-basis: auto;
+  display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  float: left;
-  left: 300px;
+  flex-direction: row;
 }
-.grid > div {
-  width:'30%';
-  flex-basis: auto;
+.card > Card.Body {
+  flex-basis: calc(70% - 100px);
+  
 }
 
+ 
+ 

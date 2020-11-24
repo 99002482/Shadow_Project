@@ -35,20 +35,22 @@ componentDidMount(){
   
       return (
       <div >
-        <ul>
+       
         {data.map(item=>(
-
-        <Card  key={data} className="box">
+          
+          
+       <Card  key={data} className="card">
              <Card.Body>
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.website}</Card.Text>
            <Button variant="primary">View Details</Button>
            </Card.Body> 
-      </Card>                    
+      </Card>  
+    
+         
                  
         ))}
-        </ul> 
-      
+             
       </div> 
       )
     }

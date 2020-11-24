@@ -28,7 +28,7 @@ class Dashboard extends Component{
     };
 
     componentDidMount(){
-      fetch('https://jsonplaceholder.typicode.com/users/3')
+      fetch('https://jsonplaceholder.typicode.com/users/1')
       .then(res=>res.json())
       .then(json=>{
           this.setState({
