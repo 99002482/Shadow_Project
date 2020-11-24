@@ -27,6 +27,18 @@
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
 }
+.profile-data{
+  background-color:  #7c8183;
+  text-align: center;
+  color: white;
+  font-weight: bolder;     
+  border: 1px solid;
+  padding: 100px;
+  box-shadow: 5px 10px 8px 1px #888888;
+  max-width: 800px;  
+  box-sizing: border-box; 
+ 
+ }
 .container1 {
   
   font-size: 28px;
@@ -199,18 +211,7 @@ height: 100vh;
   padding:  10px;
  }
 
- .profile-data{
-  background-color:  #697072;
-  text-align: center;
-  color: white;
-  font-weight: bolder;     
-  border: 1px solid;
-  padding: 100px;
-  box-shadow: 5px 10px 8px 10px #888888;
-  max-width: 800px;  
-  box-sizing: border-box; 
  
- }
 
  
 
