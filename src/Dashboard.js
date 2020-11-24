@@ -55,7 +55,8 @@ class Dashboard extends Component{
               <div className="pageheading">
              
              <h2 >Overview Dashboard</h2>
-             </div>  
+             </div> 
+              
 
            <br></br>
            {items.map(item=>(
@@ -69,13 +70,13 @@ class Dashboard extends Component{
              options={options}
             />
             </div>
-           ))}
-     
-            <div>
-              <Cardview/>
-            </div>
-           
+           ))} 
       </div>
+      <div >
+              <Cardview/>
+      </div>
+    
+      
       <Footer/> 
       </div> 
       
