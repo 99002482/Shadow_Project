@@ -30,10 +30,10 @@ body, html, #root, .app, .container {
 
 .sidebar
 {
-  height: 100%;
+  height: 100vh;
   width: 250px;
   background-color:black;
-}
+ }
 .organisation
 {
   width: 250px;
@@ -119,21 +119,27 @@ height: 100vh;
   color: black;
   background-color:  #34c9eb;
   padding-top: 1em;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  position: fixed;
   
 }
 
 .col-sm{
   text-align: center;
 }
+
 .navbar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  z-index: 1;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  
 }
 .header-list{
   list-style-type: none;
@@ -167,3 +173,26 @@ height: 100vh;
   float: left;  
   padding:  10px;
  }
+
+ .box{
+   left:300px;
+   width: 20vw;
+   
+ }
+ 
+
+ 
+ .grid {
+  min-height: 100%;
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+  float: left;
+  left: 300px;
+}
+.grid > div {
+  width:'30%';
+  flex-basis: auto;
+}
+

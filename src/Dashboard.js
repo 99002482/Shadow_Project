@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import Header from "./Header";
 import Footer from "./Footer";
-import { SidebarData } from './SidebarData';
+import Cardview from "./Cardview";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
+
+ 
 const options = [
   { value: 'Mysore', label: 'Mysore' },
   { value: 'Bangalore', label: 'Bangalore' },
@@ -20,6 +22,7 @@ class Dashboard extends Component{
     };
     render(){
       const { selectedOption } = this.state;
+     
        
            return (
             <div className="App">
@@ -29,7 +32,7 @@ class Dashboard extends Component{
               <div className="pageheading">
              
              <h2 >Overview Dashboard</h2>
-             </div>        
+             </div>  
 
            <br></br>
              <input  class="organisation" type="text"  placeholder="Organisation name" name="US Stell" value="US Steel" readOnly/> 
@@ -40,6 +43,10 @@ class Dashboard extends Component{
              onChange={this.handleChange}
              options={options}
             />
+     
+            <div>
+              <Cardview/>
+            </div>
            
       </div>
       <Footer/> 

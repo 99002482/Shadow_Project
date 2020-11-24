@@ -3,6 +3,7 @@ import './App.css';
 import Dashboard from './Dashboard';
 import Header from './Header';
 import Footer from './Footer';
+import Cardview from './Cardview';
 
 
 class Profile extends Component{
@@ -12,6 +13,9 @@ class Profile extends Component{
             <div>
            <div>
              <Header/>
+           </div>
+           <div>
+               <Cardview/>
            </div>
            <div>
                <Footer/>
