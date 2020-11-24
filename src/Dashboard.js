@@ -48,6 +48,7 @@ class Dashboard extends Component{
     else{
 
            return (
+             
             <div className="App">
                <Header/>
             <div className='sidebar'>
@@ -71,16 +72,10 @@ class Dashboard extends Component{
             />
             </div>
            ))}
-     
-            
-           
+      <div className="cardview"> 
+        <Cardview/>
       </div>
-      <div className="card"><div className="container">
-      <div className="row">
-              <Cardview/>
-      </div>
-      </div> </div>
-      
+      </div>  
       <Footer/> 
       </div> 
       

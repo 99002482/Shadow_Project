@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Card, CardText,CardBody, CardImgOverlay,CardTitle} from 'reactstrap';
+import {Card, CardText,CardBody,CardTitle} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import './App.css';
 
@@ -38,15 +38,15 @@ componentDidMount(){
       <div className="container">
       <div className="row">
        {data.map(item=>(
-        <div key={item.id} className="col-sm-4">
-       <Card  >
+        <div key={item.id} className="col-sm-3">
+       <Card >
              <CardBody >
               <CardTitle>{item.name}</CardTitle>
               <CardText>{item.website}</CardText>
               <br/><br/>
            <Button variant="primary">View Details</Button>
            </CardBody> 
-      </Card>                    
+      </Card> <br/>                   
         </div>
         ))}
        

@@ -9,6 +9,12 @@
   font-family: 'Times New Roman', Times, serif;
   
 }
+.cardview{
+  left: 270px;
+  float:right;
+  position:absolute;
+}
+
 .profile{
   background-color: #34c9eb;
   position: relative;  
@@ -202,23 +208,5 @@ height: 100vh;
  
  }
 
- .box{
-   left:300px;
-   width: 20vw;
-   
- }
  
- .grid {
-  min-height: 100%;
-  display: inline;
-  flex-basis: auto;
-  flex-wrap: wrap;
-  flex-direction: column;
-  float: left;
-  left: 300px;
-}
-.grid > div {
-  width:'30%';
-  flex-basis: auto;
-}
 

@@ -3,7 +3,7 @@ import { Button} from 'reactstrap';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import Cardview from "./Cardview";
+
 
 
 class Profile extends Component{
@@ -65,12 +65,8 @@ class Profile extends Component{
 
                         <br/><br/>
                        <center><button  className='button' >update</button></center> 
-               </div>
-            <div className="container">
-             <div className="row">
-              <Cardview/>
-            </div>
-            </div>   
+               </div>           
+               
                <div>
                    <Footer/>
                </div>
