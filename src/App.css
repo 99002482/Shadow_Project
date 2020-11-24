@@ -49,7 +49,7 @@
   justify-content: center;
   background-size: cover;
   height: 100%;
-  background: linear-gradient(0.25turn, #1B1C1C,#6F7373 , #1B1C1C);
+  background: linear-gradient(0.25turn, #5a5c5c,#6F7373 , #606363);
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 8px 10px #888888;
@@ -107,7 +107,7 @@ height: 100vh;
  padding-right: 20px;
  color: rgb(34, 33, 33);
  font-family: 'Courier New', Courier, monospace;
- background: linear-gradient(#171616,#949292);
+ background: white
  
 }
 
@@ -116,7 +116,7 @@ height: 100vh;
   font-size: 30px;
   font-weight: bolder;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .input {
@@ -126,31 +126,32 @@ height: 100vh;
 	margin: 8px 0;
   width: 350px;
   height: 50px;
-  font-size: 15px;
+  font-size: 12px;
   
 }
 .button {
   border: none;
-  color:black;
+  color:white;
   padding: 16px 32px;
   text-align: center;  
-  margin: 4px 2px;
-  opacity: 0.6;
+  margin: 4px 2px;  
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   width: 355px;
   font-weight: bold;
-  height: 50px;
+  height: 60px;
   letter-spacing: 2px;
   text-transform: uppercase;
   background: linear-gradient( #34c9eb, #34c9eb);
  }
+ 
 .button:hover{
   background: #697072;
   color: white;
 }
+
 
  .main-footer {
   color: black;
