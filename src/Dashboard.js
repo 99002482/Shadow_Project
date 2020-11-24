@@ -69,15 +69,10 @@ class Dashboard extends Component{
              onChange={this.handleChange}
              options={options}
             />
-<<<<<<< HEAD
-=======
             </div>
            ))}
      
-            <div>
-              <Cardview/>
-            </div>
->>>>>>> 11992c38a8a4a40c113282d60e701a56b096b10d
+            
            
       </div>
       <div className="card"><div className="container">
