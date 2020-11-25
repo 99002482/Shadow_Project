@@ -63,7 +63,7 @@ body, html, #root, .app, .container {
 
 .sidebar
 {
-  height: 150vh;
+  height: 100%;
   width: 250px;
   background-color:black;
  }
