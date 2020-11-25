@@ -1,10 +1,33 @@
-import React, { Profiler } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link ,Redirect} from 'react-router-dom';
+import Login from './Login';
 import profile from "./profile.png";
 import logout from "./logout.png";
 import './App.css';
 
-function Header () {
+class Header extends Component {
+
+  constructor(){
+    super();
+    this.state={
+    }
+    this.Header=this.Header.bind(this);
+    // this.Logout=this.Logout.bind(this);
+    
+    }
+
+    Header(event){
+      var c=window.confirm("Do you want to Logout?")
+      if(c==true)   
+      window.location.href=("/Login")
+      else
+      alert("You pressed cancel button")
+    }
+
+
+
+
+  render(){
 
   return (
     
@@ -12,12 +35,13 @@ function Header () {
     <div className="header" >  
     <ul className="header-list"> 
     <li className="company-name">COMPANY NAME</li>
-    <li><Link to="/Login" className="navbar-item"><img height="50px" src={logout}></img></Link></li> 
+    <li><Link  className="navbar-item"><img height="50px" onClick={this.Header} src={logout}></img></Link></li> 
     <li><Link to="/Profile" className="navbar-item"><img height="50px" src={profile}></img></Link></li>
     </ul> </div>
   </section>
  
   )
+  }
 
 }
 
