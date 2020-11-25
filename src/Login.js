@@ -1,4 +1,4 @@
-import { Button, FormGroup, Label, Input} from 'reactstrap';
+import {  FormGroup, Label, Input,Button} from 'reactstrap';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faLock, faUser } from '@fortawesome/free-solid-svg-icons'
@@ -64,31 +64,32 @@ class Login extends Component {
       render(){
       return (
         
-          <div className='container1'> 
+        <div className='container1'> 
         
         <form className="loginForm">
              <h1>
-            <span className="title">LOGIN </span>
+            <span className="title">Login</span>
           </h1>
          <div className="border">       
             
           <FormGroup>
             <br></br>
-            <Label><FontAwesomeIcon icon={faUser} /><b>&nbsp;Username</b></Label>
+            <Label><FontAwesomeIcon icon={faUser} />&nbsp;Username</Label>
             <br/>
              <input className='input' type="text" onChange={this.Username} placeholder="Username"/>
           </FormGroup>
           <FormGroup>
           <br></br>
-            <Label><FontAwesomeIcon icon={faLock} /><b>&nbsp;Password</b></Label>
+            <Label><FontAwesomeIcon icon={faLock} />&nbsp;Password</Label>
             <br/>
             <input className='input' type="password" onChange={this.Password} placeholder="Password"/>
           </FormGroup>
-          <br/>
+          
           <Button  className='button' onClick={this.Login} >Login</Button>
           </div>
           
         </form>
+        
         </div>
         
       );
