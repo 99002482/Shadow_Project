@@ -77,7 +77,7 @@ class Login extends Component {
          <div className="border">       
             
           <FormGroup>
-            <br></br>
+            
             <Label><FontAwesomeIcon icon={faUser} />&nbsp;Username</Label>
             <br/>
              <input className='input' type="text" onChange={this.Username} placeholder="Username"/>
@@ -90,6 +90,7 @@ class Login extends Component {
           </FormGroup>
           
           <Button  className='button' onClick={this.Login} >Login</Button>
+          <p className="login-copyright"> &copy;{new Date().getFullYear()} COMPANY NAME , All rights reserved </p>
           </div>
           
         </form>

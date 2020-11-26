@@ -23,7 +23,12 @@ p{
   display: inline;
 
 }
-
+.login-copyright{
+  font-size: small;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
 .profile{
   background-color: #34c9eb;
   position: relative;  
@@ -55,7 +60,7 @@ p{
   background-image: url('./1.jpg');
   border: 1px solid;
   padding: 10px;
-  box-shadow: 5px 10px 8px 10px #888888;
+  
 
 }
 body, html, #root, .app, .container {
@@ -106,7 +111,7 @@ height: 100vh;
  max-width: 400px;
  padding-left: 20px; 
  padding: 10px;
- box-shadow: 5px 10px 8px 10px #f0ede4;
+ box-shadow: 5px 10px 6px 6px #f0ede4;
  padding-right: 20px;
  color: rgb(34, 33, 33);
  font-family: 'Courier New', Courier, monospace;
