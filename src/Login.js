@@ -90,7 +90,7 @@ class Login extends Component {
           </FormGroup>
           
           <Button  className='button' onClick={this.Login} >Login</Button>
-          <center><p className="login-copyright"> &copy;{new Date().getFullYear()} COMPANY NAME , All rights reserved </p></center>
+          <center><p className="login-copyright"> &copy;{new Date().getFullYear()} COMPANY NAME , ALL RIGHTS RESERVED </p></center>
           </div>
           
         </form>
