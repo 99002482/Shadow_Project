@@ -26,8 +26,7 @@ p{
 .login-copyright{
   font-size: small;
   font-weight: bold;
-  color: #333;
-  text-align: center;
+  color: rgb(11, 64, 212);  
 }
 .profile{
   background-color: #34c9eb;
