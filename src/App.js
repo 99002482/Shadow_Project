@@ -3,7 +3,8 @@ import './App.css';
 import Login from './Login';  
 import Dashboard from './Dashboard';  
 import Profile from './Profile';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';   
+import Header from './Header';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';   
 function App() {  
   return (  
 
@@ -13,7 +14,7 @@ function App() {
        <div className="App">
          
        <Redirect to="/Login" />  
-      {/* <Login/> */}
+     
          
       <switch>
       
@@ -21,9 +22,10 @@ function App() {
    
      </switch>
       <Switch>  
+      <Route path='/Login' component={Login} />    
       <Route path='/Profile' component={Profile} />    
-
-      <Route path='/Dashboard' component={Dashboard} />    
+      <Route path='/Dashboard' component={Dashboard} />  
+      <Route path='/Header' component={Header} />     
 
     </Switch>  
     

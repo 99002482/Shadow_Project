@@ -60,6 +60,10 @@ class Login extends Component {
       })
     }
   }
+
+  componentDidUpdate(nextProps,nextState){
+    localStorage.setItem('Username',JSON.stringify(nextState.Username));
+  }
     
       render(){
       return (
