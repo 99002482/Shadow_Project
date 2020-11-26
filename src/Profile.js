@@ -51,12 +51,10 @@ class Profile extends Component{
                    {items.map(item=>(
                             
                           <center>  <div key={items.id} className="profile-data">
-                              Name: &nbsp;&nbsp;&nbsp;<input type="text" value={item.name} readOnly>                             
-                               </input> <br/><br/><br/>
-                               Email: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value={item.email} readOnly>                             
-                               </input><br/><br/><br/>
-                               Address: <input type="text" defaultValue={item.address.city}  /><br/><br/><br/>
-                               Phone:&nbsp;&nbsp; <input type="text" defaultValue={item.phone}  />                             
+                               Name: &nbsp;&nbsp;<p>{item.name}</p> <br/><br/><br/>
+                               &nbsp;&nbsp;&nbsp;  Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p><br/><br/><br/>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:&nbsp;&nbsp; <input type="text" defaultValue={item.phone}  /> <br/><br/><br/>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address: <input type="text" defaultValue={item.address.city}/>
                               
                             </div>
                             </center>

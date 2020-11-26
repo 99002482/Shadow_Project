@@ -19,6 +19,10 @@
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
   
 }
+p{
+  display: inline;
+
+}
 
 .profile{
   background-color: #34c9eb;
@@ -28,10 +32,8 @@
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
 }
-.profile-data{
-  background-color:  #7c8183;
-  text-align: center;
-  color: white;
+.profile-data{  
+  text-align: center;  
   font-weight: bolder;     
   border: 1px solid;
   padding: 100px;
