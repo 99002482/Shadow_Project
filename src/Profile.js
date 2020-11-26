@@ -55,10 +55,9 @@ class Profile extends Component{
                                </input> <br/><br/><br/>
                                Email: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value={item.email} readOnly>                             
                                </input><br/><br/><br/>
-                               Address: <input type="text" value={item.address.city} >                             
-                               </input> <br/><br/><br/>
-                               Phone:&nbsp;&nbsp; <input type="text" value={item.phone} >                             
-                               </input> 
+                               Address: <input type="text" defaultValue={item.address.city}  /><br/><br/><br/>
+                               Phone:&nbsp;&nbsp; <input type="text" defaultValue={item.phone}  />                             
+                              
                             </div>
                             </center>
                         ))}

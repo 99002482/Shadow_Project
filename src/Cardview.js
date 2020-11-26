@@ -42,6 +42,7 @@ componentDidMount(){
         <div key={item.id} className="col-sm-3">
        <Card >
              <CardBody className="card-box" >
+               
               <CardTitle ><b>{item.name}</b></CardTitle>
               <CardText>{item.website}</CardText>
               <br/><br/>
