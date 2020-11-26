@@ -9,6 +9,17 @@
   font-family: 'Times New Roman', Times, serif;
   
 }
+.pageheading-device
+{
+  background-color: #34c9eb;
+  position: absolute; 
+  left: 500px;
+  width:75%;
+  float:right; 
+  text-align:center;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
 
 .cardview{
   left: 270px;
@@ -72,6 +83,13 @@ body, html, #root, .app, .container {
 {
   height: 100%;
   width: 250px;
+  background-color:black;
+ }
+
+ .sidebar-device
+{
+  height: 100%;
+  width: 500px;
   background-color:black;
  }
 .organisation

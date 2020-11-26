@@ -44,9 +44,9 @@ componentDidMount(){
              <CardBody className="card-box" >
                
               <CardTitle ><b>{item.name}</b></CardTitle>
-              <CardText>{item.website}</CardText>
+              <CardText> Number of Devices { item.id}</CardText>
               <br/><br/>
-              <Link to={item.website} >  <Button variant="primary" >View Details</Button></Link>
+              <Link to="/Device" >  <Button variant="primary" >View Details</Button></Link>
            </CardBody> 
       </Card> <br/>                   
         </div>
