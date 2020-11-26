@@ -1,15 +1,42 @@
 import React, { Component } from 'react';
-import Sidebar from './Sidebar';
 import Header from "./Header";
 import Footer from "./Footer";
 import './App.css';
+import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 
  
 
 class Device extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+          selectedOption: null,
+          isLoaded:false,
+        }
+  
+      }
+
+      componentDidMount(){
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res=>res.json())
+        .then(json=>{
+            this.setState({
+                isLoaded:true,
+                data:json,
+    
+            })
+        });
+    }
    
      render(){
+        var {isLoaded,data}=this.state;
+        if(!isLoaded){
+            return <div><b>Loading....</b></div>
+        }
+        else{
        
          return (
              
@@ -20,6 +47,15 @@ class Device extends Component{
                                 <h2 >Devices</h2>
                           </div> 
                           <div className='sidebar-device'>
+                              <br></br><br></br>
+                          {data.map(item=>(
+                                    <div key={item.id} > 
+                                    <center> 
+                                    <br/>
+                                                 <Link to="/Devicedetails" >  <Button className="device-button"variant="primary" >Device {item.id } View Details</Button></Link> 
+                                                 </center>                    
+                                     </div>
+                          ))}
                                                   
                           </div>  
                           <Footer/> 
@@ -28,6 +64,7 @@ class Device extends Component{
                  );
 
               }
+            }
   
   }
 

@@ -5,6 +5,7 @@ import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Device from './Device'
 import Header from './Header';
+import Devicedetails from "./Devicedetails";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';   
 function App() {  
   return (  
@@ -28,6 +29,8 @@ function App() {
       <Route path='/Dashboard' component={Dashboard} />  
       <Route path='/Header' component={Header} />     
       <Route path='/Device' component={Device} />   
+      <Route path='/Devicedetails' component={Devicedetails} />   
+
 
     </Switch>  
     

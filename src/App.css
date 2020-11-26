@@ -13,8 +13,8 @@
 {
   background-color: #34c9eb;
   position: absolute; 
-  left: 500px;
-  width:75%;
+  left: 400px;
+  width:80%;
   float:right; 
   text-align:center;
   font-family: 'Times New Roman', Times, serif;
@@ -89,8 +89,15 @@ body, html, #root, .app, .container {
  .sidebar-device
 {
   height: 100%;
-  width: 500px;
-  background-color:black;
+  width: 400px;
+  background-color:rgb(158, 152, 152);
+ }
+
+ .device-button{
+   align-items: center;
+   align-content: stretch;
+   width: 60%;
+   margin-left: 20px;
  }
 .organisation
 {

@@ -52,9 +52,12 @@ class Profile extends Component{
                             
                           <center>  <div key={items.id} className="profile-data">
                                Name: &nbsp;&nbsp;<p>{item.name}</p> <br/><br/><br/>
-                               &nbsp;&nbsp;&nbsp;  Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p><br/><br/><br/>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:&nbsp;&nbsp; <input type="text" defaultValue={item.phone}  /> <br/><br/><br/>
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address: <input type="text" defaultValue={item.address.city}/>
+                               &nbsp;&nbsp;&nbsp; 
+                               Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p><br/><br/><br/>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               Phone:&nbsp;&nbsp; <input type="text" defaultValue={item.phone}  /> <br/><br/><br/>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               Address: <input type="text" defaultValue={item.address.city}/>
                               
                             </div>
                             </center>
