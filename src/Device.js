@@ -52,7 +52,7 @@ class Device extends Component{
                                     <div key={item.id} > 
                                     <center> 
                                     <br/>
-                                                 <Link to="/Devicedetails" >  <Button className="device-button"variant="primary" >Device {item.id } View Details</Button></Link> 
+                                                 <Link to="/Devicedetails" >  <Button className="device-button" >Device {item.id } View Details</Button></Link> 
                                                  </center>                    
                                      </div>
                           ))}
