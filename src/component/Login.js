@@ -1,7 +1,7 @@
 import { FormGroup, Label, Input, Button } from "reactstrap";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import "../asset/css/App.css";
 
 class Login extends Component {
@@ -62,15 +62,15 @@ class Login extends Component {
           <div className="border">
             <FormGroup>
               <Label>
-                <FontAwesomeIcon icon={faUser} />
-                &nbsp;Username
+                <FontAwesomeIcon icon={faEnvelope} />
+                &nbsp;E-mail Id
               </Label>
               <br />
               <input
                 className="input"
                 type="text"
                 onChange={this.Username}
-                placeholder="Username"
+                placeholder="E-mail ID"
               />
             </FormGroup>
             <FormGroup>
