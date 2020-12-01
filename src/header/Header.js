@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import Login from "./Login";
-import profile from "./profile.png";
-import logout from "./logout.png";
-import "./App.css";
+import profile from "../asset/images/profile.png";
+import logout from "../asset/images/logout.png";
+import "../asset/css/App.css";
 
 class Header extends Component {
   constructor() {

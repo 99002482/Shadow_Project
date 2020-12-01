@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./App.css";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+import "../asset/css/App.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class Device extends Component {
+class Devicedetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class Device extends Component {
         <div className="App">
           <Header />
           <div className="pageheading-device">
-            <h2>Devices</h2>
+            <h2>Device Details</h2>
           </div>
           <div className="sidebar-device">
             <br></br>
@@ -49,7 +49,7 @@ class Device extends Component {
                   <br />
                   <Link to="/Devicedetails">
                     {" "}
-                    <Button className="device-button">
+                    <Button className="device-button" variant="primary">
                       Device {item.id} View Details
                     </Button>
                   </Link>
@@ -64,4 +64,4 @@ class Device extends Component {
   }
 }
 
-export default Device;
+export default Devicedetails;

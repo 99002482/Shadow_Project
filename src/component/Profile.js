@@ -1,8 +1,16 @@
+<<<<<<< HEAD:src/Profile.js
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
+=======
+import React, { Component } from 'react';
+import { Button} from 'reactstrap';
+import '../asset/css/App.css';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+>>>>>>> cd3e7bcda8fc60d9d378a4eae5ad9a8870bf88c4:src/component/Profile.js
 
 class Profile extends Component {
   constructor(props) {

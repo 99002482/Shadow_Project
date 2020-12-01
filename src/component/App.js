@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
+import "../asset/css/App.css";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";
 import Device from "./Device";
-import Header from "./Header";
+import Header from "../header/Header";
 import Devicedetails from "./Devicedetails";
 import {
   BrowserRouter as Router,
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>          
+        <Switch>
           <Route path="/Login" component={Login} />
           <Route path="/Profile" component={Profile} />
           <Route path="/Dashboard" component={Dashboard} />
