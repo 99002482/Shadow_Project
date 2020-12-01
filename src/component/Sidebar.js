@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import "../asset/css/App.css";
 import Select from "react-select";
+import options from "../constant/Constant_options.js";
 
-const options = [
-  { value: "Mysore", label: "Mysore" },
-  { value: "Bangalore", label: "Bangalore" },
-  { value: "Mumbai", label: "Mumbai" },
-];
+
 class Sidebar extends Component {
   constructor(props) {
     super(props);
