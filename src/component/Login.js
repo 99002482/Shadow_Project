@@ -11,19 +11,16 @@ class Login extends Component {
       Username: "",
       Password: "",
     };
-    this.Username = this.Username.bind(this);
-    this.Password = this.Password.bind(this);
-    this.Login = this.Login.bind(this);
   }
 
-  Username(event) {
+  Username=(event)=> {
     this.setState({ Username: event.target.value });
   }
-  Password(event) {
+  Password=(event)=> {
     this.setState({ Password: event.target.value });
   }
 
-  Login(event) {
+  Login=(event) =>{
     if (this.state.Username.length == 0) {
       alert("Username cannot be empty");
     } else if (this.state.Password.length == 0) {

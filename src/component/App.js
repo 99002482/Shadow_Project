@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>          
+        <Switch>
           <Route path="/Login" component={Login} />
           <Route path="/Profile" component={Profile} />
           <Route path="/Dashboard" component={Dashboard} />
