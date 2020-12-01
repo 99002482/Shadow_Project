@@ -63,14 +63,14 @@ class Login extends Component {
             <FormGroup>
               <Label>
                 <FontAwesomeIcon icon={faEnvelope} />
-                &nbsp;E-mail Id
+                &nbsp;Email Id
               </Label>
               <br />
               <input
                 className="input"
                 type="text"
                 onChange={this.Username}
-                placeholder="E-mail ID"
+                placeholder="Email ID"
               />
             </FormGroup>
             <FormGroup>
