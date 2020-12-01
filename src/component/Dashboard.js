@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Sidebar from "./Sidebar";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 import Cardview from "./Cardview";
-import "./asset/css/App.css";
+import "../asset/css/App.css";
 
 class Dashboard extends Component {
   render() {

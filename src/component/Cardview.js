@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./asset/css/App.css";
+import "../asset/css/App.css";
 
 class Cardview extends Component {
   constructor(props) {
