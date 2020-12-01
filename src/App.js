@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./asset/css/App.css";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";

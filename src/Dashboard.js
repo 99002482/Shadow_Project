@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
 import Cardview from "./Cardview";
-import "./App.css";
+import "./asset/css/App.css";
 
 class Dashboard extends Component {
   render() {

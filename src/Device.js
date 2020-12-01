@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
-import './App.css';
+import './asset/css/App.css';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 

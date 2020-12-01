@@ -2,7 +2,7 @@ import { FormGroup, Label, Input, Button } from "reactstrap";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-import "./App.css";
+import "./asset/css/App.css";
 
 class Login extends Component {
   constructor() {
