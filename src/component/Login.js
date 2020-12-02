@@ -12,18 +12,17 @@ class Login extends Component {
       Password: "",
     };
   }
-
   Username=(event)=> {
     this.setState({ Username: event.target.value });
   }
+  
+
   Password=(event)=> {
     this.setState({ Password: event.target.value });
   }
 
   Login=(event) =>{
-    if (this.state.Username.length == 0) {
-      alert("Username or Password field cannot be empty");
-    } else if (this.state.Password.length == 0) {
+    if ((this.state.Username.length == 0)||(this.state.Password.length == 0)) {
       alert("Username or Password field cannot be empty");
     } else {
       fetch("https://jsonplaceholder.typicode.com/todos/1", {
