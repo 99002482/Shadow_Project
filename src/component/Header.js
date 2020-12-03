@@ -14,7 +14,7 @@ class Header extends Component {
 
   Header(event) {
     var c = window.confirm("Do you want to Logout?");
-    if (c == true) window.location.href = "/Login";
+    if (c == true) window.location.href = "/LoginForm";
     else alert("You pressed cancel button");
   }
 
