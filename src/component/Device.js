@@ -40,6 +40,20 @@ class Device extends Component {
           <div className="pageheading-device">
             <h2>Devices</h2>
           </div>
+          <br></br>
+          <br></br>
+          <div className="device-table">
+          {data.map((item) => (
+            <table border="1" >            
+              <div key={item.id}>                
+                <tr>
+                  <td> {item.id}</td>
+                  <td>{item.username}</td>
+                </tr>
+              </div>
+              </table>
+            ))}
+          </div>
           <div className="sidebar-device">
             <br></br>
             <br></br>
@@ -57,18 +71,7 @@ class Device extends Component {
               </div>
             ))}
           </div>
-          <div>
-          {data.map((item) => (
-            <table>
-              <div key={item.id}>                
-                <tr>
-                  <td> {item.id}</td>
-                  <td>{item.username}</td>
-                </tr>
-              </div>
-              </table>
-            ))}
-          </div>
+          
           <Footer />
         </div>
       );

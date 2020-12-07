@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
@@ -40,6 +41,40 @@ class Devicedetails extends Component {
           <div className="pageheading-device">
             <h2>Device Details</h2>
           </div>
+          <div className="device-details">
+            <br />
+            <br />
+            <br />
+            {data.slice(0, 1).map((item) => (
+              <div key={item.id}>
+                <Card>
+                  <CardBody className="card-box">
+                    <CardTitle>
+                      <b>{item.name}</b>
+                    </CardTitle>
+                    <CardText> Device id : {item.id}</CardText>
+                    <br />
+                    <br />
+                    <CardText> Device Name : {item.name}</CardText>
+                    <br />
+                    <br />
+                    <CardText> email : {item.email}</CardText>
+                    <br />
+                    <br />
+                    <CardText> Phone : {item.phone}</CardText>
+                    <br />
+                    <br />
+                    <CardText> Company : {item.company.name}</CardText>
+                    <br />
+
+                    <br />
+                    <br />
+                  </CardBody>
+                </Card>{" "}
+                <br />
+              </div>
+            ))}
+          </div>
           <div className="sidebar-device">
             <br></br>
             <br></br>
@@ -57,6 +92,7 @@ class Devicedetails extends Component {
               </div>
             ))}
           </div>
+
           <Footer />
         </div>
       );

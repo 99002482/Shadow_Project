@@ -24,11 +24,21 @@ table,td{
     
   padding: 20px;
   width: 300px;
+  
 }
 
 .cardview{
   left: 270px;
   float:right;
+  position:absolute;
+}
+.device-table{  
+  left: 700px;  
+  position:absolute;
+  
+}
+.device-details{
+  left: 700px;  
   position:absolute;
 }
 .card-box{
