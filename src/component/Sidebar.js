@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../asset/css/App.css";
 import Select from "react-select";
-import options from "../constant/Constant_options.js";
+import options from "../constant/ConstantOptions.js";
 
 
 class Sidebar extends Component {

@@ -1,11 +1,11 @@
 import React from "react";
-import "./asset/css/App.css"
+import "./asset/css/App.css";
 import Login from "./component/Login";
-import Dashboard from "./component/Dashboard";
-import Profile from "./component/Profile";
-import Device from "./component/Device";
+import Dashboard from "../src/component/Dashboard";
+import Profile from "../src/component/Profile";
+import Device from "../src/component/Device";
 import Header from "./component/Header";
-import Devicedetails from "./component/Devicedetails";
+import Devicedetails from "./component/DeviceDetails";
 import {
   BrowserRouter as Router,
   Switch,
