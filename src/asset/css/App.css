@@ -20,6 +20,11 @@
   font-family: 'Times New Roman', Times, serif;
   
 }
+table,td{
+    
+  padding: 20px;
+  width: 300px;
+}
 
 .cardview{
   left: 270px;

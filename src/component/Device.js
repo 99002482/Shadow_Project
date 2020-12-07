@@ -57,6 +57,18 @@ class Device extends Component {
               </div>
             ))}
           </div>
+          <div>
+          {data.map((item) => (
+            <table>
+              <div key={item.id}>                
+                <tr>
+                  <td> {item.id}</td>
+                  <td>{item.username}</td>
+                </tr>
+              </div>
+              </table>
+            ))}
+          </div>
           <Footer />
         </div>
       );
