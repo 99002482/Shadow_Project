@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Button} from 'reactstrap';
 import '../asset/css/App.css';
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 class Profile extends Component {
   constructor(props) {

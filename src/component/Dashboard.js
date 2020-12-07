@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "./Sidebar";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import Cardview from "./Cardview";
 import "../asset/css/App.css";
 
