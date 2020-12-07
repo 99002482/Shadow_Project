@@ -1,4 +1,4 @@
- export function Login() {
+  export const LoginService=()=> {
   return fetch("https://jsonplaceholder.typicode.com/todos/1", {
     method: "post",
     headers: {
@@ -11,6 +11,13 @@
     }),
   })
     .then((Response) => Response.json());
+    return "LoginService";
+   
     }
+
+    
+
+
+ 
 
    

@@ -231,7 +231,11 @@ height: 100vh;
 .navbar-item{  
   color: white;
   float: right;  
-  padding:  10px;
+  padding:  5px;
+  width: 60px;
+  height: 60px;
+ 
+  
 }
 .header{
   width: 100vw;

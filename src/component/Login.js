@@ -92,7 +92,7 @@ class Login extends Component {
             <center>
               <p className="login-copyright">
                 {" "}
-                &copy;{new Date().getFullYear()} COMPANY NAME , ALL RIGHTS
+                &copy;{new Date().getFullYear()} EATON PROJECT , ALL RIGHTS
                 RESERVED{" "}
               </p>
             </center>

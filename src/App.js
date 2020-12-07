@@ -17,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-         < Redirect to="/Login"></Redirect>
+        
         </Switch>
         <Switch>
           <Route path="/Login" component={Login} />
@@ -26,6 +26,7 @@ function App() {
           <Route path="/Header" component={Header} />
           <Route path="/Device" component={Device} />
           <Route path="/Devicedetails" component={Devicedetails} />
+          <Route path="" exact component={Login} />
           
         </Switch>
       </div>
