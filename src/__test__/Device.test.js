@@ -1,12 +1,11 @@
-import React from 'react';
-import {render,screen} from "@testing-library/react";
-import ReactDom from 'react-dom';
-import Device from '../component/Device';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import ReactDom from "react-dom";
+import Device from "../component/Device";
 
-describe('Device',()=>{
-it("renders loginform without crashing",()=>{
-    const div=document.createElement("div");
-    ReactDom.render(<Device></Device>,div);
-})
-
+describe("Device", () => {
+  it("renders loginform without crashing", () => {
+    const div = document.createElement("div");
+    ReactDom.render(<Device></Device>, div);
+  });
 });

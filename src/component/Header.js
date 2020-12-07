@@ -24,7 +24,7 @@ class Header extends Component {
 
   render() {
     return (
-      <section className="navbar">
+      <section className="navbar" TestId="class">
         <div className="header">
           <ul className="header-list">
             <li className="company-name">EATON SHADOW PROJECT POC</li>
