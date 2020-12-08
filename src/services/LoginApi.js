@@ -1,4 +1,4 @@
-  export const LoginService=()=> {
+export const LoginService = () => {
   return fetch("https://jsonplaceholder.typicode.com/todos/1", {
     method: "post",
     headers: {
@@ -9,15 +9,5 @@
       Username: this.state.Username,
       Password: this.state.Password,
     }),
-  })
-    .then((Response) => Response.json());
-    return "LoginService";
-   
-    }
-
-    
-
-
- 
-
-   
+  }).then((Response) => Response.json());
+};

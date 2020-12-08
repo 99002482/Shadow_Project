@@ -24,9 +24,7 @@ class Cardview extends Component {
       });
   }
   render() {
-    console.log("component rendered");
     var { isLoaded, data } = this.state;
-    console.log(data);
 
     if (!isLoaded) {
       return (

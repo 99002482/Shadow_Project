@@ -37,7 +37,6 @@ class Login extends Component {
       })
         .then((Response) => Response.json())
         .then((result) => {
-          console.log(result);
           if (result.Status == null) {
             //alert('Invalid User');
             this.props.history.push("/Dashboard");
