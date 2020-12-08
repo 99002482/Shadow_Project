@@ -9,7 +9,7 @@ class Cardview extends Component {
     super(props);
     this.state = {
       data: [],
-      isLoaded: false,
+      
     };
   }
 
@@ -24,16 +24,8 @@ class Cardview extends Component {
       });
   }
   render() {
-    var { isLoaded, data } = this.state;
-
-    if (!isLoaded) {
-      return (
-        <div>
-          <b>Loading....</b>
-        </div>
-      );
-    } else {
-      return (
+    var { data } = this.state;
+         return (
         <div className="container">
           <div className="row">
             {data.map((item) => (
@@ -60,5 +52,5 @@ class Cardview extends Component {
       );
     }
   }
-}
+
 export default Cardview;
