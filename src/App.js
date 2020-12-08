@@ -16,9 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-        
-        </Switch>
+        <Switch></Switch>
         <Switch>
           <Route path="/Login" component={Login} />
           <Route path="/Profile" component={Profile} />
@@ -27,7 +25,6 @@ function App() {
           <Route path="/Device" component={Device} />
           <Route path="/Devicedetails" component={DeviceDetails} />
           <Route path="" exact component={Login} />
-          
         </Switch>
       </div>
     </Router>

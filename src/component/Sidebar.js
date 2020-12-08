@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "../asset/css/App.css";
 import Select from "react-select";
 import options from "../constant/ConstantOptions.js";
-import {Organisation} from "../services/SidebarApi";
-
+import { Organisation } from "../services/SidebarApi";
 
 class Sidebar extends Component {
   constructor(props) {

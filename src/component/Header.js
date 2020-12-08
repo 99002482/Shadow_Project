@@ -9,18 +9,18 @@ class Header extends Component {
     super();
     this.state = {};
     this.Profile = this.Profile.bind(this);
-    this.Logout=this.Logout.bind(this);
+    this.Logout = this.Logout.bind(this);
   }
 
- Logout(event) {
+  Logout(event) {
     var c = window.confirm("Do you want to Logout?");
     if (c == true) window.location.href = "/Login";
     else alert("You pressed cancel button");
   }
 
   Profile(event) {
-     window.location.href = "/profile";
-     }
+    window.location.href = "/profile";
+  }
 
   render() {
     return (
@@ -29,11 +29,20 @@ class Header extends Component {
           <ul className="header-list">
             <li className="company-name">EATON SHADOW PROJECT POC</li>
             <li>
-                <img className="navbar-item" height="50px" onClick={this.Logout} src={logout}></img>
-           </li>
+              <img
+                className="navbar-item"
+                height="50px"
+                onClick={this.Logout}
+                src={logout}
+              ></img>
+            </li>
             <li>
-            <img className="navbar-item" height="50px" onClick={this.Profile} src={profile}></img>
-             
+              <img
+                className="navbar-item"
+                height="50px"
+                onClick={this.Profile}
+                src={profile}
+              ></img>
             </li>
           </ul>{" "}
         </div>

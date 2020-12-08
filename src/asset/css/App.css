@@ -1,79 +1,69 @@
-.pageheading
-{
+.pageheading {
   background-color: #34c9eb;
-  position: absolute; ;
+  position: absolute;
   left: 250px;
   width: 88%;
-  float:right; 
+  float: right;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  
+  font-family: "Times New Roman", Times, serif;
 }
-.pageheading-device
-{
+.pageheading-device {
   background-color: #34c9eb;
-  position: absolute; 
+  position: absolute;
   left: 400px;
-  width:80%;
-  float:right; 
-  text-align:center;
-  font-family: 'Times New Roman', Times, serif;
-  
+  width: 80%;
+  float: right;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
-table,td{
-    
+table,
+td {
   padding: 20px;
   width: 300px;
-  
 }
 
-.cardview{
+.cardview {
   left: 270px;
-  float:right;
-  position:absolute;
+  float: right;
+  position: absolute;
 }
-.device-table{  
-  left: 700px;  
-  position:absolute;
-  
+.device-table {
+  left: 700px;
+  position: absolute;
 }
-.device-details{
-  left: 700px;  
-  position:absolute;
+.device-details {
+  left: 700px;
+  position: absolute;
 }
-.card-box{
+.card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
-  
 }
-p{
+p {
   display: inline;
-
 }
-.login-copyright{
+.login-copyright {
   font-size: small;
   font-weight: bold;
-  color: rgb(11, 64, 212);  
+  color: rgb(11, 64, 212);
 }
-.profile{
+.profile {
   background-color: #34c9eb;
-  position: relative;  
+  position: relative;
   width: 100%;
-  float:right; 
+  float: right;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
-.profile-data{  
-  text-align: center;  
-  font-weight: bolder;     
+.profile-data {
+  text-align: center;
+  font-weight: bolder;
   border: 1px solid;
   padding: 100px;
   box-shadow: 5px 10px 8px 1px #888888;
-  max-width: 800px;  
-  box-sizing: border-box; 
- 
- }
+  max-width: 800px;
+  box-sizing: border-box;
+}
 .container1 {
-  
   font-size: 28px;
   color: #fff;
   display: flex;
@@ -82,84 +72,76 @@ p{
   justify-content: center;
   background-size: cover;
   height: 100%;
-  background-image: url('../images/1.jpg');
+  background-image: url("../images/1.jpg");
   border: 1px solid;
   padding: 10px;
-  
-
 }
-body, html, #root, .app, .container {
+body,
+html,
+#root,
+.app,
+.container {
   width: 100%;
   height: 100%;
- 
 }
 
-.sidebar
-{
+.sidebar {
   height: 100%;
   width: 250px;
-  background-color:black;
- }
+  background-color: black;
+}
 
- .sidebar-device
-{
+.sidebar-device {
   height: 100%;
   width: 400px;
   border-color: black;
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
- }
+}
 
- .device-button{
-   align-items: center;
-   align-content: stretch;
-   width: 60%;
-   margin-left: 20px;     
- }
-.organisation
-{
+.device-button {
+  align-items: center;
+  align-content: stretch;
+  width: 60%;
+  margin-left: 20px;
+}
+.organisation {
   width: 250px;
 }
 
 .SidebarList {
-  
   padding: 0;
   width: 100%;
 }
 
-
-.App
-{
-width: 100vw;
-height: 100vh;
-
+.App {
+  width: 100vw;
+  height: 100vh;
 }
 
 .border {
-  border: '1pt';
+  border: "1pt";
   background-origin: padding-box;
   border-spacing: 10px;
   background-color: white;
   font-variant: small-caps;
- }
- 
-
-.loginForm {
- all:center;
- box-sizing: border-box;
- width: 100%;
- height: 500px;
- max-width: 400px;
- padding-left: 20px; 
- padding: 10px;
- box-shadow: 5px 10px 6px 6px #f0ede4;
- padding-right: 20px;
- color: rgb(34, 33, 33);
- font-family: 'Courier New', Courier, monospace;
- background: white
- 
 }
 
-.title{
+.loginForm {
+  all: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 500px;
+  max-width: 400px;
+  padding-left: 20px;
+  padding: 10px;
+  box-shadow: 5px 10px 6px 6px #f0ede4;
+  padding-right: 20px;
+  color: rgb(34, 33, 33);
+  font-family: "Courier New", Courier, monospace;
+  background: white;
+}
+
+.title {
   font-family: "Sofia";
   font-size: 30px;
   font-weight: bolder;
@@ -169,20 +151,19 @@ height: 100vh;
 
 .input {
   background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
   width: 350px;
   height: 50px;
   font-size: 12px;
-  
 }
 .button {
   border: none;
-  color:white;
+  color: white;
   padding: 16px 32px;
-  text-align: center;  
-  margin: 4px 2px;  
+  text-align: center;
+  margin: 4px 2px;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -192,26 +173,24 @@ height: 100vh;
   height: 60px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: linear-gradient( #34c9eb, #34c9eb);
- }
- 
-.button:hover{
+  background: linear-gradient(#34c9eb, #34c9eb);
+}
+
+.button:hover {
   background: #697072;
   color: white;
 }
 
-
- .main-footer {
+.main-footer {
   color: black;
-  background-color:  #34c9eb;
+  background-color: #34c9eb;
   padding-top: 1em;
   bottom: 0;
   width: 100%;
   position: fixed;
-  
 }
 
-.col-sm{
+.col-sm {
   text-align: center;
 }
 
@@ -225,48 +204,36 @@ height: 100vh;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  
 }
-.header-list{
+.header-list {
   list-style-type: none;
-  color: white;  
+  color: white;
 }
-.header-list li{
-  
+.header-list li {
   display: inline;
-  color: white;  
-  padding: 14px 16px; 
+  color: white;
+  padding: 14px 16px;
 }
 
-.navbar-item{  
+.navbar-item {
   color: white;
-  float: right;  
-  padding:  5px;
+  float: right;
+  padding: 5px;
   width: 60px;
   height: 60px;
- 
-  
 }
-.header{
+.header {
   width: 100vw;
-  
 }
 
-.navbar-item:hover{
-  background-color:  #34c9eb;
+.navbar-item:hover {
+  background-color: #34c9eb;
   color: black;
   text-decoration: none;
 }
 
- .company-name{
+.company-name {
   color: white;
-  float: left;  
-  padding:  10px;
- }
-
- 
-
- 
-
- 
- 
+  float: left;
+  padding: 10px;
+}
