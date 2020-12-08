@@ -7,6 +7,7 @@
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
+
 .pageheading-device {
   background-color: #34c9eb;
   position: absolute;
@@ -27,25 +28,31 @@ td {
   float: right;
   position: absolute;
 }
+
 .device-table {
   left: 700px;
   position: absolute;
 }
+
 .device-details {
   left: 700px;
   position: absolute;
 }
+
 .card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
+
 p {
   display: inline;
 }
+
 .login-copyright {
   font-size: small;
   font-weight: bold;
   color: rgb(11, 64, 212);
 }
+
 .profile {
   background-color: #34c9eb;
   position: relative;
@@ -76,6 +83,7 @@ p {
   border: 1px solid;
   padding: 10px;
 }
+
 body,
 html,
 #root,
@@ -205,10 +213,12 @@ html,
   overflow: hidden;
   background-color: #333;
 }
+
 .header-list {
   list-style-type: none;
   color: white;
 }
+
 .header-list li {
   display: inline;
   color: white;
