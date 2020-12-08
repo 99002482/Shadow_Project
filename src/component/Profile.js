@@ -27,14 +27,7 @@ class Profile extends Component {
   render() {
     var { isLoaded, items } = this.state;
 
-    if (!isLoaded) {
-      return (
-        <div>
-          <b>Loading....</b>
-        </div>
-      );
-    } else {
-      return (
+        return (
         <div>
           <div>
             <Header />
@@ -85,6 +78,5 @@ class Profile extends Component {
       );
     }
   }
-}
 
 export default Profile;
