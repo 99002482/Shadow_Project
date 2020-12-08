@@ -6,7 +6,7 @@ import "../asset/css/App.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class Devicedetails extends Component {
+class DeviceDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -100,4 +100,4 @@ class Devicedetails extends Component {
   }
 }
 
-export default Devicedetails;
+export default DeviceDetails;
