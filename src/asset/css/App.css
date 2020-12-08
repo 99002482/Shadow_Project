@@ -170,6 +170,7 @@ html,
   height: 50px;
   font-size: 12px;
 }
+
 .button {
   border: none;
   color: white;
@@ -236,6 +237,7 @@ html,
   width: 60px;
   height: 60px;
 }
+
 .header {
   width: 100vw;
 }
