@@ -7,6 +7,7 @@
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
+
 .pageheading-device {
   background-color: #34c9eb;
   position: absolute;
@@ -16,6 +17,7 @@
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
+
 table,
 td {
   padding: 20px;
@@ -27,10 +29,12 @@ td {
   float: right;
   position: absolute;
 }
+
 .device-table {
   left: 700px;
   position: absolute;
 }
+
 .device-details {
   left: 700px;
   position: absolute;
@@ -39,11 +43,13 @@ td {
 .card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
-.card-width{
+
+.card-width {
   width: 300px;
-  height:200px;
+  height: 200px;
   padding: 5px;
 }
+
 p {
   display: inline;
 }
@@ -53,6 +59,7 @@ p {
   font-weight: bold;
   color: rgb(11, 64, 212);
 }
+
 .profile {
   background-color: #34c9eb;
   position: relative;
@@ -61,6 +68,7 @@ p {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
+
 .profile-data {
   text-align: center;
   font-weight: bolder;
@@ -70,6 +78,7 @@ p {
   max-width: 800px;
   box-sizing: border-box;
 }
+
 .container1 {
   font-size: 28px;
   color: #fff;
@@ -83,6 +92,7 @@ p {
   border: 1px solid;
   padding: 10px;
 }
+
 body,
 html,
 #root,
@@ -111,6 +121,7 @@ html,
   width: 60%;
   margin-left: 20px;
 }
+
 .organisation {
   width: 250px;
 }
@@ -213,10 +224,12 @@ html,
   overflow: hidden;
   background-color: #333;
 }
+
 .header-list {
   list-style-type: none;
   color: white;
 }
+
 .header-list li {
   display: inline;
   color: white;
@@ -230,6 +243,7 @@ html,
   width: 60px;
   height: 60px;
 }
+
 .header {
   width: 100vw;
 }
