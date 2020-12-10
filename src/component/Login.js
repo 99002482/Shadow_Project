@@ -1,9 +1,9 @@
-import { FormGroup, Label,Button } from "reactstrap";
+import { FormGroup, Label, Input, Button } from "reactstrap";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import "../asset/css/App.css";
-//import {LoginService} from '../services/LoginApi'
+
 class Login extends Component {
   constructor() {
     super();
@@ -12,37 +12,103 @@ class Login extends Component {
       Password: "",
     };
   }
+
   Username=(event)=> {
     this.setState({ Username: event.target.value });
   }
-  
-
   Password=(event)=> {
     this.setState({ Password: event.target.value });
   }
 
   Login=(event) =>{
-    if ((this.state.Username.length == 0)||(this.state.Password.length == 0)) {
+    if (this.state.Username.length == 0) {
       alert("Username or Password field cannot be empty");
-    } else {fetch("https://jsonplaceholder.typicode.com/todos/1", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Username: this.state.Username,
-        Password: this.state.Password,
-      }),
-    })
-      .then((Response) => Response.json())
-      .then((result) => {
-        console.log(result);
-        if (result.Status == null) {
-          //alert('Invalid User');
-          this.props.history.push("/Dashboard");
-        } else alert("Login successful");
-      });
+    } else if (this.state.Password.length == 0) {
+      alert("Username or Password field cannot be empty");
+    } else
+     {
+      fetch("https://localhost:44308/api/log/token", {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: this.state.Username,
+          password: this.state.Password,
+          applicationId:"53b0eeff-3aa4-4bff-93bb-94e819965e8c"
+        }),
+      })
+        .then((Response) => Response.json())
+        .then((result) => {
+          console.log(result);
+
+           if (JSON.stringify(result)==="fail" && result.Token===null) {
+             //if(!result.ok){
+
+             alert('Login failed...please check entered credentials');
+            
+           } 
+           else
+
+           {
+             
+             localStorage.setItem("tok",result.Token)
+
+             fetch("https://localhost:44308/api/login/tokdetails",{
+               method:"post",
+               headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+          
+
+               },
+               body: JSON.stringify({
+                Token:localStorage.getItem('tok')
+              })
+             }).then((res)=>res.json()).then((res)=>{
+               console.log(res);
+
+               localStorage.setItem("id",res.id);
+               localStorage.setItem("username",res.display_name);
+
+             })
+
+
+
+             fetch("https://localhost:44308/api/Org/loc",{
+              method:"post",
+              headers: {
+               Accept: "application/json",
+               "Content-Type": "application/json",
+         
+
+              },
+              body: JSON.stringify({
+               Token:localStorage.getItem('tok')
+             })
+            }).then((res)=>res.json()).then((res)=>{
+
+
+              console.log(res);
+              console.log(res.rules[0].site_id);
+              localStorage.setItem('adopter id',res.adopter_id);
+               localStorage.setItem('org id',res.rules[0].site_id);
+              
+
+              
+
+            })
+
+
+
+
+             
+             this.props.history.push("/Dashboard");
+           }
+        }).catch(err=>{
+          alert("Login failed...please check entered credentials");
+        })
     }
   }
 
@@ -92,7 +158,7 @@ class Login extends Component {
             <center>
               <p className="login-copyright">
                 {" "}
-                &copy;{new Date().getFullYear()} EATON PROJECT , ALL RIGHTS
+                &copy;{new Date().getFullYear()} COMPANY NAME , ALL RIGHTS
                 RESERVED{" "}
               </p>
             </center>

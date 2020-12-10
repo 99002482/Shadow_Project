@@ -8,59 +8,46 @@ class Cardview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      isLoaded: false,
+      data: JSON.parse(localStorage.getItem("loc_sites")),
     };
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((json) => {
-        this.setState({
-          isLoaded: true,
-          data: json,
-        });
-      });
+    this.setState({
+      data: JSON.parse(localStorage.getItem("loc_sites")),
+    });
   }
+
   render() {
     console.log("component rendered");
-    var { isLoaded, data } = this.state;
+    var { data } = this.state;
     console.log(data);
 
-    if (!isLoaded) {
-      return (
-        <div>
-          <b>Loading....</b>
-        </div>
-      );
-    } else {
-      return (
-        <div className="container">
-          <div className="row">
-            {data.map((item) => (
-              <div key={item.id} className="col-sm-3">
-                <Card>
-                  <CardBody className="card-box">
-                    <CardTitle>
-                      <b>{item.name}</b>
-                    </CardTitle>
-                    <CardText> Number of Devices {item.id}</CardText>
-                    <br />
-                    <br />
-                    <Link to="/Device">
-                      {" "}
-                      <Button variant="primary">View Details</Button>
-                    </Link>
-                  </CardBody>
-                </Card>{" "}
-                <br />
-              </div>
-            ))}
-          </div>{" "}
-        </div>
-      );
-    }
+    return (
+      <div className="container">
+        <div className="row">
+          {data.map((item) => (
+            <div key={item.id} className="col-sm-3">
+              <Card className="card-width">
+                <CardBody className="card-box">
+                  <CardTitle>
+                    <b>{item}</b>
+                  </CardTitle>
+                  <CardText> Number of Devices {6}</CardText>
+                  <br />
+                  <br />
+                  <Link to="/Device">
+                    {" "}
+                    <Button variant="primary">View Details</Button>
+                  </Link>
+                </CardBody>
+              </Card>{" "}
+              <br />
+            </div>
+          ))}
+        </div>{" "}
+      </div>
+    );
   }
 }
 export default Cardview;
