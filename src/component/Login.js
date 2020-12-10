@@ -105,7 +105,7 @@ class Login extends Component {
               <br />
               <input
                 className="input"
-                type="text"
+                type="email"                
                 onChange={this.Username}
                 placeholder="Email ID"
               />

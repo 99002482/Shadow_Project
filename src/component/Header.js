@@ -26,7 +26,8 @@ class Header extends Component {
       <section className="navbar">
         <div className="header">
           <ul className="header-list">
-            <li className="company-name">EATON SHADOW PROJECT POC</li>
+            <li className="company-name">EATON SHADOW PROJECT POC <center>Welcome user : {JSON.parse(localStorage.getItem("Username"))} </center></li> 
+             
             <li>
               <img
                 className="navbar-item"
@@ -43,6 +44,7 @@ class Header extends Component {
                 src={profile}
               ></img>
             </li>
+            
           </ul>{" "}
         </div>
       </section>
