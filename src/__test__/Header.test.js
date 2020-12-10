@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { render, screen,expect } from "@testing-library/react";
+import { render, screen, expect } from "@testing-library/react";
 import Header from "../component/Header";
 
 describe("Header", () => {
@@ -9,13 +9,12 @@ describe("Header", () => {
     ReactDom.render(<Header></Header>, div);
   });
 
-  it("Text fields working",()=>{
-    const { getAllByText} = render(<Header/>);
+  it("Text fields working", () => {
+    const { getAllByText } = render(<Header />);
     getAllByText("EATON SHADOW PROJECT POC");
-       
-})
-it("Image button working",()=>{
-    render(<Header/>);
-    screen.getAllByRole('img',{hidden:true});
-})
+  });
+  it("Image button working", () => {
+    render(<Header />);
+    screen.getAllByRole("img", { hidden: true });
+  });
 });

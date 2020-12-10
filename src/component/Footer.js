@@ -6,8 +6,8 @@ function Footer() {
     <div className="main-footer">
       <center>
         <p className="col-sm">
-          &copy;{new Date().getFullYear()} EATON SHADOW PROJECT POC | All rights reserved |
-          Terms Of Service | Privacy
+          &copy;{new Date().getFullYear()} EATON SHADOW PROJECT POC | All rights
+          reserved | Terms Of Service | Privacy
         </p>
       </center>
     </div>

@@ -43,14 +43,14 @@ class Device extends Component {
           <br></br>
           <br></br>
           <div className="device-table">
-          {data.map((item) => (
-            <table border="1" >            
-              <div key={item.id}>                
-                <tr>
-                  <td> {item.id}</td>
-                  <td>{item.username}</td>
-                </tr>
-              </div>
+            {data.map((item) => (
+              <table border="1">
+                <div key={item.id}>
+                  <tr>
+                    <td> {item.id}</td>
+                    <td>{item.username}</td>
+                  </tr>
+                </div>
               </table>
             ))}
           </div>
@@ -71,7 +71,7 @@ class Device extends Component {
               </div>
             ))}
           </div>
-          
+
           <Footer />
         </div>
       );

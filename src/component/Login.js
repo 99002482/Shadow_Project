@@ -1,7 +1,7 @@
 import { FormGroup, Label, Input, Button } from "reactstrap";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../asset/css/App.css";
 
 class Login extends Component {
@@ -18,7 +18,7 @@ class Login extends Component {
   }
   Password=(event)=> {
     this.setState({ Password: event.target.value });
-  }
+  };
 
   Login=(event) =>{
     if (this.state.Username.length == 0) {
@@ -110,7 +110,7 @@ class Login extends Component {
           alert("Login failed...please check entered credentials");
         })
     }
-  }
+  };
 
   componentDidUpdate(nextProps, nextState) {
     localStorage.setItem("Username", JSON.stringify(nextState.Username));

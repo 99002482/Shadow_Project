@@ -22,7 +22,6 @@ td {
   width: 300px;
 }
 
-
 .cardview {
   left: 270px;
   float: right;
@@ -36,17 +35,19 @@ td {
   left: 700px;
   position: absolute;
 }
+
 .card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
-.card-width {
+.card-width{
   width: 300px;
-  height: 200px;
+  height:200px;
   padding: 5px;
 }
 p {
   display: inline;
 }
+
 .login-copyright {
   font-size: small;
   font-weight: bold;
@@ -164,6 +165,7 @@ html,
   height: 50px;
   font-size: 12px;
 }
+
 .button {
   border: none;
   color: white;

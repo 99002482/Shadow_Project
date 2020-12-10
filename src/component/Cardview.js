@@ -50,4 +50,5 @@ class Cardview extends Component {
     );
   }
 }
+
 export default Cardview;
