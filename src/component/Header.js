@@ -23,7 +23,7 @@ class Header extends Component {
 
   render() {
     return (
-      <section className="navbar" TestId="class">
+      <section className="navbar">
         <div className="header">
           <ul className="header-list">
             <li className="company-name">EATON SHADOW PROJECT POC</li>
