@@ -10,6 +10,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  DefaultRoute,
   Redirect,
 } from "react-router-dom";
 function App() {

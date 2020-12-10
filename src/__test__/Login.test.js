@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Login from "../component/Login";
 
 describe("Login", () => {
