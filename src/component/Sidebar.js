@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import "../asset/css/App.css";
 import Select from "react-select";
-import opt from "../constant/ConstantOptions"
+import opt from "../constant/ConstantOptions";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: JSON.parse(localStorage.getItem("selectedOption"))
-      
+      selectedOption: JSON.parse(localStorage.getItem("selectedOption")),
     };
   }
- 
+
   handleChange = (selectedOption) => {
     var sr = [];
-    console.log(selectedOption.value);
-    localStorage.setItem("selectedOption",JSON.stringify(selectedOption.value));    
+
+    localStorage.setItem(
+      "selectedOption",
+      JSON.stringify(selectedOption.value)
+    );
     for (var i of JSON.parse(localStorage.getItem("sites")).sites) {
       if (selectedOption.value === i.name) {
         for (var j of i.sites) {
@@ -28,12 +30,11 @@ class Sidebar extends Component {
         }
       }
     }
-    console.log(sr);
-    
+
     localStorage.setItem("loc_sites", JSON.stringify(sr));
-    console.log(JSON.parse(localStorage.getItem("loc_sites")));
+
     this.setState({ selectedOption });
-    window. location. reload();
+    window.location.reload();
   };
 
   render() {
@@ -61,7 +62,9 @@ class Sidebar extends Component {
             // value={selectedOption}
             onChange={this.handleChange}
             options={opt}
-            defaultInputValue={JSON.parse(localStorage.getItem("selectedOption"))}
+            defaultInputValue={JSON.parse(
+              localStorage.getItem("selectedOption")
+            )}
           />
         </div>
       </div>
