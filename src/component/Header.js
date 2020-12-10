@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import profile from "../asset/images/profile.png";
 import logout from "../asset/images/logout.png";
 import "../asset/css/App.css";

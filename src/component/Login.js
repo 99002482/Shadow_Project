@@ -1,4 +1,4 @@
-import { FormGroup, Label, Input, Button } from "reactstrap";
+import { FormGroup, Label, Button } from "reactstrap";
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";

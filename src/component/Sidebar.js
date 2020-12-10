@@ -38,7 +38,7 @@ class Sidebar extends Component {
   };
 
   render() {
-    const { selectedOption } = this.state;
+    //const { selectedOption } = this.state;
 
     return (
       <div>

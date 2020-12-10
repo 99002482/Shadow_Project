@@ -25,7 +25,7 @@ class Profile extends Component {
   }
 
   render() {
-    var { isLoaded, items } = this.state;
+    var { items } = this.state;
 
         return (
         <div>
