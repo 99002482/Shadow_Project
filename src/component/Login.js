@@ -40,12 +40,7 @@ class Login extends Component {
       })
         .then((Response) => Response.json())
         .then((result) => {
-          if (JSON.stringify(result) === "fail" && result.Token === null) {
-            //if(!result.ok){
-
-            alert("Login failed...please check entered credentials");
-          } else {
-            localStorage.setItem("tok", result.Token);
+                      localStorage.setItem("tok", result.Token);
 
             fetch("https://localhost:44308/api/login/tokdetails", {
               method: "post",
@@ -80,10 +75,12 @@ class Login extends Component {
               });
 
             this.props.history.push("/Dashboard");
-          }
+          
         })
         .catch((err) => {
           alert("Login failed...please check entered credentials");
+           window.location.reload();
+         
         });
     }
   };
@@ -139,6 +136,7 @@ class Login extends Component {
               </p>
             </center>
           </div>
+         
         </form>
       </div>
     );
