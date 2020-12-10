@@ -19,9 +19,7 @@ class Cardview extends Component {
   }
 
   render() {
-    console.log("component rendered");
     var { data } = this.state;
-    console.log(data);
 
     return (
       <div className="container">

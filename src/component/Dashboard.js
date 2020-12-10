@@ -20,7 +20,7 @@ class Dashboard extends Component {
       .then((res) => res.json())
       .then((res) => {
         var ar = [];
-        console.log(res);
+
         localStorage.setItem("org_name", res.name);
         localStorage.setItem("sites", JSON.stringify(res));
 
@@ -33,7 +33,6 @@ class Dashboard extends Component {
           }
         }
         localStorage.setItem("loc", JSON.stringify(ar));
-        console.log(ar);
       });
   }
 

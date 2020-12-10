@@ -13,20 +13,19 @@ class Login extends Component {
     };
   }
 
-  Username=(event)=> {
+  Username = (event) => {
     this.setState({ Username: event.target.value });
-  }
-  Password=(event)=> {
+  };
+  Password = (event) => {
     this.setState({ Password: event.target.value });
   };
 
-  Login=(event) =>{
+  Login = (event) => {
     if (this.state.Username.length == 0) {
       alert("Username or Password field cannot be empty");
     } else if (this.state.Password.length == 0) {
       alert("Username or Password field cannot be empty");
-    } else
-     {
+    } else {
       fetch("https://localhost:44308/api/log/token", {
         method: "post",
         headers: {
@@ -36,79 +35,56 @@ class Login extends Component {
         body: JSON.stringify({
           user: this.state.Username,
           password: this.state.Password,
-          applicationId:"53b0eeff-3aa4-4bff-93bb-94e819965e8c"
+          applicationId: "53b0eeff-3aa4-4bff-93bb-94e819965e8c",
         }),
       })
         .then((Response) => Response.json())
         .then((result) => {
-          console.log(result);
+          if (JSON.stringify(result) === "fail" && result.Token === null) {
+            //if(!result.ok){
 
-           if (JSON.stringify(result)==="fail" && result.Token===null) {
-             //if(!result.ok){
+            alert("Login failed...please check entered credentials");
+          } else {
+            localStorage.setItem("tok", result.Token);
 
-             alert('Login failed...please check entered credentials');
-            
-           } 
-           else
-
-           {
-             
-             localStorage.setItem("tok",result.Token)
-
-             fetch("https://localhost:44308/api/login/tokdetails",{
-               method:"post",
-               headers: {
+            fetch("https://localhost:44308/api/login/tokdetails", {
+              method: "post",
+              headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
-          
-
-               },
-               body: JSON.stringify({
-                Token:localStorage.getItem('tok')
-              })
-             }).then((res)=>res.json()).then((res)=>{
-               console.log(res);
-
-               localStorage.setItem("id",res.id);
-               localStorage.setItem("username",res.display_name);
-
-             })
-
-
-
-             fetch("https://localhost:44308/api/Org/loc",{
-              method:"post",
-              headers: {
-               Accept: "application/json",
-               "Content-Type": "application/json",
-         
-
               },
               body: JSON.stringify({
-               Token:localStorage.getItem('tok')
-             })
-            }).then((res)=>res.json()).then((res)=>{
-
-
-              console.log(res);
-              console.log(res.rules[0].site_id);
-              localStorage.setItem('adopter id',res.adopter_id);
-               localStorage.setItem('org id',res.rules[0].site_id);
-              
-
-              
-
+                Token: localStorage.getItem("tok"),
+              }),
             })
+              .then((res) => res.json())
+              .then((res) => {
+                localStorage.setItem("id", res.id);
+                localStorage.setItem("username", res.display_name);
+              });
 
+            fetch("https://localhost:44308/api/Org/loc", {
+              method: "post",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                Token: localStorage.getItem("tok"),
+              }),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                localStorage.setItem("adopter id", res.adopter_id);
+                localStorage.setItem("org id", res.rules[0].site_id);
+              });
 
-
-
-             
-             this.props.history.push("/Dashboard");
-           }
-        }).catch(err=>{
-          alert("Login failed...please check entered credentials");
+            this.props.history.push("/Dashboard");
+          }
         })
+        .catch((err) => {
+          alert("Login failed...please check entered credentials");
+        });
     }
   };
 
