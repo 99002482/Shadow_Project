@@ -4,21 +4,12 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Cardview from "./Cardview";
 import "../asset/css/App.css";
+import { SitesApi } from "../services/SitesApi";
 
 class Dashboard extends Component {
   componentDidMount() {
-    fetch("https://localhost:44308/api/Loc/site", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Token: localStorage.getItem("tok"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
+   
+      SitesApi().then((res) => {
         var ar = [];
 
         localStorage.setItem("org_name", res.name);
@@ -33,6 +24,8 @@ class Dashboard extends Component {
           }
         }
         localStorage.setItem("loc", JSON.stringify(ar));
+
+        
       });
   }
 

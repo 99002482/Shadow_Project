@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle } from "reactstrap";
-import { Button } from "react-bootstrap";
+import * as fiicons from "react-icons/fc";
+import { Card, CardText, CardBody, CardTitle, CardHeader } from "reactstrap";
+import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../asset/css/App.css";
 
@@ -22,21 +23,22 @@ class Cardview extends Component {
     var { data } = this.state;
 
     return (
-      <div className="container">
+      <div >
         <div className="row">
           {data.map((item) => (
             <div key={item.id} className="col-sm-3">
               <Card className="card-width">
-                <CardBody className="card-box">
-                  <CardTitle>
-                    <b>{item}</b>
-                  </CardTitle>
-                  <CardText> Number of Devices {6}</CardText>
+                <CardHeader tag="h6" style={{ backgroundColor: '#333', borderColor: '#333',color:'white' }}>{item}</CardHeader>
+                <CardBody className="card-box" >
+                  <CardText>
+                    <fiicons.FcElectroDevices size={30} />
+                    &nbsp;&nbsp;<b>Devices : {6}</b>
+                  </CardText>
                   <br />
                   <br />
                   <Link to="/Device">
                     {" "}
-                    <Button variant="primary">View Details</Button>
+                    <Button >View Details</Button>
                   </Link>
                 </CardBody>
               </Card>{" "}

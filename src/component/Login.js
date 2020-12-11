@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../asset/css/App.css";
+import { TokenDetailsApi } from "../services/TokenDetailsApi";
+import { LocationApi } from "../services/LocationApi";
 
 class Login extends Component {
   constructor() {
@@ -40,47 +42,23 @@ class Login extends Component {
       })
         .then((Response) => Response.json())
         .then((result) => {
-                      localStorage.setItem("tok", result.Token);
+          localStorage.setItem("tok", result.Token);
 
-            fetch("https://localhost:44308/api/login/tokdetails", {
-              method: "post",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                Token: localStorage.getItem("tok"),
-              }),
-            })
-              .then((res) => res.json())
-              .then((res) => {
-                localStorage.setItem("id", res.id);
-                localStorage.setItem("username", res.display_name);
-              });
+          TokenDetailsApi().then((res) => {
+            localStorage.setItem("id", res.id);
+            localStorage.setItem("username", res.display_name);
+          });
 
-            fetch("https://localhost:44308/api/Org/loc", {
-              method: "post",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                Token: localStorage.getItem("tok"),
-              }),
-            })
-              .then((res) => res.json())
-              .then((res) => {
-                localStorage.setItem("adopter id", res.adopter_id);
-                localStorage.setItem("org id", res.rules[0].site_id);
-              });
+          LocationApi().then((res) => {
+            localStorage.setItem("adopter id", res.adopter_id);
+            localStorage.setItem("org id", res.rules[0].site_id);
+          });
 
-            this.props.history.push("/Dashboard");
-          
+          this.props.history.push("/Dashboard");
         })
         .catch((err) => {
           alert("Login failed...please check entered credentials");
-           window.location.reload();
-         
+          window.location.reload();
         });
     }
   };
@@ -105,7 +83,7 @@ class Login extends Component {
               <br />
               <input
                 className="input"
-                type="email"                
+                type="email"
                 onChange={this.Username}
                 placeholder="Email ID"
               />
@@ -136,7 +114,6 @@ class Login extends Component {
               </p>
             </center>
           </div>
-         
         </form>
       </div>
     );
