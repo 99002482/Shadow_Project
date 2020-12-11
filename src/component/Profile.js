@@ -27,56 +27,55 @@ class Profile extends Component {
   render() {
     var { items } = this.state;
 
-        return (
+    return (
+      <div>
         <div>
-          <div>
-            <Header />
-          </div>
-          <div className="profile">
-            <h2>Profile Details</h2>
-          </div>
-          <div>
-            <br />
-            <br />
-            <br />
-
-            {items.map((item) => (
-              <center>
-                {" "}
-                <div key={items.id} className="profile-data">
-                  Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
-                  <br />
-                  <br />
-                  &nbsp;&nbsp;&nbsp; Email: &nbsp;&nbsp;&nbsp;
-                  <p>{item.email}</p>
-                  <br />
-                  <br />
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  Phone:&nbsp;&nbsp;{" "}
-                  <input type="text" defaultValue={item.phone} /> <br />
-                  <br />
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  Address:{" "}
-                  <input type="text" defaultValue={item.address.city} />
-                </div>
-              </center>
-            ))}
-
-            <br />
-            <br />
-            <center>
-              <Button className="button">update</Button>
-            </center>
-          </div>
-
-          <div>
-            <Footer />
-          </div>
+          <Header />
         </div>
-      );
-    }
+        <div className="profile">
+          <h2>Profile Details</h2>
+        </div>
+        <div>
+          <br />
+          <br />
+          <br />
+
+          {items.map((item) => (
+            <center>
+              {" "}
+              <div key={items.id} className="profile-data">
+                Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp; Email: &nbsp;&nbsp;&nbsp;
+                <p>{item.email}</p>
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Phone:&nbsp;&nbsp;{" "}
+                <input type="text" defaultValue={item.phone} /> <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Address: <input type="text" defaultValue={item.address.city} />
+              </div>
+            </center>
+          ))}
+
+          <br />
+          <br />
+          <center>
+            <Button className="button">update</Button>
+          </center>
+        </div>
+
+        <div>
+          <Footer />
+        </div>
+      </div>
+    );
   }
+}
 
 export default Profile;

@@ -23,13 +23,22 @@ class Cardview extends Component {
     var { data } = this.state;
 
     return (
-      <div >
+      <div className="container">
         <div className="row">
           {data.map((item) => (
-            <div key={item.id} className="col-sm-3">
+            <div key={item.id} className="col-sm-4">
               <Card className="card-width">
-                <CardHeader tag="h6" style={{ backgroundColor: '#333', borderColor: '#333',color:'white' }}>{item}</CardHeader>
-                <CardBody className="card-box" >
+                <CardHeader
+                  tag="h6"
+                  style={{
+                    backgroundColor: "#333",
+                    borderColor: "#333",
+                    color: "white",
+                  }}
+                >
+                  {item}
+                </CardHeader>
+                <CardBody className="card-box">
                   <CardText>
                     <fiicons.FcElectroDevices size={30} />
                     &nbsp;&nbsp;<b>Devices : {6}</b>
@@ -38,7 +47,7 @@ class Cardview extends Component {
                   <br />
                   <Link to="/Device">
                     {" "}
-                    <Button >View Details</Button>
+                    <Button>View Details</Button>
                   </Link>
                 </CardBody>
               </Card>{" "}
