@@ -5,6 +5,7 @@ import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../asset/css/App.css";
 import { TokenDetailsApi } from "../services/TokenDetailsApi";
 import { LocationApi } from "../services/LocationApi";
+import { TokenApi } from "../services/TokenApi";
 
 class Login extends Component {
   constructor() {
@@ -28,19 +29,7 @@ class Login extends Component {
     } else if (this.state.Password.length == 0) {
       alert("Username or Password field cannot be empty");
     } else {
-      fetch("https://localhost:44308/api/log/token", {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user: this.state.Username,
-          password: this.state.Password,
-          applicationId: "53b0eeff-3aa4-4bff-93bb-94e819965e8c",
-        }),
-      })
-        .then((Response) => Response.json())
+      TokenApi(this.state.Username, this.state.Password)
         .then((result) => {
           localStorage.setItem("tok", result.Token);
 

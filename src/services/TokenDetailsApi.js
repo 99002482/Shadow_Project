@@ -12,3 +12,4 @@ export function TokenDetailsApi() {
     .then((res) => res.json())
   
 }
+  

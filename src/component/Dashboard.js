@@ -28,7 +28,7 @@ class Dashboard extends Component {
       localStorage.setItem("loc", JSON.stringify(ar));
     });
   }
-
+ 
   render() {
     return (
       <div className="App">

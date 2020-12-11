@@ -10,3 +10,4 @@ export function LocationApi() {
     }),
   }).then((res) => res.json());
 }
+ 
