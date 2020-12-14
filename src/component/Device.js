@@ -51,13 +51,7 @@ class Device extends Component {
   render() {
     var { isLoaded, data } = this.state;
 
-    if (!isLoaded) {
-      return (
-        <div>
-          <b>Loading....</b>
-        </div>
-      );
-    } else {
+    
       return (
         <div className="App">
           <Header />
@@ -108,7 +102,7 @@ class Device extends Component {
           </div>
           <div className="sidebar-device">
             <br></br>
-            <p className="devices-list">LIST OF DEVICES</p>
+           <center><p className="devices-list">LIST OF DEVICES</p></center>
             <br></br>
             {data.map((item) => (
               <div key={item.id}>
@@ -134,6 +128,6 @@ class Device extends Component {
       );
     }
   }
-}
+
 
 export default Device;

@@ -67,7 +67,7 @@ class DeviceDetails extends Component {
             <br />
             <br />
             <br />
-            {data.slice(0, 1).map((item) => (
+            {data.map((item) => (
               <div key={item.id}>
                 <Card>
                   <CardBody className="card-box">

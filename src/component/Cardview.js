@@ -60,6 +60,7 @@ class Cardview extends Component {
                     color: "black",
                     fontWeight: "bold",
                     textShadow: "1px 1px white",
+                    fontFamily: "sans-serif",
                   }}
                 >
                   Site :&nbsp;{item.name}

@@ -24,11 +24,18 @@
   font-family: "Times New Roman", Times, serif;
 }
 
+table,
+td {
+  padding: 20px;
+  width: 300px;
+}
+
 .device-title {
   margin-bottom: 150px;
   font-style: italic;
   font-size: 50px;
   text-shadow: 5px 5px 10px #000000;
+  font-family: sans-serif;
 }
 
 .cardview {
@@ -48,7 +55,7 @@
 }
 
 .card-box {
-  box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 10px 18px#34c9eb;
   background-image: url(../images/graph.gif);
   background-position: center;
   background-repeat: no-repeat;
@@ -137,7 +144,6 @@ html,
   background-color: #f7f0db;
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
 }
-
 .devices-list {
   color: #000000;
   font-size: 25px;
@@ -166,7 +172,6 @@ html,
   padding: 0;
   width: 100%;
 }
-
 .dashboard_app {
   margin-left: 270px;
   background-color: #f7e8d5;
@@ -313,7 +318,6 @@ html,
   font-weight: bold;
   font-size: 25px;
 }
-
 .user-name {
   margin-left: 1210px;
   color: white;
