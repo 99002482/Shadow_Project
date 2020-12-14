@@ -38,7 +38,7 @@ class Device extends Component {
   }
 
   render() {
-    var { isLoaded, data } = this.state;
+    var {  data } = this.state;
 
     
       return (
