@@ -74,6 +74,7 @@ class Sidebar extends Component {
             defaultInputValue={JSON.parse(
               localStorage.getItem("selectedOption")
             )}
+            className="select-dropdown"
             
           />
         </div>

@@ -78,6 +78,7 @@ class Cardview extends Component {
                       <Button
                         color="danger"
                         onClick={() => this.click(item.id)}
+                        className="cardview-button"
                       >
                         View Details{" "}
                         <ioicon.IoIosArrowDroprightCircle size={30} />
