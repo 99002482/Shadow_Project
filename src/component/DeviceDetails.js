@@ -3,6 +3,7 @@ import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
+import { DeviceDetailsApi } from "../services/DeviceDetailsApi";
 
 class DeviceDetails extends Component {
   constructor(props) {
@@ -14,19 +15,8 @@ class DeviceDetails extends Component {
   }
 
   componentDidMount() {
-    fetch("https://localhost:44308/Api/DeviceDetail/desc", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Token: localStorage.getItem("tok"),
-        id: localStorage.getItem("device_id"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
+    
+      DeviceDetailsApi().then((result) => {
         var ds = [];
         console.log([result]);
         // for(var i of result){
