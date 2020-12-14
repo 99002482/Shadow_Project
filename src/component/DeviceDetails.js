@@ -3,8 +3,6 @@ import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
-import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 class DeviceDetails extends Component {
   constructor(props) {
@@ -16,12 +14,36 @@ class DeviceDetails extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://localhost:44308/Api/DeviceDetail/desc", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Token: localStorage.getItem("tok"),
+        id: localStorage.getItem("device_id"),
+      }),
+    })
       .then((res) => res.json())
-      .then((json) => {
+      .then((result) => {
+        var ds = [];
+        console.log([result]);
+        // for(var i of result){
+        ds.push({
+          name: result.name,
+          id: result.id,
+          family: result.family,
+          model: result.model,
+        });
+        //}
+
+        console.log(ds);
+        localStorage.setItem("device_details", JSON.stringify(ds));
+
         this.setState({
           isLoaded: true,
-          data: json,
+          data: ds,
         });
       });
   }
@@ -58,13 +80,12 @@ class DeviceDetails extends Component {
                     <CardText> Device Name : {item.name}</CardText>
                     <br />
                     <br />
-                    <CardText> email : {item.email}</CardText>
+                    <CardText> family : {item.family}</CardText>
                     <br />
                     <br />
-                    <CardText> Phone : {item.phone}</CardText>
+                    <CardText> Model : {item.model}</CardText>
                     <br />
                     <br />
-                    <CardText> Company : {item.company.name}</CardText>
                     <br />
 
                     <br />
@@ -72,23 +93,6 @@ class DeviceDetails extends Component {
                   </CardBody>
                 </Card>{" "}
                 <br />
-              </div>
-            ))}
-          </div>
-          <div className="sidebar-device">
-            <br></br>
-            <br></br>
-            {data.map((item) => (
-              <div key={item.id}>
-                <center>
-                  <br />
-                  <Link to="/Devicedetails">
-                    {" "}
-                    <Button className="device-button" variant="primary">
-                      Device {item.id} View Details
-                    </Button>
-                  </Link>
-                </center>
               </div>
             ))}
           </div>
