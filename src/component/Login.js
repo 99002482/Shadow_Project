@@ -8,7 +8,6 @@ import { LocationApi } from "../services/LocationApi";
 import { TokenApi } from "../services/TokenApi";
 import { SitesApi } from "../services/SitesApi";
 
-
 class Login extends Component {
   constructor() {
     super();
@@ -29,9 +28,13 @@ class Login extends Component {
   };
 
   Login = (event) => {
-    if (this.state.Username.length == 0 || this.state.Password.length == 0) {
+    var mailformat =
+      "^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(gmail|yahoo|hotmail|yopmail|ltts|outlook).com$";
+    if (this.state.Username.length === 0 || this.state.Password.length === 0) {
       alert("Username or Password field cannot be empty");
       // checking username and password fields are empty and alerting message
+    } else if (!this.state.Username.match(mailformat)) {
+      alert("Invalid email..please check and try again ");
     } else {
       TokenApi(this.state.Username, this.state.Password) //Fetching token from api
         .then((result) => {
@@ -51,14 +54,14 @@ class Login extends Component {
           SitesApi().then((res) => {
             //Fetching organisation and sites from api
             var ar = [];
-            var all = [];
+            //var all = [];
             localStorage.setItem("org_name", res.name); //Storing organisation name fetched from api in local storage
             console.log(res);
             localStorage.setItem("sites", JSON.stringify(res)); //Storing site names fetched from api in local storage
 
             for (var i of res.sites) {
               if (
-                i.custom_attributes != undefined &&
+                i.custom_attributes !== undefined &&
                 i.custom_attributes.WA_Entity_Type !== "site"
               ) {
                 //Checking site name in defined or undefined
@@ -71,10 +74,10 @@ class Login extends Component {
             // for (var j of res.sites) {
             //   //Fetching all sites details
             //   for (var i of JSON.parse(localStorage.getItem("loc"))) {
-            //     if (i.value == j.name) {
+            //     if (i.value === j.name) {
             //       for (var k of j.sites) {
             //         if (
-            //           k.custom_attributes != undefined &&
+            //           k.custom_attributes !== undefined &&
             //           k.custom_attributes.WAS_Entity_Type === "site"
             //         ) {
             //           all.push(k.name);
@@ -83,7 +86,7 @@ class Login extends Component {
             //     }
             //   }
             // }
-            // localStorage.setItem("loc_sites", JSON.stringify(all));
+            //  localStorage.setItem("loc_sites", JSON.stringify(all));
           });
 
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login

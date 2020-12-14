@@ -16,7 +16,7 @@ class Header extends Component {
 
   Logout(event) {
     var c = window.confirm("Do you want to Logout?");
-    if (c == true) window.location.href = "/Login";
+    if (c === true) window.location.href = "/Login";
     else alert("You pressed cancel button");
   }
 
@@ -44,7 +44,7 @@ class Header extends Component {
             <li className="company-name" >
               LTTS SHADOW PROJECT POC{" "}
               
-               <center>Welcome user : {localStorage.getItem("username")}{" "}</center> 
+               
               
             </li>
 
@@ -54,6 +54,7 @@ class Header extends Component {
                 height="50px"
                 onClick={this.Logout}
                 src={logout}
+                alt="logout button"
               ></img>
             </li>
             <li>
@@ -61,10 +62,13 @@ class Header extends Component {
                 className="navbar-item"
                 height="50px"
                 onClick={this.Profile}
-                src={profile}                
+                src={profile} 
+                alt="profile"               
               ></img>
             </li>
-          </ul>{" "}
+            
+          </ul>{" "}<br/>
+          <p className="user-name">{localStorage.getItem("username")}</p>
         </div>
       </section>
     );

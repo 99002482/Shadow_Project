@@ -6,7 +6,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Cardview from "./Cardview";
 import "../asset/css/App.css";
-import { SitesApi } from "../services/SitesApi";
+
 //disableBrowserBackButton();
 
 class Dashboard extends Component {
@@ -17,9 +17,9 @@ class Dashboard extends Component {
         <div className="sidebar">
           <Sidebar />
           <div className="dashboard_app">
-          <div className="cardview">
-            <Cardview />
-          </div>
+            <div className="cardview">
+              <Cardview />
+            </div>
           </div>
         </div>
         <Footer />
