@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
-import { Button } from "react-bootstrap";
+import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
 class Device extends Component {
@@ -11,18 +11,17 @@ class Device extends Component {
     this.state = {
       selectedOption: null,
       isLoaded: false,
-      data:[]
+      data: [],
     };
   }
 
-  click(id){
-    localStorage.setItem("device_id",id)
-
+  click(id) {
+    localStorage.setItem("device_id", id);
   }
 
   // channel(id){
   //   console.log(id)
-  //    fetch("https://localhost:44308/Api/Channel/ch",{ 
+  //    fetch("https://localhost:44308/Api/Channel/ch",{
   //     method: "post",
   //   headers: {
   //     Accept: "application/json",
@@ -48,65 +47,63 @@ class Device extends Component {
 
   // }
   componentDidMount() {
+    //  fetch("https://localhost:44308/Api/Channel/ch",{
+    //     method: "post",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     Token: localStorage.getItem('tok'),
+    //     id:localStorage.getItem('dev_id')
+    //   }),}).then((res)=>res.json())
+    //        .then((result)=>{
+    //          console.log(result);
+    //           var ch=[];
+    //           for (var i of result.channels){
+    //             if(i.customProperties!=undefined ){
+    //               ch.push(i.name);
 
-  //  fetch("https://localhost:44308/Api/Channel/ch",{ 
-  //     method: "post",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     Token: localStorage.getItem('tok'),
-  //     id:localStorage.getItem('dev_id')
-  //   }),}).then((res)=>res.json())
-  //        .then((result)=>{
-  //          console.log(result);
-  //           var ch=[];
-  //           for (var i of result.channels){
-  //             if(i.customProperties!=undefined ){
-  //               ch.push(i.name);
+    //             }
+    //           }
+    //           console.log(ch);
+    //           //localStorage.setItem('ch_value',)
 
-  //             }
-  //           }
-  //           console.log(ch);
-  //           //localStorage.setItem('ch_value',)
+    //        })
 
-  //        })
-
-
-  
-    fetch("https://localhost:44308/Api/Device/details",{
+    fetch("https://localhost:44308/Api/Device/details", {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        Token: localStorage.getItem('tok'),
-        id:localStorage.getItem('site_id')
+        Token: localStorage.getItem("tok"),
+        id: localStorage.getItem("site_id"),
       }),
-    }).then((res)=>res.json())
-      .then((result)=>{
-        var dv=[];
-        for(var i of result.devices){
-          dv.push({name:i.name,id:i.id})
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        var dv = [];
+        for (var i of result.devices) {
+          dv.push({ name: i.name, id: i.id });
         }
 
         console.log(dv);
-        localStorage.setItem("devices",JSON.stringify(dv))
+        localStorage.setItem("devices", JSON.stringify(dv));
 
         this.setState({
-                isLoaded: true,
-                 data: dv,
-              });
+          isLoaded: true,
+          data: dv,
+        });
+      });
 
-      })
-
-     // console.log(this.data);
+    // console.log(this.data);
   }
 
   render() {
     var { isLoaded, data } = this.state;
+
     if (!isLoaded) {
       return (
         <div>
@@ -123,40 +120,44 @@ class Device extends Component {
           <br></br>
           <br></br>
           <div className="device-table">
-            {data.map((item) => (
-               //this.channel(item.id),
-               fetch("https://localhost:44308/Api/Channel/ch",{ 
-      method: "post",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      Token: localStorage.getItem('tok'),
-      id:item.id
-    }),}).then((res)=>res.json())
-         .then((result)=>{
-           console.log(result);
-            var ch=[];
-            for (var i of result.channels){
-              if(i.customProperties!==undefined ){
-                ch.push(i.name);
-
-              }
-            }
-            console.log(ch);
-            localStorage.setItem('ch_value',JSON.stringify(ch))
-
-         }),
-              <table border="1">
-                <div key={item.id}>
-                  <tr>
-                    <td> {item.id}</td>
-                    <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
-                  </tr>
-                </div>
-              </table>
-            ))}
+            {data.map(
+              (item) => (
+                //this.channel(item.id),
+                fetch("https://localhost:44308/Api/Channel/ch", {
+                  method: "post",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    Token: localStorage.getItem("tok"),
+                    id: item.id,
+                  }),
+                })
+                  .then((res) => res.json())
+                  .then((result) => {
+                    console.log(result);
+                    var ch = [];
+                    for (var i of result.channels) {
+                      if (i.customProperties !== undefined) {
+                        ch.push(i.name);
+                      }
+                    }
+                    console.log(ch);
+                    localStorage.setItem("ch_value", JSON.stringify(ch));
+                  }),
+                (
+                  <table border="1">
+                    <div key={item.id}>
+                      <tr>
+                        <td> {item.id}</td>
+                        <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
+                      </tr>
+                    </div>
+                  </table>
+                )
+              )
+            )}
           </div>
           <div className="sidebar-device">
             <br></br>
@@ -165,10 +166,14 @@ class Device extends Component {
               <div key={item.id}>
                 <center>
                   <br />
-                  <Link to="/Devicedetails">
+                  <Link to="/DeviceDetails">
                     {" "}
-                    <Button onClick={()=>this.click(item.id)} className="device-button">
-                      {item.name} 
+                    <Button
+                      color="danger"
+                      onClick={() => this.click(item.id)}
+                      className="device-button"
+                    >
+                      {item.name}
                     </Button>
                   </Link>
                 </center>
@@ -181,9 +186,9 @@ class Device extends Component {
       );
     }
   }
-//   render(){
-//     return(<h1>good</h1>)
-//   }
+  //   render(){
+  //     return(<h1>good</h1>)
+  //   }
 }
 
 export default Device;
