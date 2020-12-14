@@ -13,9 +13,7 @@ class Sidebar extends Component {
       selectedOption: JSON.parse(localStorage.getItem("selectedOption")),
     };
   }
-   allSites(event){
-
-   }
+   
   handleChange = (selectedOption) => {
     var sr = [];
 
@@ -32,7 +30,7 @@ class Sidebar extends Component {
             j.custom_attributes !== undefined &&
             j.custom_attributes.WAS_Entity_Type === "site"
           ) {
-            sr.push(j.name);
+            sr.push({name:j.name,id:j.id});
           }
         }
       }

@@ -14,6 +14,29 @@ class Cardview extends Component {
     };
   }
 
+  click(id) {
+    localStorage.setItem("site_id", id);
+    console.log(id);
+    //this.props.history.push('/Device');
+
+    fetch("https://localhost:44308/Api/Device/details", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Token: localStorage.getItem("tok"),
+        id: localStorage.getItem("site_id"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        //localStorage.setItem("dev_id",result.id)
+      });
+  }
+
   componentDidMount() {
     this.setState({
       data: JSON.parse(localStorage.getItem("loc_sites")),
@@ -39,17 +62,12 @@ class Cardview extends Component {
                     textShadow: "1px 1px white",
                   }}
                 >
-                  Site :&nbsp;{item}
+                  Site :&nbsp;{item.name}
                 </CardHeader>
                 <CardBody className="card-box">
                   <CardText>
                     <fiicons.FcElectroDevices size={30} />
-                    {/* <fiicons.FcChargeBattery size={30}/>
-                    <wiicon.WiHumidity size={30}/>
-                    <fiicons.FcAreaChart size={30}/>
-                    <wiicon.WiCloud size={30}/><br/> */}
                     &nbsp;&nbsp;<b>Devices : {6}</b>
-                    {item.id}
                   </CardText>
                   <br />
                   <br />
@@ -57,7 +75,10 @@ class Cardview extends Component {
                     {" "}
                     <center>
                       {" "}
-                      <Button color="danger">
+                      <Button
+                        color="danger"
+                        onClick={() => this.click(item.id)}
+                      >
                         View Details{" "}
                         <ioicon.IoIosArrowDroprightCircle size={30} />
                       </Button>
