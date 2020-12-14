@@ -16,7 +16,7 @@ class Header extends Component {
 
   Logout(event) {
     var c = window.confirm("Do you want to Logout?");
-    if (c == true) window.location.href = "/Login";
+    if (c === true) window.location.href = "/Login";
     else alert("You pressed cancel button");
   }
 
@@ -54,6 +54,7 @@ class Header extends Component {
                 height="50px"
                 onClick={this.Logout}
                 src={logout}
+                alt="Logout Button"
               ></img>
             </li>
             <li>
@@ -61,7 +62,8 @@ class Header extends Component {
                 className="navbar-item"
                 height="50px"
                 onClick={this.Profile}
-                src={profile}                
+                src={profile}   
+                alt="Profile"             
               ></img>
             </li>
           </ul>{" "}

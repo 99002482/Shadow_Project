@@ -29,7 +29,7 @@ class Login extends Component {
   };
 
   Login = (event) => {
-    if (this.state.Username.length == 0 || this.state.Password.length == 0) {
+    if (this.state.Username.length === 0 || this.state.Password.length === 0) {
       alert("Username or Password field cannot be empty");
       // checking username and password fields are empty and alerting message
     } else {
@@ -58,7 +58,7 @@ class Login extends Component {
 
             for (var i of res.sites) {
               if (
-                i.custom_attributes != undefined &&
+                i.custom_attributes !== undefined &&
                 i.custom_attributes.WA_Entity_Type !== "site"
               ) {
                 //Checking site name in defined or undefined
@@ -68,22 +68,22 @@ class Login extends Component {
             }
             localStorage.setItem("loc", JSON.stringify(ar)); //Storing location name in local storage
 
-            // for (var j of res.sites) {
-            //   //Fetching all sites details
-            //   for (var i of JSON.parse(localStorage.getItem("loc"))) {
-            //     if (i.value == j.name) {
-            //       for (var k of j.sites) {
-            //         if (
-            //           k.custom_attributes != undefined &&
-            //           k.custom_attributes.WAS_Entity_Type === "site"
-            //         ) {
-            //           all.push(k.name);
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
-            // localStorage.setItem("loc_sites", JSON.stringify(all));
+          //   for (var j of res.sites) {
+          //     //Fetching all sites details
+          //     for (var i of JSON.parse(localStorage.getItem("loc"))) {
+          //       if (i.value == j.name) {
+          //         for (var k of j.sites) {
+          //           if (
+          //             k.custom_attributes != undefined &&
+          //             k.custom_attributes.WAS_Entity_Type === "site"
+          //           ) {
+          //             all.push(k.name);
+          //           }
+          //         }
+          //       }
+          //     }
+          //   }
+          //   localStorage.setItem("loc_sites", JSON.stringify(all));
           });
 
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login
