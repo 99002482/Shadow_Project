@@ -29,7 +29,7 @@ class Sidebar extends Component {
       if (selectedOption.value === i.name) {
         for (var j of i.sites) {
           if (
-            j.custom_attributes != undefined &&
+            j.custom_attributes !== undefined &&
             j.custom_attributes.WAS_Entity_Type === "site"
           ) {
             sr.push(j.name);

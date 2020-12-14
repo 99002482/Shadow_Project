@@ -44,7 +44,7 @@ class Header extends Component {
             <li className="company-name" >
               LTTS SHADOW PROJECT POC{" "}
               
-               <center>Welcome user : {localStorage.getItem("username")}{" "}</center> 
+               
               
             </li>
 
@@ -54,7 +54,7 @@ class Header extends Component {
                 height="50px"
                 onClick={this.Logout}
                 src={logout}
-                alt="Logout Button"
+                alt="logout button"
               ></img>
             </li>
             <li>
@@ -62,11 +62,13 @@ class Header extends Component {
                 className="navbar-item"
                 height="50px"
                 onClick={this.Profile}
-                src={profile}   
-                alt="Profile"             
+                src={profile} 
+                alt="profile"               
               ></img>
             </li>
-          </ul>{" "}
+            
+          </ul>{" "}<br/>
+          <p className="user-name">{localStorage.getItem("username")}</p>
         </div>
       </section>
     );

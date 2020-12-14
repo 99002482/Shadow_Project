@@ -6,7 +6,6 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../asset/css/App.css";
 
-
 class Cardview extends Component {
   constructor(props) {
     super(props);
@@ -36,28 +35,33 @@ class Cardview extends Component {
                     backgroundColor: "#00BFFF",
                     borderColor: "#333",
                     color: "black",
-                    fontWeight:"bold",
-                    textShadow:"1px 1px white"
-                  
-                  }} 
+                    fontWeight: "bold",
+                    textShadow: "1px 1px white",
+                  }}
                 >
                   Site :&nbsp;{item}
                 </CardHeader>
-                <CardBody className="card-box" >
-                  
+                <CardBody className="card-box">
                   <CardText>
                     <fiicons.FcElectroDevices size={30} />
                     {/* <fiicons.FcChargeBattery size={30}/>
                     <wiicon.WiHumidity size={30}/>
                     <fiicons.FcAreaChart size={30}/>
                     <wiicon.WiCloud size={30}/><br/> */}
-                    &nbsp;&nbsp;<b>Devices : {6}</b>{item.id}
+                    &nbsp;&nbsp;<b>Devices : {6}</b>
+                    {item.id}
                   </CardText>
                   <br />
                   <br />
                   <Link to="/Device">
                     {" "}
-                   <center> <Button color="danger">View Details <ioicon.IoIosArrowDroprightCircle size={30}/></Button></center>
+                    <center>
+                      {" "}
+                      <Button color="danger">
+                        View Details{" "}
+                        <ioicon.IoIosArrowDroprightCircle size={30} />
+                      </Button>
+                    </center>
                   </Link>
                 </CardBody>
               </Card>{" "}
