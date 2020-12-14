@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import * as icons from "react-icons/fc";
+import * as icon from "react-icons/go";
 import "../asset/css/App.css";
 import Select from "react-select";
 import opt from "../constant/ConstantOptions";
@@ -7,18 +9,23 @@ class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      //Setting the state to the selectedOption fetched from local storage
       selectedOption: JSON.parse(localStorage.getItem("selectedOption")),
     };
   }
+   allSites(event){
 
+   }
   handleChange = (selectedOption) => {
     var sr = [];
 
     localStorage.setItem(
+      //Setting the selected option onchange of location dropdown
       "selectedOption",
       JSON.stringify(selectedOption.value)
     );
     for (var i of JSON.parse(localStorage.getItem("sites")).sites) {
+      //Function to display sites based on selected location
       if (selectedOption.value === i.name) {
         for (var j of i.sites) {
           if (
@@ -46,9 +53,10 @@ class Sidebar extends Component {
           <h2>Overview Dashboard</h2>
         </div>
 
-        <br></br>
-
         <div>
+          <p style={{ color: "white", fontWeight: "bold",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
+            <icons.FcOrganization size={30}/> &nbsp;Organisation
+          </p>
           <input
             className="organisation"
             type="text"
@@ -57,14 +65,18 @@ class Sidebar extends Component {
             value={localStorage.getItem("org_name")}
             readOnly
           />
-          <br></br> <br></br>
+          {/* <Button onClick={this.allSites} >View all sites</Button><br/> */}
+          <p style={{ color: "white", fontWeight: "bold",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
+            <icon.GoLocation size={30}/> &nbsp;Locations
+          </p>
           <Select
-            // value={selectedOption}
+            //  value={selectedOption}
             onChange={this.handleChange}
             options={opt}
             defaultInputValue={JSON.parse(
               localStorage.getItem("selectedOption")
             )}
+            
           />
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import profile from "../asset/images/profile.png";
-import logout from "../asset/images/logout.png";
+import profile from "../asset/images/newprof.png";
+import logout from "../asset/images/newlogout.png";
 import "../asset/css/App.css";
-import * as faicons from "react-icons/fc";
+import * as faicons from "react-icons/bs";
 
 class Header extends Component {
   constructor() {
@@ -36,16 +36,16 @@ class Header extends Component {
         <div className="header">
           <ul className="header-list">
             <li className="company-name">
-              <faicons.FcPrevious size={40} onClick={this.back} />
+              <faicons.BsFillCaretLeftFill size={40} onClick={this.back} />
             </li>
             <li className="company-name">
-              <faicons.FcNext size={40} onClick={this.forward} />
+              <faicons.BsFillCaretRightFill size={40} onClick={this.forward} />
             </li>
-            <li className="company-name">
-              EATON SHADOW PROJECT POC{" "}
-              <center>
-                Welcome user : {JSON.parse(localStorage.getItem("Username"))}{" "}
-              </center>
+            <li className="company-name" >
+              LTTS SHADOW PROJECT POC{" "}
+              
+               <center>Welcome user : {localStorage.getItem("username")}{" "}</center> 
+              
             </li>
 
             <li>
@@ -61,7 +61,7 @@ class Header extends Component {
                 className="navbar-item"
                 height="50px"
                 onClick={this.Profile}
-                src={profile}
+                src={profile}                
               ></img>
             </li>
           </ul>{" "}

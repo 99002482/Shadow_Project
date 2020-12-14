@@ -10,34 +10,16 @@ import { SitesApi } from "../services/SitesApi";
 //disableBrowserBackButton();
 
 class Dashboard extends Component {
-  componentDidMount() {
-    SitesApi().then((res) => {
-      var ar = [];
-
-      localStorage.setItem("org_name", res.name);
-      localStorage.setItem("sites", JSON.stringify(res));
-
-      for (var i of res.sites) {
-        if (
-          i.custom_attributes != undefined &&
-          i.custom_attributes.WA_Entity_Type !== "site"
-        ) {
-          ar.push({ value: i.name, label: i.name });
-        }
-      }
-      localStorage.setItem("loc", JSON.stringify(ar));
-    });
-  }
- 
   render() {
     return (
       <div className="App">
         <Header />
         <div className="sidebar">
           <Sidebar />
-
+          <div className="dashboard_app">
           <div className="cardview">
             <Cardview />
+          </div>
           </div>
         </div>
         <Footer />

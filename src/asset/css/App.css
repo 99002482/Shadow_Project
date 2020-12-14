@@ -1,19 +1,25 @@
 .pageheading {
-  background-color: #34c9eb;
+  background-color: #FFA500;
   position: absolute;
   left: 250px;
   width: 88%;
+  text-shadow: 1px 1px 1px white,1px 1px 1px blue;
   float: right;
   text-align: center;
+  font-size: 20px;
+  font-style: italic;
   font-family: "Times New Roman", Times, serif;
 }
 
 .pageheading-device {
-  background-color: #34c9eb;
+  background-color: #FFA500;
   position: absolute;
   left: 400px;
   width: 80%;
   float: right;
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 1px 1px 1px white,1px 1px 1px blue;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
@@ -22,6 +28,13 @@ table,
 td {
   padding: 20px;
   width: 300px;
+}
+
+.device-title {
+  margin-bottom: 150px;
+  font-style: italic;
+  font-size: 50px;
+  text-shadow: 5px 5px 10px #000000;
 }
 
 .cardview {
@@ -42,14 +55,17 @@ td {
 
 .card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(to right top, #ffffff, #e7edff, #c1dfff, #8bd3fa, #34c9eb);
+  background-image: url(../images/graph.gif);
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    
 }
 
 .card-width {
   width: 300px;
   height: 230px;
   padding: 7px;
-  
 }
 
 p {
@@ -90,9 +106,10 @@ p {
   justify-content: center;
   background-size: cover;
   height: 100%;
-  background-image: url("../images/1.jpg");
+  background-image: url("../images/loginpage2.gif");
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid;
-  padding: 10px;
 }
 
 body,
@@ -132,10 +149,16 @@ html,
   padding: 0;
   width: 100%;
 }
+.dashboard_app {
+  margin-left: 270px;
+  background-color: #FFDAB9;
+  width: 100vw;
+  height: 100vh;
+}
 
 .App {
   width: 100vw;
-  height: 100vh;  
+  height: 100vh;
 }
 
 .border {
@@ -154,7 +177,7 @@ html,
   max-width: 400px;
   padding-left: 20px;
   padding: 10px;
-  box-shadow: 5px 10px 6px 6px #f0ede4;
+  box-shadow: 5px 10px 20px lightblue inset;
   padding-right: 20px;
   color: rgb(34, 33, 33);
   font-family: "Courier New", Courier, monospace;
@@ -204,7 +227,7 @@ html,
 
 .main-footer {
   color: black;
-  background-color: #34c9eb;
+  background-color: #00BFFF;
   padding-top: 1em;
   bottom: 0;
   width: 100%;
@@ -224,7 +247,7 @@ html,
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #00BFFF;
 }
 
 .header-list {
@@ -260,4 +283,7 @@ html,
   color: white;
   float: left;
   padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 15px;
 }
