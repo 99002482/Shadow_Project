@@ -1,5 +1,4 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 import ReactDom from "react-dom";
 import Device from "../component/Device";
 

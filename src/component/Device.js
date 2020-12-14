@@ -19,58 +19,7 @@ class Device extends Component {
     localStorage.setItem("device_id", id);
   }
 
-  // channel(id){
-  //   console.log(id)
-  //    fetch("https://localhost:44308/Api/Channel/ch",{
-  //     method: "post",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     Token: localStorage.getItem('tok'),
-  //     id:localStorage.getItem('device_id')
-  //   }),}).then((res)=>res.json())
-  //        .then((result)=>{
-  //          console.log(result);
-  //           var ch=[];
-  //           for (var i of result.channels){
-  //             if(i.customProperties!=undefined ){
-  //               ch.push(i.name);
-
-  //             }
-  //           }
-  //           console.log(ch);
-  //           //localStorage.setItem('ch_value',)
-
-  //        })
-
-  // }
   componentDidMount() {
-    //  fetch("https://localhost:44308/Api/Channel/ch",{
-    //     method: "post",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     Token: localStorage.getItem('tok'),
-    //     id:localStorage.getItem('dev_id')
-    //   }),}).then((res)=>res.json())
-    //        .then((result)=>{
-    //          console.log(result);
-    //           var ch=[];
-    //           for (var i of result.channels){
-    //             if(i.customProperties!=undefined ){
-    //               ch.push(i.name);
-
-    //             }
-    //           }
-    //           console.log(ch);
-    //           //localStorage.setItem('ch_value',)
-
-    //        })
-
     fetch("https://localhost:44308/Api/Device/details", {
       method: "post",
       headers: {
@@ -97,8 +46,6 @@ class Device extends Component {
           data: dv,
         });
       });
-
-    // console.log(this.data);
   }
 
   render() {
@@ -122,7 +69,6 @@ class Device extends Component {
           <div className="device-table">
             {data.map(
               (item) => (
-                //this.channel(item.id),
                 fetch("https://localhost:44308/Api/Channel/ch", {
                   method: "post",
                   headers: {
@@ -188,9 +134,6 @@ class Device extends Component {
       );
     }
   }
-  //   render(){
-  //     return(<h1>good</h1>)
-  //   }
 }
 
 export default Device;
