@@ -36,10 +36,10 @@ class Header extends Component {
         <div className="header">
           <ul className="header-list">
             <li className="company-name">
-              <faicons.BsFillCaretLeftFill size={40} onClick={this.back} />
+              <faicons.BsFillCaretLeftFill className="back-forward" size={40} onClick={this.back} />
             </li>
             <li className="company-name">
-              <faicons.BsFillCaretRightFill size={40} onClick={this.forward} />
+              <faicons.BsFillCaretRightFill className="back-forward" size={40} onClick={this.forward} />
             </li>
             <li className="company-name" >
               LTTS SHADOW PROJECT POC{" "}

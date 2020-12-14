@@ -14,20 +14,14 @@
 .pageheading-device {
   background-color: #ffa500;
   position: absolute;
-  left: 400px;
-  width: 80%;
+
+  width: 100%;
   float: right;
   font-size: 20px;
   font-style: italic;
   text-shadow: 1px 1px 1px white, 1px 1px 1px blue;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-}
-
-table,
-td {
-  padding: 20px;
-  width: 300px;
 }
 
 .device-title {
@@ -55,16 +49,26 @@ td {
 
 .card-box {
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
-  background-image: url(../images/open-graph.jpg);
+  background-image: url(../images/graph.gif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.card-box:hover {
+  transform: scale(1.1);
+}
+
+.cardview-button:hover {
+  transform: scale(1.2);
+  background-color: #ffa500 !important;
 }
 
 .card-width {
   width: 300px;
   height: 230px;
   padding: 7px;
+  margin-left: 200px;
 }
 
 p {
@@ -130,7 +134,16 @@ html,
   height: 100%;
   width: 400px;
   border-color: black;
+  background-color: #f7f0db;
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
+}
+
+.devices-list {
+  color: #000000;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 5px 5px 10px #d3a644;
 }
 
 .device-button {
@@ -138,6 +151,11 @@ html,
   align-content: stretch;
   width: 60%;
   margin-left: 20px;
+}
+
+.device-button:hover {
+  transform: scale(1.1);
+  background-color: #ffa500 !important;
 }
 
 .organisation {
@@ -152,7 +170,7 @@ html,
 .dashboard_app {
   margin-left: 270px;
   background-color: #f7e8d5;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
 }
 
@@ -182,6 +200,11 @@ html,
   color: rgb(34, 33, 33);
   font-family: "Courier New", Courier, monospace;
   background: white;
+}
+
+.loginForm:hover {
+  transform: scale(1.1);
+  color: #34c9eb;
 }
 
 .title {
@@ -274,9 +297,12 @@ html,
 }
 
 .navbar-item:hover {
-  background-color: #34c9eb;
-  color: black;
-  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.back-forward:hover {
+  transform: scale(1.3);
+  color: #4441f5;
 }
 
 .company-name {

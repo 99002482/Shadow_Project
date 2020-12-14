@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
-import { Button } from "react-bootstrap";
+import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { DeviceApi } from "../services/DeviceApi";
 
@@ -39,6 +39,7 @@ class Device extends Component {
 
   render() {
     var { isLoaded, data } = this.state;
+
     if (!isLoaded) {
       return (
         <div>
@@ -81,13 +82,14 @@ class Device extends Component {
                     localStorage.setItem("ch_value", JSON.stringify(ch));
                   }),
                 (
-                  <table border="1">
+                  <table>
                     <div key={item.id}>
                       <tr>
-                        <td> {item.id}</td>
+                        <th> {item.id}</th>
                         <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
                       </tr>
                     </div>
+                    <br />
                   </table>
                 )
               )
@@ -95,14 +97,16 @@ class Device extends Component {
           </div>
           <div className="sidebar-device">
             <br></br>
+            <p className="devices-list">LIST OF DEVICES</p>
             <br></br>
             {data.map((item) => (
               <div key={item.id}>
                 <center>
                   <br />
-                  <Link to="/Devicedetails">
+                  <Link to="/DeviceDetails">
                     {" "}
                     <Button
+                      color="danger"
                       onClick={() => this.click(item.id)}
                       className="device-button"
                     >
