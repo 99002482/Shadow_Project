@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import "../asset/css/App.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { DeviceApi } from "../services/DeviceApi";
 
 class Device extends Component {
   constructor(props) {
@@ -20,32 +21,20 @@ class Device extends Component {
   }
 
   componentDidMount() {
-    fetch("https://localhost:44308/Api/Device/details", {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Token: localStorage.getItem("tok"),
-        id: localStorage.getItem("site_id"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        var dv = [];
-        for (var i of result.devices) {
-          dv.push({ name: i.name, id: i.id });
-        }
+    DeviceApi().then((result) => {
+      var dv = [];
+      for (var i of result.devices) {
+        dv.push({ name: i.name, id: i.id });
+      }
 
-        console.log(dv);
-        localStorage.setItem("devices", JSON.stringify(dv));
+      console.log(dv);
+      localStorage.setItem("devices", JSON.stringify(dv));
 
-        this.setState({
-          isLoaded: true,
-          data: dv,
-        });
+      this.setState({
+        isLoaded: true,
+        data: dv,
       });
+    });
   }
 
   render() {
