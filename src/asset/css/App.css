@@ -148,6 +148,7 @@ html,
   padding: 0;
   width: 100%;
 }
+
 .dashboard_app {
   margin-left: 270px;
   background-color: #f7e8d5;
@@ -286,7 +287,8 @@ html,
   font-weight: bold;
   font-size: 25px;
 }
-.user-name{
+
+.user-name {
   margin-left: 1210px;
   color: white;
   font-weight: bolder;
