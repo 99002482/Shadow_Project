@@ -97,20 +97,21 @@ class DeviceDetails extends Component {
                     localStorage.setItem("tg", JSON.stringify(t)); //
                   }),
                 (
-                  <table border="1">
+                  <table >
                     <div key={item.id}>
-                      {JSON.parse(localStorage.getItem("ch")).map((it) => (
-                        <tr>
+                    <tr> {JSON.parse(localStorage.getItem("ch")).map((it) => (
+                       
                           <td>{it}</td>
-                        </tr>
-                      ))}
-                      ,
-                      {JSON.parse(localStorage.getItem("tg")).map((t) => (
-                        <tr>
+                        
+                      ))}</tr>
+                      
+                     <tr> {JSON.parse(localStorage.getItem("tg")).map((t) => (
+                        
                           <td>{t}</td>
-                        </tr>
+                       
                       ))}
-                      ,
+                      </tr>
+                      
                     </div>
                   </table>
                 )
