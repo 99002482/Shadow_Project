@@ -11,7 +11,7 @@ describe("Footer", () => {
   it("Text fields working", () => {
     const { getAllByText } = render(<Footer />);
     getAllByText(
-      "©2020 EATON SHADOW PROJECT POC | All rights reserved | Terms Of Service | Privacy"
+      "©2020 DEVICE HEALTH MONITORING SYSTEM | All rights reserved | Terms Of Service | Privacy"
     );
   });
 });

@@ -60,7 +60,6 @@ class Device extends Component {
                 body: JSON.stringify({
                   Token: localStorage.getItem("tok"),
                   id: item.id,
-                  
                 }),
               })
                 .then((res) => res.json())
