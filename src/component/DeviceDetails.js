@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
+import { FcRules } from "react-icons/fc";
+import { RiDeviceFill } from "react-icons/ri";
+import { FcElectricalSensor } from "react-icons/fc";
+import { FiSettings } from "react-icons/fi";
 import Header from "./Header";
 import Footer from "./Footer";
 import "../asset/css/App.css";
@@ -49,20 +53,15 @@ class DeviceDetails extends Component {
   }
 
   render() {
-    var { isLoaded, data } = this.state;
-    if (!isLoaded) {
-      return (
-        <div>
-          <b>Loading....</b>
+    var { data } = this.state;
+
+    return (
+      <div className="App">
+        <Header />
+        <div className="pageheading-device">
+          <h2>Device Details</h2>
         </div>
-      );
-    } else {
-      return (
-        <div className="App">
-          <Header />
-          <div className="pageheading-device">
-            <h2>Device Details</h2>
-          </div>
+        <div>
           <div className="device-details">
             <br />
             <br />
@@ -94,40 +93,67 @@ class DeviceDetails extends Component {
                     }
 
                     localStorage.setItem("ch", JSON.stringify(c));
-                    localStorage.setItem("tg", JSON.stringify(t)); 
+                    localStorage.setItem("tg", JSON.stringify(t));
                   }),
                 (
                   <div key={item.id}>
-                    <Card>
-                      <CardBody className="card-box">
+                    <Card className="device-details-box">
+                      <CardBody>
                         <CardTitle>
                           <b>{item.name}</b>
                         </CardTitle>
-                        <CardText> Device id : {item.id}</CardText>
                         <br />
+
+                        <div>
+                          <CardText>
+                            {" "}
+                            <FcRules size={25} />
+                            &nbsp;<b>Device id :</b> {item.id}
+                          </CardText>
+                          <br />
+                          <br />
+                          <CardText>
+                            {" "}
+                            <RiDeviceFill size={25} />
+                            &nbsp;<b>Device Name :</b> {item.name}
+                          </CardText>
+                          <br />
+                          <br />
+                          <CardText>
+                            {" "}
+                            <FcElectricalSensor size={25} />
+                            &nbsp;<b>family :</b> {item.family}
+                          </CardText>
+                          <br />
+                          <br />
+                          <CardText>
+                            {" "}
+                            <FiSettings size={25} />
+                            &nbsp;<b>Model :</b> {item.model}
+                          </CardText>
+                          <br />
+                          <br />
+                        </div>
+
                         <br />
-                        <CardText> Device Name : {item.name}</CardText>
-                        <br />
-                        <br />
-                        <CardText> family : {item.family}</CardText>
-                        <br />
-                        <br />
-                        <CardText> Model : {item.model}</CardText>
-                        <br />
-                        <br />
+                        <b>Readings : </b>
                         <CardText>
                           {" "}
-                         <tr> {JSON.parse(localStorage.getItem("ch")).map((it) => (
-                           
-                              <td>{it}</td>
-                           
-                          ))}</tr>
-                          
-                          <tr>{JSON.parse(localStorage.getItem("tg")).map((t) => (
-                           
+                          <tr>
+                            {" "}
+                            {JSON.parse(localStorage.getItem("ch")).map(
+                              (it) => (
+                                <td>
+                                  <b>{it}</b>
+                                </td>
+                              )
+                            )}
+                          </tr>
+                          <tr>
+                            {JSON.parse(localStorage.getItem("tg")).map((t) => (
                               <td>{t}</td>
-                              
-                          ))}</tr>
+                            ))}
+                          </tr>
                         </CardText>
                         <br />
                         <br />
@@ -140,11 +166,11 @@ class DeviceDetails extends Component {
               )
             )}
           </div>
-
-          <Footer />
         </div>
-      );
-    }
+
+        <Footer />
+      </div>
+    );
   }
 }
 

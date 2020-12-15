@@ -68,7 +68,7 @@ class Cardview extends Component {
                 <CardBody className="card-box">
                   <CardText>
                     <fiicons.FcElectroDevices size={30} />
-                    &nbsp;&nbsp;<b>Devices : {6}</b>
+                    &nbsp;&nbsp;<b>Devices : {3}</b>
                   </CardText>
                   <br />
                   <br />

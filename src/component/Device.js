@@ -101,13 +101,18 @@ class Device extends Component {
                 }),
               (
                 <table>
-                  <div key={item.id}>
+                  <center>
+                    <div key={item.id}>
                     <tr>
-                      <th> {item.id}</th>
-                      <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
-                      <td>{JSON.parse(localStorage.getItem("values"))}</td>
+                      <th>Device Id: {item.id}</th>                      
                     </tr>
+                    <tr>
+                    <td> Priority:{JSON.parse(localStorage.getItem("ch_value"))}</td>
+                     
+                    </tr>
+                    <tr> <td> Reading:{JSON.parse(localStorage.getItem("values"))}</td></tr>
                   </div>
+                  </center>
                   <br />
                 </table>
               )
