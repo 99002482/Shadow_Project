@@ -119,14 +119,16 @@ class DeviceDetails extends Component {
                           {" "}
                           {JSON.parse(localStorage.getItem("ch")).map((it) => (
                            
-                              <td>{it}</td>
+                              <span>{it}</span>
                            
                           ))}
                           
                           {JSON.parse(localStorage.getItem("tg")).map((t) => (
-                           <tr>
-                              <td>{t}</td>
-                              </tr>
+                           <span>
+                             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                             {t}
+                             </span>
+                            
                           ))}
                         </CardText>
                         <br />
