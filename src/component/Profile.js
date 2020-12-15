@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import { FcBusinesswoman } from "react-icons/fc";
 import "../asset/css/App.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -28,7 +29,7 @@ class Profile extends Component {
     var { items } = this.state;
 
     return (
-      <div>
+      <div className="profile-background">
         <div>
           <Header />
         </div>
@@ -41,9 +42,12 @@ class Profile extends Component {
           <br />
 
           {items.map((item) => (
+            
             <center>
+              
               {" "}
               <div key={items.id} className="profile-data">
+              <span><FcBusinesswoman  size={100}/></span><br/><br/>
                 Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
                 <br />
                 <br />
@@ -69,7 +73,7 @@ class Profile extends Component {
             <Button className="button">update</Button>
           </center>
         </div>
-
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div>
           <Footer />
         </div>
