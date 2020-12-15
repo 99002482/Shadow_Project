@@ -62,7 +62,7 @@ class Sidebar extends Component {
             name="US Stell"
             value={localStorage.getItem("org_name")}
             readOnly
-          />
+          ></input>
           {/* <Button onClick={this.allSites} >View all sites</Button><br/> */}
           <p style={{ color: "white",fontFamily:"sans-serif", fontWeight: "bold",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
             <icon.GoLocation size={30}/> &nbsp;Locations

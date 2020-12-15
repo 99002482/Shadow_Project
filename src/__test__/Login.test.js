@@ -11,6 +11,7 @@ describe("Login", () => {
 
   it("Text fields working", () => {
     const { getAllByText, getByPlaceholderText } = render(<Login />);
+    getAllByText("DEVICE HEALTH MONITORING SYSTEM");
     getAllByText("Login");
     getByPlaceholderText("Password");
     getByPlaceholderText("Email ID");

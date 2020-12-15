@@ -38,110 +38,91 @@ class Device extends Component {
   }
 
   render() {
-    var { data } = this.state;
+    var { isLoaded, data } = this.state;
 
-    return (
-      <div className="App">
-        <Header />
-        <div className="pageheading-device">
-          <h2>Devices</h2>
+    if (!isLoaded) {
+      return (
+        <div>
+          <b>Loading....</b>
         </div>
-        <br></br>
-        <br></br>
-        <div className="device-table">
-          {data.map(
-            (item) => (
-              fetch("https://localhost:44308/Api/Channel/ch", {
-                method: "post",
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  Token: localStorage.getItem("tok"),
-                  id: item.id,
-                  
-                }),
-              })
-                .then((res) => res.json())
-                .then((result) => {
-                  console.log(result);
-                  var ch = [];
-                  var tg = [];
-                  for (var i of result.channels) {
-                    if (i.customProperties !== undefined) {
-                      ch.push(i.name);
-                      tg.push(i.tag);
+      );
+    } else {
+      return (
+        <div className="App">
+          <Header />
+          <div className="pageheading-device">
+            <h2>Devices</h2>
+          </div>
+          <br></br>
+          <br></br>
+          <div className="device-table">
+            {data.map(
+              (item) => (
+                fetch("https://localhost:44308/Api/Channel/ch", {
+                  method: "post",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    Token: localStorage.getItem("tok"),
+                    id: item.id,
+                  }),
+                })
+                  .then((res) => res.json())
+                  .then((result) => {
+                    console.log(result);
+                    var ch = [];
+                    for (var i of result.channels) {
+                      if (i.customProperties !== undefined) {
+                        ch.push(i.name);
+                      }
                     }
-                  }
-                  localStorage.setItem("tg_value", JSON.stringify(tg));
-                  localStorage.setItem("ch_value", JSON.stringify(ch));
-                  JSON.parse(localStorage.getItem("tg_value")).map((i) =>
-                    fetch("https://localhost:44308/Api/tag/value", {
-                      method: "post",
-                      headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        Token: localStorage.getItem("tok"),
-                        id: item.id,
-                        tag: i,
-                      }),
-                    })
-                      .then((res) => res.json())
-                      .then((result) => {
-                        var vl = [];
-                        for (var i of result.results) console.log(i.value);
-                        vl.push(i.value);
-                        console.log(vl);
-                        localStorage.setItem("values", JSON.stringify(vl));
-                      })
-                  );
-                }),
-              (
-                <table>
-                  <div key={item.id}>
-                    <tr>
-                      <th> {item.id}</th>
-                      <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
-                      <td>{JSON.parse(localStorage.getItem("values"))}</td>
-                    </tr>
-                  </div>
-                  <br />
-                </table>
+                    console.log(ch);
+                    localStorage.setItem("ch_value", JSON.stringify(ch));
+                  }),
+                (
+                  <table>
+                    <div key={item.id}>
+                      <tr>
+                        <th> {item.id}</th>
+                        <td>{JSON.parse(localStorage.getItem("ch_value"))}</td>
+                        <td>{JSON.parse(localStorage.getItem("values"))}</td>
+                      </tr>
+                    </div>
+                    <br />
+                  </table>
+                )
               )
-            )
-          )}
-        </div>
-        <div className="sidebar-device">
-          <br></br>
-          <center>
+            )}
+          </div>
+          <div className="sidebar-device">
+            <br></br>
             <p className="devices-list">LIST OF DEVICES</p>
-          </center>
-          <br></br>
-          {data.map((item) => (
-            <div key={item.id}>
-              <center>
-                <br />
-                <Link to="/DeviceDetails">
-                  {" "}
-                  <Button
-                    color="danger"
-                    onClick={() => this.click(item.id)}
-                    className="device-button"
-                  >
-                    {item.name}
-                  </Button>
-                </Link>
-              </center>
-            </div>
-          ))}
-        </div>
+            <br></br>
+            {data.map((item) => (
+              <div key={item.id}>
+                <center>
+                  <br />
+                  <Link to="/DeviceDetails">
+                    {" "}
+                    <Button
+                      color="danger"
+                      onClick={() => this.click(item.id)}
+                      className="device-button"
+                    >
+                      {item.name}
+                    </Button>
+                  </Link>
+                </center>
+              </div>
+            ))}
+          </div>
 
-        <Footer />
-      </div>
-    );
+          <Footer />
+        </div>
+      );
+    }
   }
 }
 

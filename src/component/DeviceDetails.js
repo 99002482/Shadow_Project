@@ -85,7 +85,7 @@ class DeviceDetails extends Component {
                   .then((result) => {
                     console.log(result);
                     var c = [];
-                    var t = []; //
+                    var t = []; 
                     for (var i of result.channels) {
                       if (i.customProperties !== undefined) {
                         c.push(i.name);
