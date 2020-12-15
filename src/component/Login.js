@@ -70,23 +70,6 @@ class Login extends Component {
               }
             }
             localStorage.setItem("loc", JSON.stringify(ar)); //Storing location name in local storage
-
-            // for (var j of res.sites) {
-            //   //Fetching all sites details
-            //   for (var i of JSON.parse(localStorage.getItem("loc"))) {
-            //     if (i.value === j.name) {
-            //       for (var k of j.sites) {
-            //         if (
-            //           k.custom_attributes !== undefined &&
-            //           k.custom_attributes.WAS_Entity_Type === "site"
-            //         ) {
-            //           all.push(k.name);
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
-            //  localStorage.setItem("loc_sites", JSON.stringify(all));
           });
 
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login
@@ -124,6 +107,7 @@ class Login extends Component {
                 className="input"
                 type="email"
                 onChange={this.Username}
+                data-testid="Username"
                 placeholder="Email ID"
               />
             </FormGroup>

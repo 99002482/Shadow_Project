@@ -9,12 +9,13 @@ describe("Login", () => {
     ReactDom.render(<Login></Login>, div);
   });
 
-  it("Text fields working", () => {
+  it("Text fields working", async() => {
     const { getAllByText, getByPlaceholderText } = render(<Login />);
     getAllByText("DEVICE HEALTH MONITORING SYSTEM");
     getAllByText("Login");
     getByPlaceholderText("Password");
-    getByPlaceholderText("Email ID");
+    const email=getByPlaceholderText("Email ID");
+    email.value='nisarga@gmail.com'
   });
 
   it("Login button working", () => {
