@@ -36,17 +36,20 @@ class Header extends Component {
         <div className="header">
           <ul className="header-list">
             <li className="company-name">
-              <faicons.BsFillCaretLeftFill className="back-forward" size={40} onClick={this.back} />
+              <faicons.BsFillCaretLeftFill
+                className="back-forward"
+                size={40}
+                onClick={this.back}
+              />
             </li>
             <li className="company-name">
-              <faicons.BsFillCaretRightFill className="back-forward" size={40} onClick={this.forward} />
+              <faicons.BsFillCaretRightFill
+                className="back-forward"
+                size={40}
+                onClick={this.forward}
+              />
             </li>
-            <li className="company-name" >
-              LTTS SHADOW PROJECT POC{" "}
-              
-               
-              
-            </li>
+            <li className="company-name">DEVICE HEALTH MONITORING SYSTEM </li>
 
             <li>
               <img
@@ -62,12 +65,12 @@ class Header extends Component {
                 className="navbar-item"
                 height="50px"
                 onClick={this.Profile}
-                src={profile} 
-                alt="profile"               
+                src={profile}
+                alt="profile"
               ></img>
             </li>
-            
-          </ul>{" "}<br/>
+          </ul>{" "}
+          <br />
           <p className="user-name">{localStorage.getItem("username")}</p>
         </div>
       </section>
