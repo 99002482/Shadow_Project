@@ -11,12 +11,11 @@
   font-family: "Times New Roman", Times, serif;
 }
 
-.pageheading-device {
-  background-color: #ffa500;
+.pageheading-device {  
   position: absolute;
-
-  width: 100%;
   float: right;
+  background-color: #ffa500;
+  width: 100%;  
   font-size: 20px;
   font-style: italic;
   text-shadow: 1px 1px 1px white, 1px 1px 1px blue;
@@ -28,6 +27,35 @@ table,
 td {
   padding: 20px;
   width: 300px;
+}
+
+table {
+  margin-top: 80px;
+  background-image: linear-gradient(
+    to right top,
+    #edf0f6,
+    #d2eaff,
+    #a9e7ff,
+    #72e5fd,
+    #12e2eb
+  );
+  width: 900px;
+  color: black;
+  font-family: sans-serif;
+  padding: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table:hover {
+  background-image: linear-gradient(
+    to right top,
+    #f49239,
+    #cebd5c,
+    #b5da9d,
+    #c0ebd8,
+    #f0f6f6
+  );
 }
 
 .device-title {
@@ -89,12 +117,22 @@ p {
 }
 
 .profile {
-  background-color: #34c9eb;
-  position: relative;
-  width: 100%;
+  background-color: #ffa500;
+  position: relative;  
   float: right;
+  width: 100%;  
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 1px 1px 1px white, 1px 1px 1px blue;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.profile-background{
+  background-color: rgb(243, 223, 198);
+  
 }
 
 .profile-data {
@@ -105,6 +143,14 @@ p {
   box-shadow: 5px 10px 8px 1px #888888;
   max-width: 800px;
   box-sizing: border-box;
+  background-image: linear-gradient(
+    to right top,
+    #edf0f6,
+    #d2eaff,
+    #a9e7ff,
+    #72e5fd,
+    #12e2eb
+  );
 }
 
 .container1 {
@@ -144,6 +190,7 @@ html,
   background-color: #f7f0db;
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
 }
+
 .devices-list {
   color: #000000;
   font-size: 25px;
@@ -182,6 +229,7 @@ html,
 .App {
   width: 100vw;
   height: 100vh;
+  background-color: #f2f9fa;
 }
 
 .border {

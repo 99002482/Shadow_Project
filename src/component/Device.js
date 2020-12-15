@@ -45,7 +45,7 @@ class Device extends Component {
         <div className="App">
           <Header />
           <div className="pageheading-device">
-            <h2>Devices</h2>
+            <h2>Site Details</h2>
           </div>
           <br></br>
           <br></br>
@@ -76,6 +76,7 @@ class Device extends Component {
                     localStorage.setItem("ch_value", JSON.stringify(ch));
                   }),
                 (
+                  
                   <table>
                     <div key={item.id}>
                       <tr>
