@@ -94,7 +94,7 @@ class DeviceDetails extends Component {
                     }
 
                     localStorage.setItem("ch", JSON.stringify(c));
-                    localStorage.setItem("tg", JSON.stringify(t)); //
+                    localStorage.setItem("tg", JSON.stringify(t)); 
                   }),
                 (
                   <div key={item.id}>
