@@ -11,7 +11,7 @@ describe("Header", () => {
 
   it("Text fields working", () => {
     const { getAllByText } = render(<Header />);
-    getAllByText("LTTS SHADOW PROJECT POC");
+    getAllByText("DEVICE HEALTH MONITORING SYSTEM");
   });
   it("Image button working", () => {
     render(<Header />);

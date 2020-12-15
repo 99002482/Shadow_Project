@@ -8,7 +8,7 @@ function Footer() {
         <p className="col-sm">
           <b>
             {" "}
-            &copy;{new Date().getFullYear()} EATON SHADOW PROJECT POC | All
+            &copy;{new Date().getFullYear()} DEVICE HEALTH MONITORING SYSTEM  | All
             rights reserved | Terms Of Service | Privacy
           </b>
         </p>
