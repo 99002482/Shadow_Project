@@ -12,7 +12,7 @@ import "../asset/css/App.css";
 class Dashboard extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Header />
         <div className="sidebar">
           <Sidebar />

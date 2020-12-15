@@ -8,7 +8,6 @@ import Header from "./component/Header";
 import DeviceDetails from "./component/DeviceDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
-  
   return (
     <Router>
       <div className="App">
@@ -19,7 +18,7 @@ function App() {
           <Route path="/Header" component={Header} />
           <Route path="/Device" component={Device} />
           <Route path="/Devicedetails" component={DeviceDetails} />
-          <Route path="" exact component={Login}/>
+          <Route path="" exact component={Login} />
         </Switch>
       </div>
     </Router>
