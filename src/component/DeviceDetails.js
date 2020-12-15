@@ -97,55 +97,48 @@ class DeviceDetails extends Component {
                     localStorage.setItem("tg", JSON.stringify(t)); //
                   }),
                 (
-                  <table border="1">
-                    <div key={item.id}>
-                      {JSON.parse(localStorage.getItem("ch")).map((it) => (
-                        <tr>
-                          <td>{it}</td>
-                        </tr>
-                      ))}
-                      ,
-                      {JSON.parse(localStorage.getItem("tg")).map((t) => (
-                        <tr>
-                          <td>{t}</td>
-                        </tr>
-                      ))}
-                      ,
-                    </div>
-                  </table>
+                  <div key={item.id}>
+                    <Card>
+                      <CardBody className="card-box">
+                        <CardTitle>
+                          <b>{item.name}</b>
+                        </CardTitle>
+                        <CardText> Device id : {item.id}</CardText>
+                        <br />
+                        <br />
+                        <CardText> Device Name : {item.name}</CardText>
+                        <br />
+                        <br />
+                        <CardText> family : {item.family}</CardText>
+                        <br />
+                        <br />
+                        <CardText> Model : {item.model}</CardText>
+                        <br />
+                        <br />
+                        <CardText>
+                          {" "}
+                          {JSON.parse(localStorage.getItem("ch")).map((it) => (
+                           
+                              <td>{it}</td>
+                           
+                          ))}
+                          
+                          {JSON.parse(localStorage.getItem("tg")).map((t) => (
+                           <tr>
+                              <td>{t}</td>
+                              </tr>
+                          ))}
+                        </CardText>
+                        <br />
+                        <br />
+                        <br />
+                      </CardBody>
+                    </Card>{" "}
+                    <br />
+                  </div>
                 )
               )
             )}
-
-            {data.map((item) => (
-              <div key={item.id}>
-                <Card>
-                  <CardBody className="card-box">
-                    <CardTitle>
-                      <b>{item.name}</b>
-                    </CardTitle>
-                    <CardText> Device id : {item.id}</CardText>
-                    <br />
-                    <br />
-                    <CardText> Device Name : {item.name}</CardText>
-                    <br />
-                    <br />
-                    <CardText> family : {item.family}</CardText>
-                    <br />
-                    <br />
-                    <CardText> Model : {item.model}</CardText>
-                    <br />
-                    <br />
-                    {/* <CardText> Company : {item.company.name}</CardText> */}
-                    <br />
-
-                    <br />
-                    <br />
-                  </CardBody>
-                </Card>{" "}
-                <br />
-              </div>
-            ))}
           </div>
 
           <Footer />
