@@ -8,6 +8,16 @@ import { LocationApi } from "../services/LocationApi";
 import { TokenApi } from "../services/TokenApi";
 import { SitesApi } from "../services/SitesApi";
 
+const authentication={
+  isLoggedIn:false,
+  onAuthentication(){
+    this.isLoggedIn=true;
+  },
+  getLogInStatus(){
+    return this.isLoggedIn;
+  }
+}
+
 class Login extends Component {
   constructor() {
     super();
@@ -71,7 +81,8 @@ class Login extends Component {
             }
             localStorage.setItem("loc", JSON.stringify(ar)); //Storing location name in local storage
           });
-
+          var auth='true'
+          localStorage.setItem("Auth",auth)
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login
         })
         .catch((err) => {
