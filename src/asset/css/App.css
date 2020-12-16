@@ -1,5 +1,5 @@
 .pageheading {
-  background-color: #ffa500;
+  background-color: #e4d8c3;
   position: absolute;
   left: 250px;
   width: 88%;
@@ -14,7 +14,7 @@
 .pageheading-device {
   position: absolute;
   float: right;
-  background-color: #ffa500;
+  background-color: #e4d8c3;
   width: 100%;
   font-size: 20px;
   font-style: italic;
@@ -46,17 +46,6 @@ table {
   font-weight: bold;
 }
 
-table:hover {
-  background-image: linear-gradient(
-    to right top,
-    #f49239,
-    #cebd5c,
-    #b5da9d,
-    #c0ebd8,
-    #f0f6f6
-  );
-}
-
 .device-title {
   margin-bottom: 150px;
   font-style: italic;
@@ -82,25 +71,14 @@ table:hover {
 }
 
 .card-box {
-  box-shadow: 5px 10px 18px#34c9eb;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.945),
-      rgba(255, 255, 255, 0.602)
-    ),
-    url(../images/graph.gif);
-
+  background-color: rgb(247, 234, 218);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.card-box:hover {
-  transform: scale(1.1);
-  background-image: url(../images/graph.gif);
-}
-
 .device-details-box {
-  box-shadow: 5px 10px 8px 1px rgb(228, 138, 21);
+  box-shadow: 5px 10px 8px 1px rgb(110, 109, 107);
   background: linear-gradient(
       rgba(255, 255, 255, 0.945),
       rgba(255, 255, 255, 0.685)
@@ -110,11 +88,6 @@ table:hover {
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: 500px;
-}
-
-.device-details-box:hover {
-  transform: scale(1.1);
-  background-image: url(../images/graph.gif);
 }
 
 .cardview-button:hover {
@@ -151,10 +124,6 @@ p {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-}
-
-.profile-background {
-  background-color: rgb(243, 223, 198);
 }
 
 .profile-data {
@@ -244,21 +213,6 @@ html,
 
 .dashboard_app {
   margin-left: 270px;
-  background-image: linear-gradient(
-    to right top,
-    #21e5ee,
-    #70e8ff,
-    #a3ebff,
-    #cbeeff,
-    #e9f3ff,
-    #e9f3ff,
-    #e9f3ff,
-    #e9f3ff,
-    #cbeeff,
-    #a3ebff,
-    #70e8ff,
-    #21e5ee
-  );
   width: 80vw;
   height: 100vh;
 }
@@ -266,10 +220,9 @@ html,
 .App {
   width: 100%;
   height: 98%;
-  
 }
 
-.device-body{
+.device-body {
   background-image: linear-gradient(
     to right top,
     #21e5ee,
@@ -423,7 +376,7 @@ html,
 }
 
 .user-name {
-  margin-left: 1210px;
+  margin-left: 1725px;
   color: white;
   font-weight: bolder;
   font-style: italic;

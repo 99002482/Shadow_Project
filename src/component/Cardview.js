@@ -57,9 +57,9 @@ class Cardview extends Component {
                   style={{
                     backgroundColor: "#00BFFF",
                     borderColor: "#333",
-                    color: "black",
+                    color: "white",
                     fontWeight: "bold",
-                    textShadow: "1px 1px white",
+                    fontSize:"20px",
                     fontFamily: "sans-serif",
                   }}
                 >
@@ -77,7 +77,7 @@ class Cardview extends Component {
                     <center>
                       {" "}
                       <Button
-                        color="danger"
+                        color="primary"
                         onClick={() => this.click(item.id)}
                         className="cardview-button"
                       >

@@ -85,15 +85,18 @@ class DeviceDetails extends Component {
                     console.log(result);
                     var c = [];
                     var t = []; 
+                    var unit=[];//
                     for (var i of result.channels) {
                       if (i.customProperties !== undefined) {
                         c.push(i.name);
                         t.push(i.tag);
+                        unit.push(i.unit);
                       }
                     }
 
                     localStorage.setItem("ch", JSON.stringify(c));
                     localStorage.setItem("tg", JSON.stringify(t));
+                    localStorage.setItem('unit',JSON.stringify(unit))
                   }),
                 (
                   <div key={item.id}>
@@ -153,6 +156,12 @@ class DeviceDetails extends Component {
                             {JSON.parse(localStorage.getItem("tg")).map((t) => (
                               <td>{t}</td>
                             ))}
+                          </tr>
+                          <tr>
+                          {JSON.parse(localStorage.getItem("unit")).map((t)=>
+  
+   
+                         ( <td>{t}</td>))}
                           </tr>
                         </CardText>
                         <br />
