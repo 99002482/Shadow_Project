@@ -18,8 +18,10 @@ class Header extends Component {
 
   Logout(event) {
     var c = window.confirm("Do you want to Logout?");
-    if (c === true) window.location.href = "/Login";
-    else alert("You pressed cancel button");
+    if (c === true) {
+      window.location.href = "/Login";
+      localStorage.setItem("Auth", 'false');
+    } else alert("You pressed cancel button");
   }
   home(event) {
     window.location.href = "/Dashboard";
