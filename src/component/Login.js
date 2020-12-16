@@ -8,15 +8,7 @@ import { LocationApi } from "../services/LocationApi";
 import { TokenApi } from "../services/TokenApi";
 import { SitesApi } from "../services/SitesApi";
 
-const authentication={
-  isLoggedIn:false,
-  onAuthentication(){
-    this.isLoggedIn=true;
-  },
-  getLogInStatus(){
-    return this.isLoggedIn;
-  }
-}
+
 
 class Login extends Component {
   constructor() {

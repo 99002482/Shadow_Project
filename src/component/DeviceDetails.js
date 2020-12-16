@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
-import { FcRules } from "react-icons/fc";
 import { RiDeviceFill } from "react-icons/ri";
 import { FcElectricalSensor } from "react-icons/fc";
 import { FiSettings } from "react-icons/fi";
