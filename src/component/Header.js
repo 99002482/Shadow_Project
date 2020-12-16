@@ -85,7 +85,6 @@ class Header extends Component {
             </li>
           </ul>{" "}
           <br />
-          <p className="user-name">{localStorage.getItem("username")}</p>
         </div>
       </section>
     );

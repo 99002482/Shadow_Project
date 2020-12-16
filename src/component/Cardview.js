@@ -14,8 +14,10 @@ class Cardview extends Component {
     };
   }
 
-  click(id) {
+  click(id,name) {
     localStorage.setItem("site_id", id);
+    localStorage.setItem("site_name", name);
+
     console.log(id);
     //this.props.history.push('/Device');
 
@@ -59,7 +61,7 @@ class Cardview extends Component {
                     borderColor: "#333",
                     color: "white",
                     fontWeight: "bold",
-                    fontSize:"20px",
+                    fontSize: "20px",
                     fontFamily: "sans-serif",
                   }}
                 >
@@ -78,7 +80,7 @@ class Cardview extends Component {
                       {" "}
                       <Button
                         color="primary"
-                        onClick={() => this.click(item.id)}
+                        onClick={() => this.click(item.id,item.name)}
                         className="cardview-button"
                       >
                         View Details{" "}

@@ -81,9 +81,6 @@ class Profile extends Component {
 
           <br />
           <br />
-          <center>
-            <Button className="button">update</Button>
-          </center>
         </div>
 
         <div>

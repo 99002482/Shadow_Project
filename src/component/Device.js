@@ -44,7 +44,7 @@ class Device extends Component {
       <div className="App">
         <Header />
         <div className="pageheading-device">
-          <h2>Site Details</h2>
+          <h2>Site Details : {localStorage.getItem("site_name")}</h2>
         </div>
         <br></br>
         <br></br>
@@ -67,17 +67,17 @@ class Device extends Component {
                   console.log(result);
                   var ch = [];
                   var tg = [];
-                  var u=[];
+                  var u = [];
                   for (var i of result.channels) {
                     if (i.customProperties !== undefined) {
                       ch.push(i.name);
                       tg.push(i.tag);
-                      u.push(i.unit)//
+                      u.push(i.unit); //
                     }
                   }
                   localStorage.setItem("tg_value", JSON.stringify(tg));
                   localStorage.setItem("ch_value", JSON.stringify(ch));
-                  localStorage.setItem('u_value',JSON.stringify(u))//
+                  localStorage.setItem("u_value", JSON.stringify(u)); //
 
                   JSON.parse(localStorage.getItem("tg_value")).map((i) =>
                     fetch("https://localhost:44308/Api/tag/value", {
@@ -104,41 +104,38 @@ class Device extends Component {
                 }),
               (
                 <table>
-                  
-                    <div key={item.id}>
-                   <center> <tr>
-                      <th>Device Name: {item.name}</th>                      
-                    </tr></center>
-                    <br/>
+                  <div key={item.id}>
+                    <center>
+                      {" "}
+                      <tr>
+                        <th>Device Name: {item.name}</th>
+                      </tr>
+                    </center>
+                    <br />
                     {/* <td> Priority:{JSON.parse(localStorage.getItem("ch_value"))}</td> */}
                     <tr>
-                    Priority Channel :{JSON.parse(localStorage.getItem("ch_value")).slice(0,1).map(
-                              (it) => (
-                                <p> {it}</p>
-                              )
-                            )}
-                    
-                     </tr>
-                    
-                     
-                     <tr>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;{JSON.parse(localStorage.getItem("values")).slice(0,1).map(
-                       (it)=>(
-                        <p>{it}</p>
-                        
-                       )
-                     )}
-                  &nbsp;&nbsp;
-                 
-                  {JSON.parse(localStorage.getItem("u_value")).slice(0,1).map(
-                       (it)=>(
-                        
-                        <p>{it}</p>
-                      
-                       )
-                     )}
-                     </tr>
-                 
+                      Priority Channel :
+                      {JSON.parse(localStorage.getItem("ch_value"))
+                        .slice(0, 1)
+                        .map((it) => (
+                          <p> {it}</p>
+                        ))}
+                    </tr>
+
+                    <tr>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;
+                      {JSON.parse(localStorage.getItem("values"))
+                        .slice(0, 1)
+                        .map((it) => (
+                          <p>{it}</p>
+                        ))}
+                      &nbsp;&nbsp;
+                      {JSON.parse(localStorage.getItem("u_value"))
+                        .slice(0, 1)
+                        .map((it) => (
+                          <p>{it}</p>
+                        ))}
+                    </tr>
                   </div>
                   <br />
                 </table>

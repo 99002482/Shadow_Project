@@ -33,8 +33,8 @@ class Login extends Component {
     if (this.state.Username.length === 0 || this.state.Password.length === 0) {
       alert("Username or Password field cannot be empty");
       // checking username and password fields are empty and alerting message
-    } else if (!this.state.Username.match(mailformat)) {
-      alert("Invalid email..please check and try again ");
+    } else if ((!this.state.Username.match(mailformat))|| this.state.Password.length <7)  {
+      alert("Invalid email or password format (min length 7)..please check and try again ");
     } else {
       TokenApi(this.state.Username, this.state.Password) //Fetching token from api
         .then((result) => {
@@ -70,23 +70,6 @@ class Login extends Component {
               }
             }
             localStorage.setItem("loc", JSON.stringify(ar)); //Storing location name in local storage
-
-            // for (var j of res.sites) {
-            //   //Fetching all sites details
-            //   for (var i of JSON.parse(localStorage.getItem("loc"))) {
-            //     if (i.value === j.name) {
-            //       for (var k of j.sites) {
-            //         if (
-            //           k.custom_attributes !== undefined &&
-            //           k.custom_attributes.WAS_Entity_Type === "site"
-            //         ) {
-            //           all.push(k.name);
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
-            //  localStorage.setItem("loc_sites", JSON.stringify(all));
           });
 
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login
@@ -124,6 +107,7 @@ class Login extends Component {
                 className="input"
                 type="email"
                 onChange={this.Username}
+                data-testid="Username"
                 placeholder="Email ID"
               />
             </FormGroup>

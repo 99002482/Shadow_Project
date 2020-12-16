@@ -50,6 +50,66 @@ class DeviceDetails extends Component {
           data: ds,
         });
       });
+
+    fetch("https://localhost:44308/Api/Channel/ch", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Token: localStorage.getItem("tok"),
+        id: localStorage.getItem("device_id"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        var c = [];
+        var t = []; //
+        var unit = [];
+        for (var i of result.channels) {
+          if (i.customProperties != undefined) {
+            c.push(i.name);
+            t.push(i.tag); //
+            unit.push(i.unit);
+          }
+        }
+        //console.log(c);
+        //console.log(t)
+        localStorage.setItem("ch", JSON.stringify(c));
+        localStorage.setItem("tg", JSON.stringify(t)); //
+        localStorage.setItem("unit", JSON.stringify(unit));
+      });
+
+    var value = [];
+    //JSON.parse(localStorage.getItem("ch")).map((j)=>(
+    for (var k of JSON.parse(localStorage.getItem("tg"))) {
+      fetch("https://localhost:44308/Api/tag/value", {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Token: localStorage.getItem("tok"),
+          tag: k,
+          id: localStorage.getItem("device_id"),
+        }),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          for (var j of result.results) {
+            value.push(j.value);
+          }
+
+          //console.log(result.v)
+
+          localStorage.setItem("vl", JSON.stringify(value));
+        });
+
+      console.log(value);
+    }
   }
 
   render() {
@@ -84,8 +144,8 @@ class DeviceDetails extends Component {
                   .then((result) => {
                     console.log(result);
                     var c = [];
-                    var t = []; 
-                    var unit=[];//
+                    var t = [];
+                    var unit = []; //
                     for (var i of result.channels) {
                       if (i.customProperties !== undefined) {
                         c.push(i.name);
@@ -96,7 +156,7 @@ class DeviceDetails extends Component {
 
                     localStorage.setItem("ch", JSON.stringify(c));
                     localStorage.setItem("tg", JSON.stringify(t));
-                    localStorage.setItem('unit',JSON.stringify(unit))
+                    localStorage.setItem("unit", JSON.stringify(unit));
                   }),
                 (
                   <div key={item.id}>
@@ -108,13 +168,6 @@ class DeviceDetails extends Component {
                         <br />
 
                         <div>
-                          <CardText>
-                            {" "}
-                            <FcRules size={25} />
-                            &nbsp;<b>Device id :</b> {item.id}
-                          </CardText>
-                          <br />
-                          <br />
                           <CardText>
                             {" "}
                             <RiDeviceFill size={25} />
@@ -153,15 +206,16 @@ class DeviceDetails extends Component {
                             )}
                           </tr>
                           <tr>
-                            {JSON.parse(localStorage.getItem("tg")).map((t) => (
+                            {JSON.parse(localStorage.getItem("vl")).map((t) => (
                               <td>{t}</td>
                             ))}
                           </tr>
                           <tr>
-                          {JSON.parse(localStorage.getItem("unit")).map((t)=>
-  
-   
-                         ( <td>{t}</td>))}
+                            {JSON.parse(localStorage.getItem("unit")).map(
+                              (t) => (
+                                <td>{t}</td>
+                              )
+                            )}
                           </tr>
                         </CardText>
                         <br />
