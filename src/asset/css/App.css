@@ -128,10 +128,11 @@ p {
 }
 
 .profile-data {
-  text-align: center;
+  text-align: left;
   font-weight: bolder;
   border: 1px solid;
   padding: 100px;
+  font-size: xx-large;
   box-shadow: 5px 10px 8px 1px #888;
   max-width: 1000px;
   box-sizing: border-box;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import profile from "../asset/images/newprof.png";
 import logout from "../asset/images/newlogout.png";
-import home from "../asset/images/home.jpeg";
+import home from "../asset/images/home.png";
 import "../asset/css/App.css";
 import * as faicons from "react-icons/bs";
 

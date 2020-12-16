@@ -64,28 +64,17 @@ class Profile extends Component {
               {" "}
               <div key={items.name} className="profile-data">
                 <span>
-                  <FcBusinesswoman size={100} />
+                  <FcBusinesswoman size={130} />
                 </span>
                 <br />
                 <br />
                 First Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
-                <br />
-                <br />
                 Last Name: &nbsp;&nbsp;<p>{item.lname}</p> <br />
+                Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p>
                 <br />
-                <br />
-                Email: &nbsp;&nbsp;&nbsp;
-                <p>{item.email}</p>
-                <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Phone:&nbsp;&nbsp;{" "}
-                <input type="text" defaultValue={item.phone} /> <br />
-                <br />
-                <br />
-                {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Address: <input type="text" defaultValue={item.address.city} /> */}
+                Phone:&nbsp;&nbsp;
+                <input type="text" defaultValue={item.phone} />
+                
               </div>
             </center>
           ))}
