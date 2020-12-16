@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import profile from "../asset/images/newprof.png";
 import logout from "../asset/images/newlogout.png";
+import home from "../asset/images/home.jpeg";
 import "../asset/css/App.css";
 import * as faicons from "react-icons/bs";
 
@@ -12,12 +13,16 @@ class Header extends Component {
     this.Logout = this.Logout.bind(this);
     this.back = this.back.bind(this);
     this.forward = this.forward.bind(this);
+    this.home = this.home.bind(this);
   }
 
   Logout(event) {
     var c = window.confirm("Do you want to Logout?");
     if (c === true) window.location.href = "/Login";
     else alert("You pressed cancel button");
+  }
+  home(event) {
+    window.location.href = "/Dashboard";
   }
 
   Profile(event) {
@@ -69,9 +74,17 @@ class Header extends Component {
                 alt="profile"
               ></img>
             </li>
+            <li>
+              <img
+                className="navbar-item"
+                height="50px"
+                onClick={this.home}
+                src={home}
+                alt="home"
+              ></img>
+            </li>
           </ul>{" "}
           <br />
-          <p className="user-name">{localStorage.getItem("username")}</p>
         </div>
       </section>
     );

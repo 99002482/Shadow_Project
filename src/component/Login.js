@@ -33,8 +33,8 @@ class Login extends Component {
     if (this.state.Username.length === 0 || this.state.Password.length === 0) {
       alert("Username or Password field cannot be empty");
       // checking username and password fields are empty and alerting message
-    } else if (!this.state.Username.match(mailformat)) {
-      alert("Invalid email..please check and try again ");
+    } else if ((!this.state.Username.match(mailformat))|| this.state.Password.length <7)  {
+      alert("Invalid email or password format (min length 7)..please check and try again ");
     } else {
       TokenApi(this.state.Username, this.state.Password) //Fetching token from api
         .then((result) => {
