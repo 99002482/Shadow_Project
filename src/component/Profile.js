@@ -15,12 +15,30 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users/3")
+    fetch("https://localhost:44308/Api/Profile/userdetails", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Token: localStorage.getItem("tok"),
+      }),
+    })
       .then((res) => res.json())
-      .then((json) => {
+      .then((result) => {
+        var pf = [];
+        console.log(result);
+        pf.push({
+          name: result.first_name,
+          email: result.email,
+          phone: result.phone_number,
+          lname: result.last_name,
+        });
+
         this.setState({
           isLoaded: true,
-          items: [json],
+          items: pf,
         });
       });
   }
@@ -29,7 +47,7 @@ class Profile extends Component {
     var { items } = this.state;
 
     return (
-      <div className="profile-background">
+      <div>
         <div>
           <Header />
         </div>
@@ -42,27 +60,21 @@ class Profile extends Component {
           <br />
 
           {items.map((item) => (
-            
             <center>
-              
               {" "}
-              <div key={items.id} className="profile-data">
-              <span><FcBusinesswoman  size={100}/></span><br/><br/>
-                Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
+              <div key={items.name} className="profile-data">
+                <span>
+                  <FcBusinesswoman size={130} />
+                </span>
                 <br />
                 <br />
-                &nbsp;&nbsp;&nbsp; Email: &nbsp;&nbsp;&nbsp;
-                <p>{item.email}</p>
+                First Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
+                Last Name: &nbsp;&nbsp;<p>{item.lname}</p> <br />
+                Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p>
                 <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Phone:&nbsp;&nbsp;{" "}
-                <input type="text" defaultValue={item.phone} /> <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Address: <input type="text" defaultValue={item.address.city} />
+                Phone:&nbsp;&nbsp;
+                <input type="text" defaultValue={item.phone} />
+                
               </div>
             </center>
           ))}
@@ -73,7 +85,7 @@ class Profile extends Component {
             <Button className="button">update</Button>
           </center>
         </div>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
         <div>
           <Footer />
         </div>
