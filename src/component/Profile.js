@@ -63,22 +63,50 @@ class Profile extends Component {
             <center>
               {" "}
               <div key={items.name} className="profile-data">
-                <span>
-                  <FcBusinesswoman size={130} />
-                </span>
-                <br />
-                <br />
-                First Name: &nbsp;&nbsp;<p>{item.name}</p> <br />
-                Last Name: &nbsp;&nbsp;<p>{item.lname}</p> <br />
-                Email: &nbsp;&nbsp;&nbsp;<p>{item.email}</p>
-                <br />
-                Phone:&nbsp;&nbsp;
-                <input type="text" defaultValue={item.phone} />
                 
-              </div>
+                <table className="profile-values" >
+                <br />
+                  <tr><FcBusinesswoman size={140} /></tr>
+                  <br />
+                  <tr>
+                    <td>
+                      <p className="profile-label">First Name&nbsp;</p>
+                    </td>
+                    <td>
+                    :&nbsp;<p className="profile-label-value">{item.name}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <p className="profile-label">Last Name&nbsp;</p>
+                    </td>
+                    <td>
+                    :&nbsp;<p className="profile-label-value">{item.lname}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <p className="profile-label">Email&nbsp;</p>
+                    </td>
+                    <td>
+                    :&nbsp;<p className="profile-label-value">{item.email}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <p className="profile-label">Phone&nbsp;</p> 
+                    </td>
+                    <td>
+                    :&nbsp;<input type="text" defaultValue={item.phone} />
+                    </td>
+                  </tr><br/>
+
+                </table>
+                
+              </div><br/><br/><Button className="button">update</Button>
             </center>
           ))}
-
+            
           <br />
           <br />
         </div>

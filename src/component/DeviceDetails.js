@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
-import { FcRules } from "react-icons/fc";
 import { RiDeviceFill } from "react-icons/ri";
 import { FcElectricalSensor } from "react-icons/fc";
 import { FiSettings } from "react-icons/fi";
@@ -121,6 +120,8 @@ class DeviceDetails extends Component {
         <div className="pageheading-device">
           <h2>Device Details</h2>
         </div>
+        <center>
+          
         <div>
           <div className="device-details">
             <br />
@@ -222,7 +223,7 @@ class DeviceDetails extends Component {
                         <br />
                         <br />
                       </CardBody>
-                    </Card>{" "}
+                    </Card>
                     <br />
                   </div>
                 )
@@ -231,6 +232,7 @@ class DeviceDetails extends Component {
           </div>
         </div>
 
+        </center>
         <Footer />
       </div>
     );
