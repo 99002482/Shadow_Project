@@ -49,10 +49,10 @@ class Cardview extends Component {
     var { data } = this.state;
 
     return (
-      <div className="container">
+      <div >
         <div className="row">
           {data.map((item) => (
-            <div key={item.id} className="col-sm-4">
+            <div key={item.id} className="col-sm-3">
               <Card className="card-width">
                 <CardHeader
                   tag="h6"

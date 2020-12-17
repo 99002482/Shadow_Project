@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardText, CardBody } from "reactstrap";
 import { RiDeviceFill } from "react-icons/ri";
 import { FcElectricalSensor } from "react-icons/fc";
 import { FiSettings } from "react-icons/fi";
@@ -167,45 +167,110 @@ class DeviceDetails extends Component {
                     <div key={item.id}>
                       <Card className="device-details-box">
                         <CardBody>
-                          <CardTitle>
-                            <b>{item.name}</b>
-                          </CardTitle>
-                          <br />
-
                           <div>
-                            <CardText>
-                              {" "}
-                              <RiDeviceFill size={25} />
-                              &nbsp;<b>Device Name :</b> {item.name}
-                            </CardText>
-                            <br />
-                            <br />
-                            <CardText>
-                              {" "}
-                              <FcElectricalSensor size={25} />
-                              &nbsp;<b>family :</b> {item.family}
-                            </CardText>
-                            <br />
-                            <br />
-                            <CardText>
-                              {" "}
-                              <FiSettings size={25} />
-                              &nbsp;<b>Model :</b> {item.model}
-                            </CardText>
+                            <table className="device-details-table" >
+                              <tr>
+                                <td>
+                                  <RiDeviceFill size={35} />
+                                  &nbsp;
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Device Name{" "}
+                                  </p>
+                                </td>
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    :&nbsp;{item.name}
+                                  </p>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  <FcElectricalSensor size={40} />
+
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Family{" "}
+                                  </p>
+                                </td>
+
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    :&nbsp;{item.family}
+                                  </p>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  <FiSettings size={35} />
+                                  &nbsp;
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Model{" "}
+                                  </p>
+                                </td>
+
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    : {item.model}
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+
                             <br />
                             <br />
                           </div>
 
                           <br />
-                          <b>Readings : </b>
+                          <p style={{ fontSize: "25px", fontWeight: "bolder" }}>
+                            Readings :{" "}
+                          </p><br/><br/>
                           <CardText>
                             {" "}
                             <tr>
                               {" "}
                               {JSON.parse(localStorage.getItem("ch")).map(
                                 (it) => (
-                                  <td>
-                                    <b>{it}</b>
+                                  <td
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "bolder",
+                                    }}
+                                  >
+                                    <p>{it}</p>
                                   </td>
                                 )
                               )}

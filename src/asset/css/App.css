@@ -94,7 +94,7 @@ table {
   width: 300px;
   height: 230px;
   padding: 7px;
-  margin-left: 200px;
+  margin-left: 50px;
 }
 
 p {
@@ -194,19 +194,48 @@ html,
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
 }
 
+.select-dropdown{
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.select-dropdown:hover{
+  background-color: #cc3864 !important;
+}
+
 .devices-list {
   color: #000000;
-  font-size: 25px;
+  font-size: 30px;
   font-style: italic;
   font-weight: bolder;
   text-shadow: 5px 5px 10px #d3a644;
 }
 
+.device-details-table{
+  text-align: left;
+  
+}
+
+.device-details-table,td{
+  width: 550px;
+}
+
 .device-button {
   align-items: center;
   align-content: stretch;
-  width: 60%;
+  width: 80%;
   margin-left: 20px;
+  font-size: 18px !important;
+  box-shadow: 0 9px rgb(202, 200, 200) !important;
+}
+
+.site-details-table{
+  background-color: rgb(243, 232, 194);
+  margin-top: 12px;
+}
+
+.site-details-cardview{
+  height: 150px;
 }
 
 .device-button:hover {
