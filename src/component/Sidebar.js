@@ -52,7 +52,7 @@ class Sidebar extends Component {
         </div>
 
         <div>
-          <p style={{ color: "blue",fontFamily:"sans-serif",fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
+          <p style={{ color: "white",fontFamily:"sans-serif",fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
             <icons.FcOrganization size={35}/> &nbsp;Organisation
           </p>
           <input
@@ -65,7 +65,7 @@ class Sidebar extends Component {
             style={{fontSize:"20px",fontWeight:"bolder"}}
           ></input>
           {/* <Button onClick={this.allSites} >View all sites</Button><br/> */}
-          <p style={{ color: "blue",fontFamily:"sans-serif", fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
+          <p style={{ color: "white",fontFamily:"sans-serif", fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
             <icon.GoLocation size={35}/> &nbsp;Locations
           </p>
           <Select
