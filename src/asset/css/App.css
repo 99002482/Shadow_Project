@@ -235,8 +235,8 @@ html,
 }
 
 .site-details-cardview{
-  height: 150px;
-  box-shadow: 0 5px rgb(202, 200, 200);
+  height: 165px;
+  box-shadow: 5px 2px 5px rgb(173, 175, 175) ;
 }
 
 .device-button:hover {
