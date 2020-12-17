@@ -106,7 +106,7 @@ class Profile extends Component {
                 </table>
               </div>
               <br />
-              <br />
+            
               <Button className="button">update</Button>
             </center>
           ))}

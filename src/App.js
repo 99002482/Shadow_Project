@@ -39,7 +39,8 @@ function App() {
           <SecuredRoute path="/Header" component={Header} />
           <SecuredRoute path="/Device" component={Device} />
           <SecuredRoute path="/Devicedetails" component={DeviceDetails} />
-          <Route path="" exact component={Login} />
+          <Route path="/" exact component={Login} />
+          <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </div>
     </Router>
