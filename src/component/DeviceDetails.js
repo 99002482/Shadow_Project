@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody, CardTitle } from "reactstrap";
+import { Card, CardText, CardBody } from "reactstrap";
 import { RiDeviceFill } from "react-icons/ri";
 import { FcElectricalSensor } from "react-icons/fc";
 import { FiSettings } from "react-icons/fi";
@@ -121,117 +121,182 @@ class DeviceDetails extends Component {
           <h2>Device Details</h2>
         </div>
         <center>
-          
-        <div>
-          <div className="device-details">
-            <br />
-            <br />
-            <br />
+          <div>
+            <div className="device-details">
+              <br />
+              <br />
+              <br />
 
-            {data.map(
-              (item) => (
-                fetch("https://localhost:44308/Api/Channel/ch", {
-                  method: "post",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    Token: localStorage.getItem("tok"),
-                    id: item.id,
-                  }),
-                })
-                  .then((res) => res.json())
-                  .then((result) => {
-                    console.log(result);
-                    var c = [];
-                    var t = [];
-                    var unit = []; //
-                    for (var i of result.channels) {
-                      if (i.customProperties !== undefined) {
-                        c.push(i.name);
-                        t.push(i.tag);
-                        unit.push(i.unit);
+              {data.map(
+                (item) => (
+                  fetch("https://localhost:44308/Api/Channel/ch", {
+                    method: "post",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      Token: localStorage.getItem("tok"),
+                      id: item.id,
+                    }),
+                  })
+                    .then((res) => res.json())
+                    .then((result) => {
+                      console.log(result);
+                      var c = [];
+                      var t = [];
+                      var unit = []; //
+                      for (var i of result.channels) {
+                        if (i.customProperties !== undefined) {
+                          c.push(i.name);
+                          t.push(i.tag);
+                          unit.push(i.unit);
+                        }
                       }
-                    }
 
-                    localStorage.setItem("ch", JSON.stringify(c));
-                    localStorage.setItem("tg", JSON.stringify(t));
-                    localStorage.setItem("unit", JSON.stringify(unit));
-                  }),
-                (
-                  <div key={item.id}>
-                    <Card className="device-details-box">
-                      <CardBody>
-                        <CardTitle>
-                          <b>{item.name}</b>
-                        </CardTitle>
-                        <br />
-
-                        <div>
-                          <CardText>
-                            {" "}
-                            <RiDeviceFill size={25} />
-                            &nbsp;<b>Device Name :</b> {item.name}
-                          </CardText>
-                          <br />
-                          <br />
-                          <CardText>
-                            {" "}
-                            <FcElectricalSensor size={25} />
-                            &nbsp;<b>family :</b> {item.family}
-                          </CardText>
-                          <br />
-                          <br />
-                          <CardText>
-                            {" "}
-                            <FiSettings size={25} />
-                            &nbsp;<b>Model :</b> {item.model}
-                          </CardText>
-                          <br />
-                          <br />
-                        </div>
-
-                        <br />
-                        <b>Readings : </b>
-                        <CardText>
-                          {" "}
-                          <tr>
-                            {" "}
-                            {JSON.parse(localStorage.getItem("ch")).map(
-                              (it) => (
+                      localStorage.setItem("ch", JSON.stringify(c));
+                      localStorage.setItem("tg", JSON.stringify(t));
+                      localStorage.setItem("unit", JSON.stringify(unit));
+                    }),
+                  (
+                    <div key={item.id}>
+                      <Card className="device-details-box">
+                        <CardBody>
+                          <div>
+                            <table className="device-details-table" >
+                              <tr>
                                 <td>
-                                  <b>{it}</b>
+                                  <RiDeviceFill size={35} />
+                                  &nbsp;
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Device Name{" "}
+                                  </p>
                                 </td>
-                              )
-                            )}
-                          </tr>
-                          <tr>
-                            {JSON.parse(localStorage.getItem("vl")).map((t) => (
-                              <td>{t}</td>
-                            ))}
-                          </tr>
-                          <tr>
-                            {JSON.parse(localStorage.getItem("unit")).map(
-                              (t) => (
-                                <td>{t}</td>
-                              )
-                            )}
-                          </tr>
-                        </CardText>
-                        <br />
-                        <br />
-                        <br />
-                      </CardBody>
-                    </Card>
-                    <br />
-                  </div>
-                )
-              )
-            )}
-          </div>
-        </div>
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    :&nbsp;{item.name}
+                                  </p>
+                                </td>
+                              </tr>
 
+                              <tr>
+                                <td>
+                                  <FcElectricalSensor size={40} />
+
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Family{" "}
+                                  </p>
+                                </td>
+
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    :&nbsp;{item.family}
+                                  </p>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>
+                                  <FiSettings size={35} />
+                                  &nbsp;
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontWeight: "bolder",
+                                      fontFamily: "sans-serif",
+                                    }}
+                                  >
+                                    Model{" "}
+                                  </p>
+                                </td>
+
+                                <td>
+                                  <p
+                                    style={{
+                                      fontSize: "22px",
+                                      fontStyle: "italic",
+                                    }}
+                                  >
+                                    : {item.model}
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+
+                            <br />
+                            <br />
+                          </div>
+
+                          <br />
+                          <p style={{ fontSize: "25px", fontWeight: "bolder" }}>
+                            Readings :{" "}
+                          </p><br/><br/>
+                          <CardText>
+                            {" "}
+                            <tr>
+                              {" "}
+                              {JSON.parse(localStorage.getItem("ch")).map(
+                                (it) => (
+                                  <td
+                                    style={{
+                                      fontSize: "18px",
+                                      fontWeight: "bolder",
+                                    }}
+                                  >
+                                    <p>{it}</p>
+                                  </td>
+                                )
+                              )}
+                            </tr>
+                            <tr>
+                              {JSON.parse(localStorage.getItem("vl")).map(
+                                (t) => (
+                                  <td>{t}</td>
+                                )
+                              )}
+                            </tr>
+                            <tr>
+                              {JSON.parse(localStorage.getItem("unit")).map(
+                                (t) => (
+                                  <td>{t}</td>
+                                )
+                              )}
+                            </tr>
+                          </CardText>
+                          <br />
+                          <br />
+                          <br />
+                        </CardBody>
+                      </Card>
+                      <br />
+                    </div>
+                  )
+                )
+              )}
+            </div>
+          </div>
         </center>
         <Footer />
       </div>

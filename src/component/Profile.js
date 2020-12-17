@@ -63,50 +63,54 @@ class Profile extends Component {
             <center>
               {" "}
               <div key={items.name} className="profile-data">
-                
-                <table className="profile-values" >
-                <br />
-                  <tr><FcBusinesswoman size={140} /></tr>
+                <table className="profile-values">
+                  <br />
+                  <tr>
+                    <FcBusinesswoman size={140} />
+                  </tr>
                   <br />
                   <tr>
                     <td>
                       <p className="profile-label">First Name&nbsp;</p>
                     </td>
                     <td>
-                    :&nbsp;<p className="profile-label-value">{item.name}</p>
+                      :&nbsp;<p className="profile-label-value">{item.name}</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                    <p className="profile-label">Last Name&nbsp;</p>
+                      <p className="profile-label">Last Name&nbsp;</p>
                     </td>
                     <td>
-                    :&nbsp;<p className="profile-label-value">{item.lname}</p>
+                      :&nbsp;<p className="profile-label-value">{item.lname}</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                    <p className="profile-label">Email&nbsp;</p>
+                      <p className="profile-label">Email&nbsp;</p>
                     </td>
                     <td>
-                    :&nbsp;<p className="profile-label-value">{item.email}</p>
+                      :&nbsp;<p className="profile-label-value">{item.email}</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                    <p className="profile-label">Phone&nbsp;</p> 
+                      <p className="profile-label">Phone&nbsp;</p>
                     </td>
                     <td>
-                    :&nbsp;<input type="text" defaultValue={item.phone} />
+                      :&nbsp;
+                      <input type="text" defaultValue={item.phone} />
                     </td>
-                  </tr><br/>
-
+                  </tr>
+                  <br />
                 </table>
-                
-              </div><br/><br/><Button className="button">update</Button>
+              </div>
+              <br />
+              <br />
+              <Button className="button">update</Button>
             </center>
           ))}
-            
+
           <br />
           <br />
         </div>

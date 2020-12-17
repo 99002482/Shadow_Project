@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import * as ioicon from "react-icons/io";
 import "../asset/css/App.css";
-import { Button } from "reactstrap";
+import { Button, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import { DeviceApi } from "../services/DeviceApi";
 
@@ -103,42 +104,46 @@ class Device extends Component {
                   );
                 }),
               (
-                <table>
-                  <div key={item.id}>
-                    <center>
-                      {" "}
-                      <tr>
-                        <th>Device Name: {item.name}</th>
-                      </tr>
-                    </center>
-                    <br />
-                    {/* <td> Priority:{JSON.parse(localStorage.getItem("ch_value"))}</td> */}
-                    <tr>
-                      Priority Channel :
-                      {JSON.parse(localStorage.getItem("ch_value"))
-                        .slice(0, 1)
-                        .map((it) => (
-                          <p> {it}</p>
-                        ))}
-                    </tr>
+                <Card className="site-details-cardview">
+                  
+                    <div key={item.id}>
+                    <CardBody>
+                      <CardTitle style={{fontWeight:"bolder",fontSize:"20px",color:"red"}}>
+                        <center> Device Name: {item.name}</center>
+                      </CardTitle>
+                      
+                      <table className="site-details-table">
+                        <br/>
+                        <tr>
+                          Priority Channel :
+                          {JSON.parse(localStorage.getItem("ch_value"))
+                            .slice(0, 1)
+                            .map((it) => (
+                              <p> {it}</p>
+                            ))}
+                        </tr>
+                        
+                        <tr>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;
+                          {JSON.parse(localStorage.getItem("values"))
+                            .slice(0, 1)
+                            .map((it) => (
+                              <p>{it}</p>
+                            ))}
+                          &nbsp;&nbsp;
+                          {JSON.parse(localStorage.getItem("u_value"))
+                            .slice(0, 1)
+                            .map((it) => (
+                              <p>{it}</p>
+                            ))}
+                        </tr>
 
-                    <tr>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;
-                      {JSON.parse(localStorage.getItem("values"))
-                        .slice(0, 1)
-                        .map((it) => (
-                          <p>{it}</p>
-                        ))}
-                      &nbsp;&nbsp;
-                      {JSON.parse(localStorage.getItem("u_value"))
-                        .slice(0, 1)
-                        .map((it) => (
-                          <p>{it}</p>
-                        ))}
-                    </tr>
-                  </div>
-                  <br />
-                </table>
+                        <br />
+                      </table>
+                      </CardBody>
+                    </div>
+                  
+                </Card>
               )
             )
           )}
@@ -161,6 +166,7 @@ class Device extends Component {
                     className="device-button"
                   >
                     {item.name}
+                    <ioicon.IoIosArrowDroprightCircle size={30} style={{float:"right"}} />
                   </Button>
                 </Link>
               </center>
