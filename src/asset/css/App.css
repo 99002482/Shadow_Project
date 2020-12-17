@@ -58,10 +58,10 @@ table {
   position: absolute;
 }
 
-.device-details {
+/* .device-details {
   
-  position: relative;
-}
+  position: absolute;
+} */
 
 .card-box {
   background-color: rgb(247, 234, 218);
