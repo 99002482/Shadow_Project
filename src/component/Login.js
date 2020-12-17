@@ -8,8 +8,6 @@ import { LocationApi } from "../services/LocationApi";
 import { TokenApi } from "../services/TokenApi";
 import { SitesApi } from "../services/SitesApi";
 
-
-
 class Login extends Component {
   constructor() {
     super();
@@ -35,8 +33,13 @@ class Login extends Component {
     if (this.state.Username.length === 0 || this.state.Password.length === 0) {
       alert("Username or Password field cannot be empty");
       // checking username and password fields are empty and alerting message
-    } else if ((!this.state.Username.match(mailformat))|| this.state.Password.length <7)  {
-      alert("Invalid email or password format (min length 7)..please check and try again ");
+    } else if (
+      !this.state.Username.match(mailformat) ||
+      this.state.Password.length < 7
+    ) {
+      alert(
+        "Invalid email or password format (min length 7)..please check and try again "
+      );
     } else {
       TokenApi(this.state.Username, this.state.Password) //Fetching token from api
         .then((result) => {
@@ -73,8 +76,8 @@ class Login extends Component {
             }
             localStorage.setItem("loc", JSON.stringify(ar)); //Storing location name in local storage
           });
-          var auth='true'
-          localStorage.setItem("Auth",auth)
+          var auth = "true";
+          localStorage.setItem("Auth", auth);
           this.props.history.push("/Dashboard"); // Redirecting to dashboard page after succesful login
         })
         .catch((err) => {
@@ -135,7 +138,7 @@ class Login extends Component {
             <center>
               <p className="login-copyright">
                 {" "}
-                &copy;{new Date().getFullYear()} LTTS POC , ALL RIGHTS RESERVED{" "}
+                &copy;{new Date().getFullYear()} LTTS , ALL RIGHTS RESERVED{" "}
               </p>
             </center>
           </div>

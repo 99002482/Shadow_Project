@@ -14,6 +14,7 @@ class DeviceDetails extends Component {
       selectedOption: null,
       isLoaded: false,
       data: [],
+      val:[]
     };
   }
 
@@ -68,7 +69,7 @@ class DeviceDetails extends Component {
         var t = []; //
         var unit = [];
         for (var i of result.channels) {
-          if (i.customProperties != undefined) {
+          if (i.customProperties !== undefined) {
             c.push(i.name);
             t.push(i.tag); //
             unit.push(i.unit);
@@ -101,18 +102,22 @@ class DeviceDetails extends Component {
           for (var j of result.results) {
             value.push(j.value);
           }
-
-          //console.log(result.v)
-
-          localStorage.setItem("vl", JSON.stringify(value));
+         
+          this.setState({
+            isLoaded: true,
+            val: value,
+          });
         });
-
+       // for(var l of value){
       console.log(value);
+      localStorage.setItem("vl", JSON.stringify(value)); 
     }
+    //console.log(value);
   }
 
   render() {
     var { data } = this.state;
+    var {val}=this.state;
 
     return (
       <div className="App">
@@ -121,117 +126,117 @@ class DeviceDetails extends Component {
           <h2>Device Details</h2>
         </div>
         <center>
-          
-        <div>
-          <div className="device-details">
-            <br />
-            <br />
-            <br />
+          <div>
+            <div className="device-details">
+              <br />
+              <br />
+              <br />
 
-            {data.map(
-              (item) => (
-                fetch("https://localhost:44308/Api/Channel/ch", {
-                  method: "post",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    Token: localStorage.getItem("tok"),
-                    id: item.id,
-                  }),
-                })
-                  .then((res) => res.json())
-                  .then((result) => {
-                    console.log(result);
-                    var c = [];
-                    var t = [];
-                    var unit = []; //
-                    for (var i of result.channels) {
-                      if (i.customProperties !== undefined) {
-                        c.push(i.name);
-                        t.push(i.tag);
-                        unit.push(i.unit);
+              {data.map(
+                (item) => (
+                  fetch("https://localhost:44308/Api/Channel/ch", {
+                    method: "post",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      Token: localStorage.getItem("tok"),
+                      id: item.id,
+                    }),
+                  })
+                    .then((res) => res.json())
+                    .then((result) => {
+                      console.log(result);
+                      var c = [];
+                      var t = [];
+                      var unit = []; //
+                      for (var i of result.channels) {
+                        if (i.customProperties !== undefined) {
+                          c.push(i.name);
+                          t.push(i.tag);
+                          unit.push(i.unit);
+                        }
                       }
-                    }
 
-                    localStorage.setItem("ch", JSON.stringify(c));
-                    localStorage.setItem("tg", JSON.stringify(t));
-                    localStorage.setItem("unit", JSON.stringify(unit));
-                  }),
-                (
-                  <div key={item.id}>
-                    <Card className="device-details-box">
-                      <CardBody>
-                        <CardTitle>
-                          <b>{item.name}</b>
-                        </CardTitle>
-                        <br />
+                      localStorage.setItem("ch", JSON.stringify(c));
+                      localStorage.setItem("tg", JSON.stringify(t));
+                      localStorage.setItem("unit", JSON.stringify(unit));
+                    }),
+                  (
+                    <div key={item.id}>
+                      <Card className="device-details-box">
+                        <CardBody>
+                          <CardTitle>
+                            <b>{item.name}</b>
+                          </CardTitle>
+                          <br />
 
-                        <div>
+                          <div>
+                            <CardText>
+                              {" "}
+                              <RiDeviceFill size={25} />
+                              &nbsp;<b>Device Name :</b> {item.name}
+                            </CardText>
+                            <br />
+                            <br />
+                            <CardText>
+                              {" "}
+                              <FcElectricalSensor size={25} />
+                              &nbsp;<b>family :</b> {item.family}
+                            </CardText>
+                            <br />
+                            <br />
+                            <CardText>
+                              {" "}
+                              <FiSettings size={25} />
+                              &nbsp;<b>Model :</b> {item.model}
+                            </CardText>
+                            <br />
+                            <br />
+                          </div>
+
+                          <br />
+                          <b>Readings : </b>
                           <CardText>
                             {" "}
-                            <RiDeviceFill size={25} />
-                            &nbsp;<b>Device Name :</b> {item.name}
+                            <tr>
+                              {" "}
+                              {JSON.parse(localStorage.getItem("ch")).map(
+                                (it) => (
+                                  <td>
+                                    <b>{it}</b>
+                                  </td>
+                                )
+                              )}
+                            </tr>
+                            <tr>
+                              {val.map(
+                                (t) => (
+                                  <td>{t}</td>
+                                )
+                              )}
+                            </tr>
+                            <tr>
+                              {JSON.parse(localStorage.getItem("unit")).map(
+                                (t) => (
+                                  <td>{t}</td>
+                                )
+                              )}
+                            </tr>
                           </CardText>
                           <br />
                           <br />
-                          <CardText>
-                            {" "}
-                            <FcElectricalSensor size={25} />
-                            &nbsp;<b>family :</b> {item.family}
-                          </CardText>
                           <br />
-                          <br />
-                          <CardText>
-                            {" "}
-                            <FiSettings size={25} />
-                            &nbsp;<b>Model :</b> {item.model}
-                          </CardText>
-                          <br />
-                          <br />
-                        </div>
-
-                        <br />
-                        <b>Readings : </b>
-                        <CardText>
-                          {" "}
-                          <tr>
-                            {" "}
-                            {JSON.parse(localStorage.getItem("ch")).map(
-                              (it) => (
-                                <td>
-                                  <b>{it}</b>
-                                </td>
-                              )
-                            )}
-                          </tr>
-                          <tr>
-                            {JSON.parse(localStorage.getItem("vl")).map((t) => (
-                              <td>{t}</td>
-                            ))}
-                          </tr>
-                          <tr>
-                            {JSON.parse(localStorage.getItem("unit")).map(
-                              (t) => (
-                                <td>{t}</td>
-                              )
-                            )}
-                          </tr>
-                        </CardText>
-                        <br />
-                        <br />
-                        <br />
-                      </CardBody>
-                    </Card>
-                    <br />
-                  </div>
+                        </CardBody>
+                      </Card>
+                      <br />
+                    </div>
+                  )
                 )
-              )
-            )}
+              )}
+            </div>
           </div>
-        </div>
-
         </center>
         <Footer />
       </div>
