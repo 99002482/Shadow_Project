@@ -236,6 +236,7 @@ html,
 
 .site-details-cardview{
   height: 150px;
+  box-shadow: 0 5px rgb(202, 200, 200);
 }
 
 .device-button:hover {

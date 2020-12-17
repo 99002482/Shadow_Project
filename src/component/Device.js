@@ -142,7 +142,7 @@ class Device extends Component {
                       </table>
                       </CardBody>
                     </div>
-                  
+                  <br/>
                 </Card>
               )
             )
