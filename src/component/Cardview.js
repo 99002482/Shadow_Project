@@ -57,7 +57,7 @@ class Cardview extends Component {
                 <CardHeader
                   tag="h6"
                   style={{
-                    backgroundColor: "#00BFFF",
+                    backgroundColor: "#f76757",
                     borderColor: "#333",
                     color: "white",
                     fontWeight: "bold",
@@ -70,7 +70,7 @@ class Cardview extends Component {
                 <CardBody className="card-box">
                   <CardText>
                     <fiicons.FcElectroDevices size={30} />
-                    &nbsp;&nbsp;<b>Devices : {3}</b>
+                    &nbsp;&nbsp;<b>Devices : {5}</b>
                   </CardText>
                   <br />
                   <br />
