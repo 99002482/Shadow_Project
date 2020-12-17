@@ -14,6 +14,7 @@ class DeviceDetails extends Component {
       selectedOption: null,
       isLoaded: false,
       data: [],
+      val:[]
     };
   }
 
@@ -68,7 +69,7 @@ class DeviceDetails extends Component {
         var t = []; //
         var unit = [];
         for (var i of result.channels) {
-          if (i.customProperties != undefined) {
+          if (i.customProperties !== undefined) {
             c.push(i.name);
             t.push(i.tag); //
             unit.push(i.unit);
@@ -101,18 +102,22 @@ class DeviceDetails extends Component {
           for (var j of result.results) {
             value.push(j.value);
           }
-
-          //console.log(result.v)
-
-          localStorage.setItem("vl", JSON.stringify(value));
+         
+          this.setState({
+            isLoaded: true,
+            val: value,
+          });
         });
-
+       // for(var l of value){
       console.log(value);
+      localStorage.setItem("vl", JSON.stringify(value)); 
     }
+    //console.log(value);
   }
 
   render() {
     var { data } = this.state;
+    var {val}=this.state;
 
     return (
       <div className="App">
@@ -271,7 +276,7 @@ class DeviceDetails extends Component {
                               )}
                             </tr>
                             <tr>
-                              {JSON.parse(localStorage.getItem("vl")).map(
+                              {val.map(
                                 (t) => (
                                   <td>{t}</td>
                                 )
