@@ -14,8 +14,5 @@ describe("Profile", () => {
     getAllByText("Profile Details");
   });
 
-  it("update button working", () => {
-    render(<Profile />);
-    screen.getByRole("button", { hidden: true });
-  });
+  
 });

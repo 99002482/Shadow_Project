@@ -99,15 +99,31 @@ class Profile extends Component {
                     </td>
                     <td>
                       :&nbsp;
-                      <input type="text" defaultValue={item.phone} />
+                      <input
+                        type="number"
+                        id="phone"
+                        defaultValue={localStorage.getItem("phone")}
+                      />
                     </td>
                   </tr>
                   <br />
                 </table>
               </div>
               <br />
-            
-              <Button className="button">update</Button>
+              <Button
+                className="button"
+                onClick={() => {
+                  var phonenumber = document.getElementById("phone").value;
+                  if (phonenumber.length < 10 || phonenumber.length > 10) {
+                    alert("Please check the length of the phone number...");
+                  } else {
+                    localStorage.setItem("phone", phonenumber);
+                    alert("Data updated successfully!");
+                  }
+                }}
+              >
+                Update
+              </Button>
             </center>
           ))}
 
