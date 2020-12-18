@@ -18,9 +18,9 @@ class DeviceDetails extends Component {
     };
   }
 
-  componentDidMount() {
+ async componentDidMount() {
 
-    Promise.all([fetch("https://localhost:44308/Api/DeviceDetail/desc", {
+   await Promise.all([fetch("https://localhost:44308/Api/DeviceDetail/desc", {
       method: "post",
       headers: {
         Accept: "application/json",
@@ -70,7 +70,7 @@ class DeviceDetails extends Component {
         var t = []//
         var unit = []
         for (var i of res2.channels) {
-          if (i.customProperties != undefined) {
+          if (i.customProperties !==undefined) {
             c.push(i.name);
             t.push(i.tag);//
             unit.push(i.unit)
@@ -95,7 +95,7 @@ class DeviceDetails extends Component {
     var v = [];
 
 
-    var req = JSON.parse(localStorage.getItem("tg")).map(i => {
+    var req = await JSON.parse(localStorage.getItem("tg")).map(i => {
 
       return new Promise((resolve, reject) => {
 
