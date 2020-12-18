@@ -59,7 +59,6 @@ table {
   background-color: rgb(247, 234, 218);
   background-position: center;
   background-image: url("../images/open-graph.jpg");
-  background-position: center;
   background-repeat: no-repeat;
 
   background-size: cover;
@@ -67,8 +66,7 @@ table {
 
 .device-details-box {
   box-shadow: 5px 10px 8px 1px rgb(110, 109, 107);
-  background: 
-  linear-gradient(
+  background: linear-gradient(
       rgba(255, 255, 255, 0.945),
       rgba(255, 255, 255, 0.685)
     ),
@@ -123,8 +121,7 @@ p {
   box-shadow: 5px 10px 8px 1px #888;
   max-width: 1100px;
   box-sizing: border-box;
-  background-image: 
-  linear-gradient(
+  background-image: linear-gradient(
     to right top,
     #344461,
     #3d6087,
@@ -188,6 +185,7 @@ html,
     #7ee7fb,
     #9df3fb
   ); */
+  
   /* background-color: #344461; */
 
   background-image: linear-gradient(
