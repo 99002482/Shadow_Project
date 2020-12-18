@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import * as ioicon from "react-icons/io";
 import "../asset/css/App.css";
+import * as fiicons from "react-icons/fc";
 import { Button, Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import { DeviceApi } from "../services/DeviceApi";
@@ -110,8 +111,8 @@ class Device extends Component {
                   
                   <div key={item.id}>
                   <CardBody>
-                    <CardTitle style={{fontWeight:"bolder",fontSize:"20px",color:"red"}}>
-                      <center> Device Name: {item.name}</center>
+                    <CardTitle style={{fontWeight:"bolder",fontSize:"20px",color:"red",textAlign:"left"}}>
+                      <fiicons.FcElectroDevices size={30} /> Device Name: {item.name}
                     </CardTitle>
                     
                     <table className="site-details-table">

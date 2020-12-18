@@ -58,10 +58,10 @@ table {
   position: absolute;
 }
 
-.device-details {
+/* .device-details {
   
-  position: relative;
-}
+  position: absolute;
+} */
 
 .card-box {
   background-color: rgb(247, 234, 218);
@@ -234,6 +234,10 @@ html,
 .site-details-table{
   background-color: rgb(243, 232, 194);
   margin-top: 12px;
+}
+
+.site-details-table,p{
+  font-size: 18px;
 }
 
 .site-details-cardview{
