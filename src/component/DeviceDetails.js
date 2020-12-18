@@ -30,37 +30,35 @@ class DeviceDetails extends Component {
         Token: localStorage.getItem('tok'),
         id: localStorage.getItem('device_id')
       }),
+    }),
 
-      fetch("https://localhost:44308/Api/Channel/ch", {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Token: localStorage.getItem("tok"),
-          id: localStorage.getItem("device_id"),
-        }),
+    fetch("https://localhost:44308/Api/Channel/ch", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Token: localStorage.getItem('tok'),
+        id: localStorage.getItem("device_id")
       }),
-    ])
+    })])
+
 
       .then(([res1, res2]) => {
-        return Promise.all([res1.json(), res2.json()]);
+        return Promise.all([res1.json(), res2.json()])
       })
       .then(([res1, res2]) => {
+
+
         var ds = [];
         console.log(res1);
         // for(var i of result){
-        ds.push({
-          name: res1.name,
-          id: res1.id,
-          family: res1.family,
-          model: res1.model,
-        });
+        ds.push({ name: res1.name, id: res1.id, family: res1.family, model: res1.model })
         //}
 
         console.log(ds);
-        localStorage.setItem("device_details", JSON.stringify(ds));
+        localStorage.setItem("device_details", JSON.stringify(ds))
 
         this.setState({
           isLoaded: true,
@@ -69,25 +67,30 @@ class DeviceDetails extends Component {
 
         console.log(res2);
         var c = [];
-        var t = []; //
-        var unit = [];
+        var t = []//
+        var unit = []
         for (var i of res2.channels) {
           if (i.customProperties !==undefined) {
             c.push(i.name);
-            t.push(i.tag); //
-            unit.push(i.unit);
+            t.push(i.tag);//
+            unit.push(i.unit)
+
           }
         }
 
-        localStorage.setItem("ch", JSON.stringify(c));
-        localStorage.setItem("tg", JSON.stringify(t)); //
-        localStorage.setItem("unit", JSON.stringify(unit));
+        localStorage.setItem('ch', JSON.stringify(c))
+        localStorage.setItem('tg', JSON.stringify(t))//
+        localStorage.setItem('unit', JSON.stringify(unit))
         console.log(JSON.parse(localStorage.getItem("tg")));
 
         this.setState({
           isDetail: true,
+
         });
-      });
+
+
+      })
+
 
     var v = [];
 
@@ -95,6 +98,7 @@ class DeviceDetails extends Component {
     var req = await JSON.parse(localStorage.getItem("tg")).map(i => {
 
       return new Promise((resolve, reject) => {
+
         fetch("https://localhost:44308/Api/tag/value", {
           method: "post",
           headers: {
@@ -102,34 +106,40 @@ class DeviceDetails extends Component {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            Token: localStorage.getItem("tok"),
+            Token: localStorage.getItem('tok'),
             tag: i,
-            id: localStorage.getItem("device_id"),
+            id: localStorage.getItem("device_id")
           }),
-        })
-          .then((res) => res.json())
+        }).then((res) => res.json())
           .then((result) => {
-            if (result.result !== undefined && result.result[0] !== undefined) {
-              console.log(result.results[0]);
-            } else {
-              resolve(result.results[0].value);
-            }
-          });
-      });
-    });
 
-    Promise.all(req)
-      .then((body) => {
-        body.forEach((res) => {
-          if (res) v.push(res);
-        });
-        console.log(v);
-        this.setState({
-          values: v,
-        });
-        localStorage.setItem("value", JSON.stringify(v));
+            //console.log(result.results[0].value);
+            
+            var r=result.results[0];
+            //window.location.reload();
+            resolve(r.value);
+
+          })
+
       })
-      .catch((err) => console.log(err));
+
+    })
+
+    Promise.all(req).then((body) => {
+
+      body.forEach(res => {
+        if (res)
+          v.push(res)
+      })
+      console.log(v);
+      this.setState({
+        values: v
+      })
+      localStorage.setItem("value", JSON.stringify(v))
+
+
+
+    }).catch(err => console.log(err))
   }
 
   render() {
@@ -157,12 +167,17 @@ class DeviceDetails extends Component {
                         <table className="device-details-table">
                           <tr>
                             <td>
-                              <RiDeviceFill
-                                size={35}
-                                className="profile-label"
-                              />
+                              <RiDeviceFill size={35} />
                               &nbsp;
-                              <p className="profile-label">Device Name </p>
+                              <p
+                                style={{
+                                  fontSize: "22px",
+                                  fontWeight: "bolder",
+                                  fontFamily: "sans-serif",
+                                }}
+                              >
+                                Device Name{" "}
+                              </p>
                             </td>
                             <td>
                               <p
@@ -180,7 +195,15 @@ class DeviceDetails extends Component {
                             <td>
                               <FcElectricalSensor size={40} />
 
-                              <p className="profile-label">Family </p>
+                              <p
+                                style={{
+                                  fontSize: "22px",
+                                  fontWeight: "bolder",
+                                  fontFamily: "sans-serif",
+                                }}
+                              >
+                                Family{" "}
+                              </p>
                             </td>
 
                             <td>
@@ -197,9 +220,17 @@ class DeviceDetails extends Component {
 
                           <tr>
                             <td>
-                              <FiSettings size={35} className="profile-label" />
+                              <FiSettings size={35} />
                               &nbsp;
-                              <p className="profile-label">Model </p>a
+                              <p
+                                style={{
+                                  fontSize: "22px",
+                                  fontWeight: "bolder",
+                                  fontFamily: "sans-serif",
+                                }}
+                              >
+                                Model{" "}
+                              </p>
                             </td>
 
                             <td>
