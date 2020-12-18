@@ -105,49 +105,54 @@ class Device extends Component {
                   );
                 }),
               (
-                
                 <div>
                   <Card className="site-details-cardview">
-                  
-                  <div key={item.id}>
-                  <CardBody>
-                    <CardTitle style={{fontWeight:"bolder",fontSize:"20px",color:"red",textAlign:"left"}}>
-                      <fiicons.FcElectroDevices size={30} /> Device Name: {item.name}
-                    </CardTitle>
-                    
-                    <table className="site-details-table">
-                      <br/>
-                      <tr>
-                        Priority Channel :
-                        {JSON.parse(localStorage.getItem("ch_value"))
-                          .slice(0, 1)
-                          .map((it) => (
-                            <p> {it}</p>
-                          ))}
-                      </tr>
-                      
-                      <tr>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;
-                        {JSON.parse(localStorage.getItem("values"))
-                          .slice(0, 1)
-                          .map((it) => (
-                            <p>{it}</p>
-                          ))}
-                        &nbsp;&nbsp;
-                        {JSON.parse(localStorage.getItem("u_value"))
-                          .slice(0, 1)
-                          .map((it) => (
-                            <p>{it}</p>
-                          ))}
-                      </tr>
+                    <div key={item.id}>
+                      <CardBody>
+                        <CardTitle
+                          style={{
+                            fontWeight: "bolder",
+                            fontSize: "20px",
+                            color: "red",
+                            textAlign: "left",
+                          }}
+                        >
+                          <fiicons.FcElectroDevices size={30} /> Device Name:{" "}
+                          {item.name}
+                        </CardTitle>
 
-                      <br />
-                    </table>
-                    </CardBody>
-                  </div>
-                <br/>
-              </Card>
-              <br/>
+                        <table className="site-details-table">
+                          <br />
+                          <tr>
+                            Priority Channel :
+                            {JSON.parse(localStorage.getItem("ch_value"))
+                              .slice(0, 1)
+                              .map((it) => (
+                                <p> {it}</p>
+                              ))}
+                          </tr>
+
+                          <tr>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading:&nbsp;&nbsp;
+                            {JSON.parse(localStorage.getItem("values"))
+                            .map((it) => (
+                              <p>{it}</p>
+                            ))}
+                            &nbsp;&nbsp;
+                            {JSON.parse(localStorage.getItem("u_value"))
+                              .slice(0, 1)
+                              .map((it) => (
+                                <p>{it}</p>
+                              ))}
+                          </tr>
+
+                          <br />
+                        </table>
+                      </CardBody>
+                    </div>
+                    <br />
+                  </Card>
+                  <br />
                 </div>
               )
             )
@@ -171,7 +176,10 @@ class Device extends Component {
                     className="device-button"
                   >
                     {item.name}
-                    <ioicon.IoIosArrowDroprightCircle size={30} style={{float:"right"}} />
+                    <ioicon.IoIosArrowDroprightCircle
+                      size={30}
+                      style={{ float: "right" }}
+                    />
                   </Button>
                 </Link>
               </center>

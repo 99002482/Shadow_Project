@@ -116,14 +116,13 @@ class Profile extends Component {
                   var phonenumber = document.getElementById("phone").value;
                   if (phonenumber.length < 10 || phonenumber.length > 10) {
                     alert("Please check the length of the phone number...");
-                  }else{
+                  } else {
                     localStorage.setItem("phone", phonenumber);
-                  alert("Data updated successfully!");
+                    alert("Data updated successfully!");
                   }
-                  
                 }}
               >
-                update
+                Update
               </Button>
             </center>
           ))}

@@ -40,7 +40,6 @@ table {
 }
 
 .device-title {
-  margin-bottom: 150px;
   font-style: italic;
   font-size: 50px;
   text-shadow: 5px 5px 10px #000000;
@@ -69,7 +68,7 @@ table {
   background-image: url("../images/open-graph.jpg");
   background-position: center;
   background-repeat: no-repeat;
- 
+
   background-size: cover;
 }
 
@@ -120,7 +119,6 @@ p {
   text-shadow: 1px 1px 1px white, 1px 1px 1px blue;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  
 }
 
 .profile-data {
@@ -132,7 +130,14 @@ p {
   box-shadow: 5px 10px 8px 1px #888;
   max-width: 1100px;
   box-sizing: border-box;
-  background-image: linear-gradient(to right top, #344461, #3d6087, #3f7eaf, #359dd7, #00bfff);
+  background-image: linear-gradient(
+    to right top,
+    #344461,
+    #3d6087,
+    #3f7eaf,
+    #359dd7,
+    #00bfff
+  );
 }
 
 .profile-values {
@@ -143,6 +148,7 @@ p {
 .profile-label {
   color: #f86707;
   text-shadow: 1px 1px 1px white, 1px 1px 1px blue;
+  font-size: 25px;
 }
 
 .profile-label-value {
@@ -188,8 +194,14 @@ html,
     #9df3fb
   ); */
   /* background-color: #344461; */
-  background-image: linear-gradient(to right top, #344461, #3d6087, #3f7eaf, #359dd7, #00bfff);
-  
+  background-image: linear-gradient(
+    to right top,
+    #344461,
+    #3d6087,
+    #3f7eaf,
+    #359dd7,
+    #00bfff
+  );
 }
 
 .sidebar-device {
@@ -200,7 +212,7 @@ html,
   box-shadow: 0px 12px 18px 6px rgba(0, 0, 0, 0.3);
 }
 
-.select-dropdown{
+.select-dropdown {
   font-size: 15px !important;
   font-weight: bold !important;
 }
@@ -213,12 +225,12 @@ html,
   text-shadow: 5px 5px 10px #d3a644;
 }
 
-.device-details-table{
+.device-details-table {
   text-align: left;
-  
 }
 
-.device-details-table,td{
+.device-details-table,
+td {
   width: 550px;
 }
 
@@ -231,18 +243,19 @@ html,
   box-shadow: 0 9px rgb(202, 200, 200) !important;
 }
 
-.site-details-table{
+.site-details-table {
   background-color: rgb(243, 232, 194);
   margin-top: 12px;
 }
 
-.site-details-table,p{
+.site-details-table,
+p {
   font-size: 18px;
 }
 
-.site-details-cardview{
+.site-details-cardview {
   height: 165px;
-  box-shadow: 5px 2px 5px rgb(173, 175, 175) ;
+  box-shadow: 5px 2px 5px rgb(173, 175, 175);
 }
 
 .device-button:hover {
@@ -309,6 +322,7 @@ html,
   color: rgb(34, 33, 33);
   font-family: "Courier New", Courier, monospace;
   background: white;
+  margin-top: 100px;
 }
 
 .loginForm:hover {

@@ -94,8 +94,8 @@ class Login extends Component {
   render() {
     return (
       <div className="container1">
-        <div className="device-title">
-          <p>DEVICE HEALTH MONITORING SYSTEM</p>
+        <div>
+          <p className="device-title">DEVICE HEALTH MONITORING SYSTEM</p>
         </div>
 
         <form className="loginForm">

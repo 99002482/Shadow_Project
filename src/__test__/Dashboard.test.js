@@ -18,5 +18,18 @@ describe("Dashboard", () => {
   it("location dropdown working", () => {
     const { getAllByText } = render(<Sidebar />);
     getAllByText("Select...");
+    
+  });
+
+  it("location label rendering",()=>{
+    const { getAllByText } = render(<Sidebar />);   
+    getAllByText("Locations");
+    
+  });
+
+  it("location label rendering",()=>{
+    const { getAllByText } = render(<Sidebar />);   
+   
+    getAllByText("Organisation");
   });
 });
