@@ -236,6 +236,10 @@ html,
   margin-top: 12px;
 }
 
+.site-details-table,p{
+  font-size: 18px;
+}
+
 .site-details-cardview{
   height: 165px;
   box-shadow: 5px 2px 5px rgb(173, 175, 175) ;

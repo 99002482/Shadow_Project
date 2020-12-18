@@ -14,42 +14,23 @@ class DeviceDetails extends Component {
       selectedOption: null,
       isLoaded: false,
       data: [],
-      val: [],
+      values: [],
     };
   }
 
   componentDidMount() {
-    fetch("https://localhost:44308/Api/DeviceDetail/desc", {
+
+    Promise.all([fetch("https://localhost:44308/Api/DeviceDetail/desc", {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        Token: localStorage.getItem("tok"),
-        id: localStorage.getItem("device_id"),
+        Token: localStorage.getItem('tok'),
+        id: localStorage.getItem('device_id')
       }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        var ds = [];
-        console.log([result]);
-
-        ds.push({
-          name: result.name,
-          id: result.id,
-          family: result.family,
-          model: result.model,
-        });
-
-        console.log(ds);
-        localStorage.setItem("device_details", JSON.stringify(ds));
-
-        this.setState({
-          isLoaded: true,
-          data: ds,
-        });
-      });
+    }),
 
     fetch("https://localhost:44308/Api/Channel/ch", {
       method: "post",
@@ -58,68 +39,113 @@ class DeviceDetails extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        Token: localStorage.getItem("tok"),
-        id: localStorage.getItem("device_id"),
+        Token: localStorage.getItem('tok'),
+        id: localStorage.getItem("device_id")
       }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
+    })])
+
+
+      .then(([res1, res2]) => {
+        return Promise.all([res1.json(), res2.json()])
+      })
+      .then(([res1, res2]) => {
+
+
+        var ds = [];
+        console.log(res1);
+        // for(var i of result){
+        ds.push({ name: res1.name, id: res1.id, family: res1.family, model: res1.model })
+        //}
+
+        console.log(ds);
+        localStorage.setItem("device_details", JSON.stringify(ds))
+
+        this.setState({
+          isLoaded: true,
+          data: ds,
+        });
+
+        console.log(res2);
         var c = [];
-        var t = []; //
-        var unit = [];
-        for (var i of result.channels) {
-          if (i.customProperties !== undefined) {
+        var t = []//
+        var unit = []
+        for (var i of res2.channels) {
+          if (i.customProperties != undefined) {
             c.push(i.name);
-            t.push(i.tag); //
-            unit.push(i.unit);
+            t.push(i.tag);//
+            unit.push(i.unit)
+
           }
         }
-        //console.log(c);
-        //console.log(t)
-        localStorage.setItem("ch", JSON.stringify(c));
-        localStorage.setItem("tg", JSON.stringify(t)); //
-        localStorage.setItem("unit", JSON.stringify(unit));
-      });
 
-    var value = [];
+        localStorage.setItem('ch', JSON.stringify(c))
+        localStorage.setItem('tg', JSON.stringify(t))//
+        localStorage.setItem('unit', JSON.stringify(unit))
+        console.log(JSON.parse(localStorage.getItem("tg")));
 
-    //JSON.parse(localStorage.getItem("ch")).map((j)=>(
-    for (var k of JSON.parse(localStorage.getItem("tg"))) {
-      fetch("https://localhost:44308/Api/tag/value", {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Token: localStorage.getItem("tok"),
-          tag: k,
-          id: localStorage.getItem("device_id"),
-        }),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          for (var j of result.results) {
-            value.push(j.value);
-          }
+        this.setState({
+          isDetail: true,
 
-          this.setState({
-            isLoaded: true,
-            val: value,
-          });
         });
-      // for(var l of value){
-      console.log(value);
-      localStorage.setItem("vl", JSON.stringify(value));
-    }
-    //console.log(value);
+
+
+      })
+
+
+    var v = [];
+
+
+    var req = JSON.parse(localStorage.getItem("tg")).map(i => {
+
+      return new Promise((resolve, reject) => {
+
+        fetch("https://localhost:44308/Api/tag/value", {
+          method: "post",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Token: localStorage.getItem('tok'),
+            tag: i,
+            id: localStorage.getItem("device_id")
+          }),
+        }).then((res) => res.json())
+          .then((result) => {
+
+            //console.log(result.results[0].value);
+            
+            var r=result.results[0];
+            //window.location.reload();
+            resolve(r.value);
+
+          })
+
+      })
+
+    })
+
+    Promise.all(req).then((body) => {
+
+      body.forEach(res => {
+        if (res)
+          v.push(res)
+      })
+      console.log(v);
+      this.setState({
+        values: v
+      })
+      localStorage.setItem("value", JSON.stringify(v))
+
+
+
+    }).catch(err => console.log(err))
   }
 
   render() {
     var { data } = this.state;
-    var { val } = this.state;
-  
+    var { values } = this.state;
+
     return (
       <div className="App">
         <Header />
@@ -237,7 +263,7 @@ class DeviceDetails extends Component {
                           {JSON.parse(localStorage.getItem("ch")).map((it) => (
                             <td
                               style={{
-                                fontSize: "18px",
+                                fontSize: "20px",
                                 fontWeight: "bolder",
                               }}
                             >
@@ -246,13 +272,29 @@ class DeviceDetails extends Component {
                           ))}
                         </tr>
                         <tr>
-                          {val.map((t) => (
-                            <td>{t}</td>
+                          {values.map((t) => (
+                            <td
+                              style={{
+                                fontSize: "18px",
+                                fontWeight: "bold",
+                                color: "navy",
+                              }}
+                            >
+                              {t}
+                            </td>
                           ))}
                         </tr>
                         <tr>
                           {JSON.parse(localStorage.getItem("unit")).map((t) => (
-                            <td>{t}</td>
+                            <td
+                              style={{
+                                fontSize: "18px",
+                                fontWeight: "bold",
+                                color: "navy",
+                              }}
+                            >
+                              {t}
+                            </td>
                           ))}
                         </tr>
                       </CardText>

@@ -13,7 +13,7 @@ class Sidebar extends Component {
       selectedOption: JSON.parse(localStorage.getItem("selectedOption")),
     };
   }
-   
+
   handleChange = (selectedOption) => {
     var sr = [];
 
@@ -30,7 +30,7 @@ class Sidebar extends Component {
             j.custom_attributes !== undefined &&
             j.custom_attributes.WAS_Entity_Type === "site"
           ) {
-            sr.push({name:j.name,id:j.id});
+            sr.push({ name: j.name, id: j.id });
           }
         }
       }
@@ -52,8 +52,17 @@ class Sidebar extends Component {
         </div>
 
         <div>
-          <p style={{ color: "white",fontFamily:"sans-serif",fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
-            <icons.FcOrganization size={35}/> &nbsp;Organisation
+          <p
+            style={{
+              color: "white",
+              fontFamily: "sans-serif",
+              fontSize: "20px",
+              fontWeight: "bolder",
+              textShadow: " 1px 1px 1px orange,1px 1px 1px orange",
+              padding: "10px",
+            }}
+          >
+            <icons.FcOrganization size={35} /> &nbsp;Organisation
           </p>
           <input
             className="organisation"
@@ -62,22 +71,30 @@ class Sidebar extends Component {
             name="US Stell"
             value={localStorage.getItem("org_name")}
             readOnly
-            style={{fontSize:"20px",fontWeight:"bolder"}}
+            style={{ fontSize: "20px", fontWeight: "bolder" }}
           ></input>
           {/* <Button onClick={this.allSites} >View all sites</Button><br/> */}
-          <p style={{ color: "white",fontFamily:"sans-serif", fontSize:"20px" ,fontWeight: "bolder",textShadow: " 1px 1px 1px orange,1px 1px 1px orange", padding: "10px" }}>
-            <icon.GoLocation size={35}/> &nbsp;Locations
+          <p
+            style={{
+              color: "white",
+              fontFamily: "sans-serif",
+              fontSize: "20px",
+              fontWeight: "bolder",
+              textShadow: " 1px 1px 1px orange,1px 1px 1px orange",
+              padding: "10px",
+            }}
+          >
+            <icon.GoLocation size={35} /> &nbsp;Locations
           </p>
           <Select
             //  value={selectedOption}
-            
+
             onChange={this.handleChange}
             options={opt}
             defaultInputValue={JSON.parse(
               localStorage.getItem("selectedOption")
             )}
             className="select-dropdown"
-            
           />
         </div>
       </div>
